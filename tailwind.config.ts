@@ -20,6 +20,29 @@ const config = {
       }
     },
     extend: {
+      colors: {
+        primary: {
+          DEFAULT: '#D7FF01'
+        },
+        secondary: {
+          DEFAULT: '#E17A61'
+        },
+        accent: {
+          DEFAULT: '#D7FF01'
+        },
+        dark: {
+          DEFAULT: '#021422'
+        },
+        light: {
+          DEFAULT: '#F9F9F9'
+        },
+        silver: {
+          DEFAULT: '#E7E7E7'
+        }
+      },
+      backgroundImage: {
+        hero: 'url(/hero.jpg)'
+      },
       boxShadow: {
         input: `0px 2px 3px -1px rgba(0,0,0,0.1), 0px 1px 0px 0px rgba(25,28,33,0.02), 0px 0px 0px 1px rgba(25,28,33,0.08)`,
         'beam-collision':
@@ -76,7 +99,7 @@ const config = {
           '100%': { transform: 'translateY(-50%)' }
         },
         scroll: {
-          to: { transform: 'translate(calc(-50% - 0.5rem))' }
+          to: { transform: 'translate(calc(-60%))' }
         },
         shimmer: {
           from: { backgroundPosition: '0 0' },
@@ -111,6 +134,30 @@ const config = {
         },
         '.no-visible-scrollbar::-webkit-scrollbar': {
           display: 'none'
+        },
+        '.animate-underline': {
+          display: 'block',
+          position: 'relative',
+          padding: '0.1em 0',
+          overflow: 'hidden'
+        },
+        '.animate-underline::after': {
+          content: '""',
+          position: 'absolute',
+          bottom: '0',
+          left: '0',
+          width: '100%',
+          height: '0.1em',
+          backgroundColor: '#000',
+          opacity: '1',
+          transform: 'translate3d(-100%, 0, 0)',
+          transition: 'opacity 300ms, transform 300ms'
+        },
+        '.animate-underline:hover::after': {
+          transform: 'translate3d(0, 0, 0)'
+        },
+        '.animate-underline:focus::after': {
+          transform: 'translate3d(0, 0, 0)'
         }
       });
 
@@ -120,6 +167,9 @@ const config = {
         },
         '.scrollbar-none': {
           scrollbarWidth: 'none'
+        },
+        '.small-caps': {
+          fontVariant: 'small-caps'
         }
       });
     }),

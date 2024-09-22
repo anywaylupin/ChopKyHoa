@@ -3,16 +3,17 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
     "build": "next build",
-    "start": "next start",
+    "dev": "next dev",
+    "format": "prettier --write **/*.{js,jsx,ts,tsx,scss,css,md}",
     "lint": "next lint",
     "lint:fix": "next lint --fix",
     "lint:strict": "next lint '*/**/*.{js,jsx,ts,tsx}'",
-    "prettier": "prettier --write */**/*.{js,jsx,json,ts,tsx,scss,css,md}",
-    "prepare": "husky"
+    "prepare": "husky",
+    "start": "next start"
   },
   "dependencies": {
+    "@gsap/react": "^2.1.1",
     "@radix-ui/react-hover-card": "^1.1.1",
     "@radix-ui/react-label": "^2.1.0",
     "@react-three/drei": "^9.111.5",
@@ -23,6 +24,8 @@
     "@tsparticles/slim": "^3.5.0",
     "clsx": "^2.1.1",
     "framer-motion": "^11.3.31",
+    "gsap": "^3.12.5",
+    "lottie-web": "^5.12.2",
     "mini-svg-data-uri": "^1.4.4",
     "next": "14.2.7",
     "qss": "^3.0.0",

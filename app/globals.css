@@ -4,10 +4,14 @@
 
 html {
   position: relative;
+  height: 100%;
+  margin: 0;
+  overflow-x: hidden;
+  overflow-y: scroll;
 }
 
 img {
+  position: relative !important;
   object-fit: contain;
-  width: auto;
-  height: auto;
+  height: unset !important;
 }

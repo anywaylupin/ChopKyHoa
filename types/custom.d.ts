@@ -17,4 +17,7 @@ declare type PropsWithClass<P = unknown, T = undefined> = React.PropsWithChildre
 > &
   (T extends undefined ? unknown : React.HTMLProps<T>);
 
-declare type AceternityComponent<P = unknown, T = undefined> = React.FC<PropsWithClass<P, T>>;
+declare type PropsWithSVG<P = unknown, T = undefined> = PropsWithClass<
+  P & { fill?: string; width?: number; height?: number },
+  T
+>;
