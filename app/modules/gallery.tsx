@@ -17,12 +17,15 @@ const Gallery = () => {
   ];
 
   return (
-    <>
+    <section
+      id="gallery"
+      className="panel no-visible-scrollbar relative flex h-screen max-h-max min-h-full w-screen flex-col justify-between overflow-y-scroll bg-secondary p-16 pt-0"
+    >
       <h2 className="text-nowrap text-center text-[300px] font-semibold uppercase -tracking-[9.36px] text-light small-caps">
         Thư viện
       </h2>
       <LayoutGrid items={cards} />
-    </>
+    </section>
   );
 };
 

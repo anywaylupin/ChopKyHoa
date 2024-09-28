@@ -59,7 +59,7 @@ export const range = (size: number): number[] => Array.from({ length: size }, (_
  */
 export const intersection = <T>(...args: T[][]) => {
   if (args.length === 0) return [];
-  return args.reduce((acc, array) => acc.filter((item) => array.includes(item)));
+  return args.reduce((acc, array) => acc.filter((item) => array.includes(item)), []);
 };
 
 /**
@@ -80,7 +80,7 @@ export const diff = <T>(...args: T[][]) => {
  * @param args - The values to exclude.
  * @returns A new array with the excluded values removed.
  */
-export const allBut = <T>(array: T[], ...args: (T | unknown)[]) => array.filter((value) => !args.includes(value));
+export const allBut = <T>(array: T[], ...args: T[]) => array.filter((value) => !args.includes(value));
 
 /**
  * Returns all elements of an array except the first one.

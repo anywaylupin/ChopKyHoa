@@ -8,8 +8,8 @@
     "start": "next start",
     "lint": "next lint",
     "lint:fix": "next lint --fix",
-    "lint:strict": "next lint '*/**/*.{js,jsx,ts,tsx}'",
-    "format": "prettier --write **/*.{js,jsx,ts,tsx,scss,css,md}",
+    "lint:strict": "next lint '*/**/*.{js,mjs,jsx,ts,tsx}'",
+    "format": "prettier --write **/*.{js,mjs,jsx,ts,tsx,scss,css,md}",
     "prepare": "husky"
   },
   "dependencies": {

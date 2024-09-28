@@ -1,7 +1,13 @@
+import { cn } from '@/lib/utils';
 import Image from 'next/image';
 
 const About = () => (
-  <>
+  <section
+    id="about"
+    className={cn(
+      'panel relative flex h-screen max-h-screen min-h-full w-screen translate-x-0 justify-between bg-dark p-16 pt-28 text-light'
+    )}
+  >
     <div className="flex flex-col justify-between">
       <h2 className="text-6xl font-semibold uppercase leading-[116px] -tracking-[2.56px] small-caps">
         Hãy tham gia các lớp học của tôi
@@ -26,7 +32,7 @@ const About = () => (
         </p>
       </div>
     </aside>
-  </>
+  </section>
 );
 
 export default About;

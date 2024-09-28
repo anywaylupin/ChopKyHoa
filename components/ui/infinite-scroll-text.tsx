@@ -44,10 +44,7 @@ export const InfiniteScrollText = ({
   }, [direction, speed]);
 
   return (
-    <div
-      ref={ref}
-      className={cn('relative bottom-0 z-20 w-full items-center justify-center overflow-hidden bg-accent', className)}
-    >
+    <div ref={ref} className={cn('relative w-full overflow-hidden', className)}>
       <ul
         ref={scrollerRef}
         className={cn(

@@ -24,7 +24,12 @@ const Plans = () => {
   ];
 
   return (
-    <>
+    <section
+      id="plans"
+      className={cn(
+        'panel relative flex h-screen max-h-screen min-h-full w-screen translate-x-0 flex-col justify-between bg-secondary p-16 pt-32'
+      )}
+    >
       <h2 className="text-9xl font-semibold uppercase -tracking-[2.56px] text-light small-caps">
         Lớp học
         <br />
@@ -51,7 +56,7 @@ const Plans = () => {
           </div>
         ))}
       </div>
-    </>
+    </section>
   );
 };
 
