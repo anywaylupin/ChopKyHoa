@@ -15,10 +15,10 @@ const Hero = () => (
         <h1
           className={cn(
             montserratAlternates.className,
-            'w-full font-semibold tracking-tighter',
-            'max-w-sm text-4xl',
+            'w-full max-w-sm text-4xl font-semibold tracking-tighter',
             'sm:max-w-2xl sm:text-6xl',
-            'lg:max-w-full lg:text-8xl'
+            'md:text-7xl',
+            '2xl:max-w-full 2xl:text-8xl'
           )}
         >
           Huấn luyện viên Tennis cá nhân
@@ -27,8 +27,10 @@ const Hero = () => (
           className={cn(
             'max-w-sm text-2xl font-light tracking-normal',
             'sm:max-w-2xl sm:tracking-tighter',
-            'lg:max-w-full lg:text-6xl',
-            'xl:text-7xl'
+            'md:text-4xl',
+            'lg:max-w-full',
+            'xl:text-6xl',
+            '2xl:text-7xl'
           )}
         >
           Hãy để đam mê tỏa sáng trên sân
