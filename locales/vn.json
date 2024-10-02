@@ -1,0 +1,63 @@
+{
+  "name": "Chớp Kỳ Hòa",
+  "pages": {
+    "hero": {
+      "heading": "Huấn luyện viên Tennis cá nhân",
+      "subheading": "Hãy để đam mê tỏa sáng trên sân"
+    },
+    "about": {
+      "heading": "Hãy tham gia các lớp học của tôi",
+      "subheading": "Tennis không chỉ là một môn thể thao, mà là một phong cách sống đầy đam mê và cống hiến.",
+      "description": "Hãy dấn thân vào Thế Giới Tennis, nơi niềm đam mê hòa quyện cùng sự kịch tính của từng trận đấu."
+    },
+    "benefits": {
+      "heading": "Lớp học Tennis & Pickle Ball",
+      "subheading": "Lợi ích khi tham gia lớp học",
+      "items": [
+        {
+          "key": 1,
+          "title": "Chương trình đào tạo và cam kết",
+          "list": [
+            "Khóa học từ cơ bản đến nâng cao",
+            "Đảm bảo thành thạo sau 6 tháng",
+            "Bài tập kỹ thuật, chiến thuật, thể lực",
+            "Chương trình học thiết kế bởi chuyên gia"
+          ]
+        },
+        {
+          "key": 2,
+          "title": "Điều kiện học tập và hỗ trợ",
+          "list": [
+            "Chi phí thuê sân đã bao gồm",
+            "Lịch học linh hoạt, phù hợp",
+            "Huấn luyện viên giàu kinh nghiệm",
+            "Môi trường học tập thoải mái"
+          ]
+        },
+        {
+          "key": 3,
+          "title": "Phát triển và giao lưu",
+          "list": [
+            "Cơ hội tay đôi với người chơi giỏi",
+            "Tham gia các giải đấu để thử sức",
+            "Hỗ trợ và tư vấn cá nhân hóa",
+            "Kết nối với người cùng đam mê"
+          ]
+        }
+      ]
+    },
+    "contact": {
+      "heading": "Liên hệ",
+      "description": "Sẵn sàng khám phá Thế Giới Tennis đầy đam mê và kịch tính? Đừng bỏ lỡ cơ hội tham gia khóa học đặc biệt cùng huấn luyện viên tận tâm và giàu kinh nghiệm!<br/> Cùng nhau, chúng ta sẽ chinh phục những đỉnh cao mới trong môn thể thao tuyệt vời này!",
+      "contactDetails": [
+        { "key": "phone", "value": "(+84) 123-4567", "href": "tel:+841234567" },
+        { "key": "email", "value": "chopkyhoa@gmail.com", "href": "mailto:chopkyhoa@gmail.com" }
+      ],
+      "addressDetails": [
+        { "key": "venue", "value": "Sân Học Viện" },
+        { "key": "ward", "value": "Phường 12, Quận 10" },
+        { "key": "city", "value": "Thành phố Hồ Chí Minh" }
+      ]
+    }
+  }
+}

@@ -1,14 +1,16 @@
 'use client';
 
+import { useCallback, useEffect, useMemo, useRef } from 'react';
+
 import About from './modules/about';
+import Benefits from './modules/benefits';
 import Contact from './modules/contact';
 import Gallery from './modules/gallery';
 import Hero from './modules/hero';
-import Plans from './modules/plans';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { gsap } from 'gsap';
-import { useEffect, useRef, useCallback, useMemo } from 'react';
 import { cn } from '@/lib/utils';
+import { gsap } from 'gsap';
+import locales from '@/locales/vn.json';
 
 const Home = () => {
   const ref = useRef<HTMLElement>(null);
@@ -17,7 +19,7 @@ const Home = () => {
     () => [
       { id: 'hero', content: Hero },
       { id: 'about', content: About },
-      { id: 'plans', content: Plans },
+      { id: 'benefits', content: Benefits },
       { id: 'contact', content: Contact },
       { id: 'gallery', content: Gallery }
     ],
@@ -66,7 +68,7 @@ const Home = () => {
           'xl:left-16'
         )}
       >
-        Chớp Kỳ Hòa
+        {locales.name}
       </span>
       {sections.map(({ id, content: SectionComponent }) => (
         <SectionComponent key={id} />

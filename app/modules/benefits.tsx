@@ -2,71 +2,43 @@ import { IconCheck } from '@/components/icons';
 import { Tooltip } from '@/components/ui';
 import { cn } from '@/lib/utils';
 
-const benefits = [
-  {
-    key: 1,
-    title: 'Chương trình đào tạo và cam kết',
-    list: [
-      'Khóa học từ cơ bản đến nâng cao',
-      'Đảm bảo thành thạo sau 6 tháng',
-      'Bài tập kỹ thuật, chiến thuật, thể lực',
-      'Chương trình học thiết kế bởi chuyên gia'
-    ]
-  },
-  {
-    key: 2,
-    title: 'Điều kiện học tập và hỗ trợ',
-    list: [
-      'Chi phí thuê sân đã bao gồm',
-      'Lịch học linh hoạt, phù hợp',
-      'Huấn luyện viên giàu kinh nghiệm',
-      'Môi trường học tập thoải mái'
-    ]
-  },
-  {
-    key: 3,
-    title: 'Phát triển và giao lưu',
-    list: [
-      'Cơ hội tay đôi với người chơi giỏi',
-      'Tham gia các giải đấu để thử sức',
-      'Hỗ trợ và tư vấn cá nhân hóa',
-      'Kết nối với người cùng đam mê'
-    ]
-  }
-];
+import locales from '@/locales/vn.json';
 
-const Plans = () => {
+const Benefits = () => {
+  const { heading, subheading, items: benefitItems } = locales.pages.benefits;
+
   return (
     <section
       id="plans"
       className={cn(
-        'panel relative flex h-max w-screen translate-x-0 flex-col flex-wrap items-center justify-between gap-8 bg-secondary p-6',
+        'panel relative flex h-max w-screen translate-x-0 flex-col items-center justify-between gap-8 bg-secondary p-6',
         'sm:p-8',
         'md:p-16',
         'xl:h-screen xl:max-h-screen xl:min-h-full xl:gap-0'
       )}
     >
       <span className={cn('min-w-full text-center text-2xl font-semibold tracking-tighter text-light', 'xl:text-end')}>
-        Lợi ích khi tham gia lớp học
+        {subheading}
       </span>
       <h2
         className={cn(
-          'text-center text-4xl font-semibold uppercase tracking-tighter text-light small-caps',
-          'md:text-start md:text-6xl',
-          'xl:text-9xl'
+          'relative h-full max-h-max text-center text-4xl font-semibold uppercase tracking-tighter text-light small-caps',
+          'md:text-6xl',
+          'lg:text-start',
+          'xl:absolute xl:px-16 xl:pt-16 xl:text-9xl'
         )}
       >
-        Lớp học Tennis & Pickle Ball
+        {heading}
       </h2>
 
       <div
         className={cn(
-          'flex w-full flex-col gap-8',
+          'relative flex w-full flex-col gap-8',
           'md:w-1/2 md:min-w-max',
           'xl:grid xl:w-full xl:min-w-full xl:grid-cols-3 xl:gap-16'
         )}
       >
-        {benefits.map(({ key, title, list }) => (
+        {benefitItems.map(({ key, title, list }) => (
           <div
             key={key}
             className={cn(
@@ -106,4 +78,4 @@ const Plans = () => {
   );
 };
 
-export default Plans;
+export default Benefits;
