@@ -5,18 +5,30 @@ const About = () => (
   <section
     id="about"
     className={cn(
-      'panel relative flex h-max w-screen translate-x-0 flex-col justify-between gap-12 bg-dark p-16 pt-28 text-light',
+      'panel relative flex h-max w-screen translate-x-0 flex-col justify-between gap-12 bg-dark px-4 py-12 text-light',
+      'sm:p-8',
+      'md:p-16 md:pt-28',
       'xl:h-screen xl:max-h-screen xl:min-h-full xl:flex-row'
     )}
   >
     <div className={cn('flex flex-col-reverse justify-between gap-12', 'lg:flex-col')}>
-      <div className="flex flex-col gap-12">
+      <div className={cn('flex flex-col gap-4', 'md:gap-12')}>
         <h2
-          className={cn('text-5xl font-semibold uppercase leading-snug -tracking-[2.56px] small-caps', 'xl:text-6xl')}
+          className={cn(
+            'text-center text-3xl font-semibold uppercase leading-snug -tracking-[2.56px] small-caps',
+            'md:text-start md:text-5xl',
+            'xl:text-6xl'
+          )}
         >
           Hãy tham gia các lớp học của tôi
         </h2>
-        <div className="text-4xl leading-[50px] -tracking-tighter">
+        <div
+          className={cn(
+            'text-center text-xl leading-relaxed -tracking-tighter',
+            'md:text-start md:text-4xl',
+            'lg:leading-loose'
+          )}
+        >
           Tennis không chỉ là một môn thể thao, mà là một phong cách sống đầy đam mê và cống hiến.
         </div>
       </div>

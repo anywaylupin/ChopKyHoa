@@ -40,8 +40,10 @@ const Plans = () => {
     <section
       id="plans"
       className={cn(
-        'panel relative flex h-max w-screen translate-x-0 flex-wrap items-center justify-between gap-8 bg-secondary p-16',
-        'flex-col xl:h-screen xl:max-h-screen xl:min-h-full xl:gap-0'
+        'panel relative flex h-max w-screen translate-x-0 flex-col flex-wrap items-center justify-between gap-8 bg-secondary p-6',
+        'sm:p-8',
+        'md:p-16',
+        'xl:h-screen xl:max-h-screen xl:min-h-full xl:gap-0'
       )}
     >
       <span className={cn('min-w-full text-center text-2xl font-semibold tracking-tighter text-light', 'xl:text-end')}>
