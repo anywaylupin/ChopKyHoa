@@ -115,17 +115,9 @@ const config = {
   plugins: [
     plugin(({ addComponents, addUtilities }) => {
       addComponents({
-        '.aceternity-3d-pin': {
-          marginLeft: '0.09375rem',
-          perspective: '1000px',
-          transform: 'rotateX(70deg) translateZ(0deg)'
-        },
-        '.aceternity-container-scroll': {
-          backgroundColor: '#222222',
-          border: '4px #6C6C6C',
-          borderRadius: '30px',
-          boxShadow:
-            '0 0 #0000004d, 0 9px 20px #0000004a, 0 37px 37px #00000042, 0 84px 50px #00000026, 0 149px 60px #0000000a, 0 233px 65px #00000003'
+        '.panel': {
+          position: 'relative',
+          display: 'flex'
         },
         '.no-visible-scrollbar': {
           MsOverflowStyle: 'none',

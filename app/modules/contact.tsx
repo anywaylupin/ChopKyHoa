@@ -19,10 +19,7 @@ const Contact = () => {
   return (
     <section
       id="contact"
-      className={cn(
-        'panel relative z-50 h-max w-screen bg-accent text-dark',
-        'xl:h-screen xl:max-h-screen xl:min-h-full'
-      )}
+      className={cn('panel z-50 h-max w-screen bg-accent text-dark', 'xl:h-screen xl:max-h-screen xl:min-h-full')}
     >
       <div
         className={cn(

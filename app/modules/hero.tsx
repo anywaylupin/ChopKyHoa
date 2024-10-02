@@ -8,7 +8,7 @@ const Hero = () => {
   const { heading, subheading } = locales.pages.hero;
 
   return (
-    <section id="hero" className="panel relative flex h-screen max-h-screen min-h-full w-screen flex-col">
+    <section id="hero" className={cn('panel h-full max-h-screen min-h-full w-screen flex-col', 'lg:h-screen')}>
       <div className={cn('relative flex size-full flex-col bg-dark bg-opacity-20 text-light', 'xl:flex-row')}>
         <div
           className={cn(

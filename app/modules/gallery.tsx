@@ -9,7 +9,7 @@ const Gallery = () => {
     <section
       id="gallery"
       className={cn(
-        'panel no-visible-scrollbar relative flex h-max w-screen flex-col justify-between bg-secondary p-4',
+        'panel no-visible-scrollbar h-max w-screen flex-col justify-between bg-secondary p-4',
         'sm:p-8',
         'md:gap-8 md:px-16 md:py-8',
         'xl:h-screen xl:max-h-max xl:min-h-full xl:overflow-y-scroll'
