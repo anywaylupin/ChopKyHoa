@@ -1,26 +1,33 @@
 import { LayoutGrid } from '@/components/ui';
+import { cn } from '@/lib/utils';
+import locales from '@/locales/vn.json';
 
 const Gallery = () => {
-  const cards = [
-    { id: 1, src: 'img-1.jpg' },
-    { id: 2, src: 'img-2.jpg' },
-    { id: 3, src: 'img-3.jpg' },
-    { id: 4, src: 'img-4.jpg' },
-    { id: 5, src: 'img-5.jpg' },
-    { id: 6, src: 'img-6.jpg' },
-    { id: 7, src: 'img-7.jpg' },
-    { id: 8, src: 'img-8.jpg' }
-  ];
+  const { heading, items } = locales.pages.gallery;
 
   return (
     <section
       id="gallery"
-      className="panel no-visible-scrollbar relative flex h-screen max-h-max min-h-full w-screen flex-col justify-between overflow-y-scroll bg-secondary p-16 pt-0"
+      className={cn(
+        'panel no-visible-scrollbar relative flex h-max w-screen flex-col justify-between bg-secondary p-4',
+        'sm:p-8',
+        'md:gap-8 md:px-16 md:py-8',
+        'xl:h-screen xl:max-h-max xl:min-h-full xl:overflow-y-scroll'
+      )}
     >
-      <h2 className="text-nowrap text-center text-[300px] font-semibold uppercase -tracking-[9.36px] text-light small-caps">
-        Thư viện
+      <h2
+        className={cn(
+          'text-nowrap text-center text-6xl font-semibold uppercase -tracking-widest text-light small-caps',
+          'sm:text-7xl',
+          'md:text-8xl',
+          'lg:text-[200px]',
+          '2xl:text-[300px]'
+        )}
+      >
+        {heading}
       </h2>
-      <LayoutGrid items={cards} />
+
+      <LayoutGrid items={items} />
     </section>
   );
 };

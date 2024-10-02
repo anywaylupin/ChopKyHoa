@@ -55,14 +55,17 @@ const Contact = () => {
                 'xl:text-3xl'
               )}
             >
-              {description}
+              {description[0]}
+              <br />
+              {description[1]}
             </p>
           </div>
 
           <CardContainer
             containerClassName={cn(
               'inter-var relative hidden py-2 size-full min-w-[380px] min-h-[500px] rounded-xl bg-center',
-              'lg:block'
+              'lg:block',
+              'xl:max-w-[500px]'
             )}
             className="size-full"
           >
@@ -79,7 +82,7 @@ const Contact = () => {
             'xl:text-3xl'
           )}
         >
-          <div className="w-full">
+          <div className={cn('w-full', 'lg:w-auto')}>
             <ul
               className={cn('flex max-w-48 items-end justify-start', 'md:max-w-60 lg:gap-2', 'xl:max-w-max xl:gap-0')}
             >

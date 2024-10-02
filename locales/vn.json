@@ -48,7 +48,10 @@
     },
     "contact": {
       "heading": "Liên hệ",
-      "description": "Sẵn sàng khám phá Thế Giới Tennis đầy đam mê và kịch tính? Đừng bỏ lỡ cơ hội tham gia khóa học đặc biệt cùng huấn luyện viên tận tâm và giàu kinh nghiệm!<br/> Cùng nhau, chúng ta sẽ chinh phục những đỉnh cao mới trong môn thể thao tuyệt vời này!",
+      "description": [
+        "Sẵn sàng khám phá Thế Giới Tennis đầy đam mê và kịch tính? Đừng bỏ lỡ cơ hội tham gia khóa học đặc biệt cùng huấn luyện viên tận tâm và giàu kinh nghiệm!",
+        "Cùng nhau, chúng ta sẽ chinh phục những đỉnh cao mới trong môn thể thao tuyệt vời này!"
+      ],
       "contactDetails": [
         { "key": "phone", "value": "(+84) 123-4567", "href": "tel:+841234567" },
         { "key": "email", "value": "chopkyhoa@gmail.com", "href": "mailto:chopkyhoa@gmail.com" }
@@ -57,6 +60,19 @@
         { "key": "venue", "value": "Sân Học Viện" },
         { "key": "ward", "value": "Phường 12, Quận 10" },
         { "key": "city", "value": "Thành phố Hồ Chí Minh" }
+      ]
+    },
+    "gallery": {
+      "heading": "Thư viện",
+      "items": [
+        { "id": 1, "src": "img-1.jpg" },
+        { "id": 2, "src": "img-2.jpg" },
+        { "id": 3, "src": "img-3.jpg" },
+        { "id": 4, "src": "img-4.jpg" },
+        { "id": 5, "src": "img-5.jpg" },
+        { "id": 6, "src": "img-6.jpg" },
+        { "id": 7, "src": "img-7.jpg" },
+        { "id": 8, "src": "img-8.jpg" }
       ]
     }
   }
