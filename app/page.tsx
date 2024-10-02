@@ -1,6 +1,6 @@
 'use client';
 
-import { useCallback, useEffect, useMemo, useRef } from 'react';
+import { useCallback, useEffect, useRef } from 'react';
 
 import About from './modules/about';
 import Benefits from './modules/benefits';
@@ -12,19 +12,16 @@ import { cn } from '@/lib/utils';
 import { gsap } from 'gsap';
 import locales from '@/locales/vn.json';
 
+const sections = [
+  { id: 'hero', content: Hero },
+  { id: 'about', content: About },
+  { id: 'benefits', content: Benefits },
+  { id: 'contact', content: Contact },
+  { id: 'gallery', content: Gallery }
+];
+
 const Home = () => {
   const ref = useRef<HTMLElement>(null);
-
-  const sections = useMemo(
-    () => [
-      { id: 'hero', content: Hero },
-      { id: 'about', content: About },
-      { id: 'benefits', content: Benefits },
-      { id: 'contact', content: Contact },
-      { id: 'gallery', content: Gallery }
-    ],
-    []
-  );
 
   const handleResize = useCallback(() => {
     ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
@@ -64,12 +61,13 @@ const Home = () => {
     >
       <span
         className={cn(
-          'fixed top-16 z-50 text-center text-2xl font-extrabold text-accent drop-shadow-2xl',
-          'xl:left-16'
+          'fixed top-6 z-50 text-center text-2xl font-extrabold text-accent [text-shadow:0px_1px_8px_black]',
+          'xl:left-16 xl:top-16'
         )}
       >
         {locales.name}
       </span>
+
       {sections.map(({ id, content: SectionComponent }) => (
         <SectionComponent key={id} />
       ))}
