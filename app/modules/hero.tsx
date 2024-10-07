@@ -41,7 +41,9 @@ const Hero = () => {
             {subheading}
           </h2>
         </div>
-        <div className={cn('size-full bg-hero bg-cover bg-center bg-no-repeat', 'xl:w-1/2')}></div>
+        <div
+          className={cn('size-full bg-hero bg-cover bg-[position:36%_0%] bg-no-repeat', 'md:bg-center', 'xl:w-1/2')}
+        ></div>
       </div>
       <InfiniteScrollText
         className={cn('bottom-0 z-20 hidden bg-accent', 'sm:block')}

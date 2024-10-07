@@ -29,5 +29,8 @@ export const usePageSection = () => {
     []
   );
 
-  return { sections };
+  const isMobile = () => window.innerWidth < 768;
+  const isDesktop = () => window.innerWidth >= 1280;
+
+  return { sections, isMobile, isDesktop };
 };

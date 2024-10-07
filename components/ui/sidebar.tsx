@@ -72,10 +72,7 @@ export const MobileSidebar = ({ className, children, ...rest }: React.ComponentP
   const { open, setOpen } = useSidebar();
 
   return (
-    <div
-      className={cn('flex h-10 w-full flex-row items-center justify-between bg-neutral-100 px-4 py-4', 'md:hidden')}
-      {...rest}
-    >
+    <div className={cn('absolute left-10 top-10', 'md:hidden')} {...rest}>
       <button className={cn('fixed left-10 top-10 z-50 rounded-xl bg-dark p-2 text-white shadow-2xl', 'sm:top-8')}>
         <IconMenu2 className={cn('size-8', 'sm:size-12')} onClick={() => setOpen(!open)} />
       </button>

@@ -14,7 +14,7 @@ const RootLayout = ({ children }: Readonly<React.PropsWithChildren>) => (
     <body
       className={cn(
         montserrat.className,
-        'no-visible-scrollbar relative m-0 overflow-x-hidden overflow-y-visible scroll-smooth'
+        'no-visible-scrollbar relative m-0 flex flex-wrap justify-center overflow-x-hidden overflow-y-visible scroll-smooth'
       )}
     >
       {children}
