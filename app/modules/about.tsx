@@ -3,15 +3,15 @@ import Image from 'next/image';
 import locales from '@/locales/vn.json';
 
 const About = () => {
-  const { heading, subheading, description } = locales.pages.about;
+  const { id, heading, subheading, description } = locales.pages.about;
 
   return (
     <section
-      id="about"
+      id={id}
       className={cn(
-        'panel h-max w-screen translate-x-0 flex-col justify-between gap-12 bg-dark px-4 py-12 text-light',
-        'sm:p-8',
-        'md:p-16 md:pt-28',
+        'panel h-max w-screen translate-x-0 flex-col justify-between gap-12 bg-dark px-4 pb-12 pt-32 text-light',
+        'sm:px-8 sm:pb-8',
+        'md:px-16 md:pb-16',
         'xl:h-screen xl:max-h-screen xl:min-h-full xl:flex-row'
       )}
     >

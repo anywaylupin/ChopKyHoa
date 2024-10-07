@@ -12,7 +12,10 @@ export const metadata: Metadata = {
 const RootLayout = ({ children }: Readonly<React.PropsWithChildren>) => (
   <html lang="en">
     <body
-      className={cn(montserrat.className, 'no-visible-scrollbar relative m-0 overflow-x-hidden overflow-y-visible')}
+      className={cn(
+        montserrat.className,
+        'no-visible-scrollbar relative m-0 overflow-x-hidden overflow-y-visible scroll-smooth'
+      )}
     >
       {children}
     </body>

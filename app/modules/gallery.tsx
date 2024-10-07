@@ -3,24 +3,25 @@ import { cn } from '@/lib/utils';
 import locales from '@/locales/vn.json';
 
 const Gallery = () => {
-  const { heading, items } = locales.pages.gallery;
+  const { id, heading, items } = locales.pages.gallery;
 
   return (
     <section
-      id="gallery"
+      id={id}
       className={cn(
-        'panel no-visible-scrollbar h-max w-screen flex-col justify-between bg-secondary p-4',
-        'sm:p-8',
-        'md:gap-8 md:px-16 md:py-8',
+        'panel no-visible-scrollbar h-max w-screen flex-col justify-between bg-secondary px-4 pb-4 pt-32',
+        'sm:px-8 sm:pb-8',
+        'md:gap-8 md:px-16 md:pb-8',
         'xl:h-screen xl:max-h-max xl:min-h-full xl:overflow-y-scroll'
       )}
     >
       <h2
         className={cn(
-          'text-nowrap text-center text-6xl font-semibold uppercase -tracking-widest text-light small-caps',
+          'mb-8 text-nowrap text-center text-6xl font-semibold uppercase -tracking-widest text-light small-caps',
           'sm:text-7xl',
           'md:text-8xl',
           'lg:text-[200px]',
+          'xl:mb-0',
           '2xl:text-[300px]'
         )}
       >

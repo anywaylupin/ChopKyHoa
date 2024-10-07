@@ -13,25 +13,22 @@ const socialIcons = [
 ];
 
 const Contact = () => {
-  const name = locales.name;
-  const { heading, description, addressDetails, contactDetails } = locales.pages.contact;
+  const { id, heading, description, addressDetails, contactDetails } = locales.pages.contact;
 
   return (
     <section
-      id="contact"
-      className={cn('panel z-50 h-max w-screen bg-accent text-dark', 'xl:h-screen xl:max-h-screen xl:min-h-full')}
+      id={id}
+      className={cn('panel z-10 h-max w-screen bg-accent text-dark', 'xl:h-screen xl:max-h-screen xl:min-h-full')}
     >
       <div
         className={cn(
-          'flex size-full flex-col justify-between bg-dark bg-opacity-10 p-4',
-          'sm:p-8',
-          'md:gap-8 md:px-16 md:py-8',
+          'flex size-full flex-col justify-between bg-dark bg-opacity-10 p-4 pt-16',
+          'sm:px-8 sm:pb-8',
+          'md:gap-8 md:px-16 md:pb-8',
           'lg:py-16'
         )}
       >
-        <span className={cn('hidden text-2xl font-extrabold text-dark drop-shadow-2xl', 'xl:block')}>{name}</span>
-
-        <div className="relative flex h-full flex-1 justify-between gap-8">
+        <div className="relative flex h-full flex-1 justify-between gap-8 pt-16">
           <div className="flex h-max flex-col justify-between gap-8">
             <h2
               className={cn(

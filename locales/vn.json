@@ -2,15 +2,21 @@
   "name": "Chớp Kỳ Hòa",
   "pages": {
     "hero": {
+      "id": "hero",
+      "label": "Trang chính",
       "heading": "Huấn luyện viên Tennis cá nhân",
       "subheading": "Hãy để đam mê tỏa sáng trên sân"
     },
     "about": {
+      "id": "about",
+      "label": "Thông tin",
       "heading": "Hãy tham gia các lớp học của tôi",
       "subheading": "Tennis không chỉ là một môn thể thao, mà là một phong cách sống đầy đam mê và cống hiến.",
       "description": "Hãy dấn thân vào Thế Giới Tennis, nơi niềm đam mê hòa quyện cùng sự kịch tính của từng trận đấu."
     },
     "benefits": {
+      "id": "benefits",
+      "label": "Lớp học",
       "heading": "Lớp học Tennis & Pickle Ball",
       "subheading": "Lợi ích khi tham gia lớp học",
       "items": [
@@ -47,6 +53,8 @@
       ]
     },
     "contact": {
+      "id": "contact",
+      "label": "Liên hệ",
       "heading": "Liên hệ",
       "description": [
         "Sẵn sàng khám phá Thế Giới Tennis đầy đam mê và kịch tính? Đừng bỏ lỡ cơ hội tham gia khóa học đặc biệt cùng huấn luyện viên tận tâm và giàu kinh nghiệm!",
@@ -63,6 +71,8 @@
       ]
     },
     "gallery": {
+      "id": "gallery",
+      "label": "Thư viện",
       "heading": "Thư viện",
       "items": [
         { "id": 1, "src": "img-1.jpg" },

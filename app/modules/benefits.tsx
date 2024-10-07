@@ -5,15 +5,15 @@ import { cn } from '@/lib/utils';
 import locales from '@/locales/vn.json';
 
 const Benefits = () => {
-  const { heading, subheading, items: benefitItems } = locales.pages.benefits;
+  const { id, heading, subheading, items: benefitItems } = locales.pages.benefits;
 
   return (
     <section
-      id="plans"
+      id={id}
       className={cn(
-        'panel h-max w-screen translate-x-0 flex-col items-center justify-between gap-8 bg-secondary p-6',
-        'sm:p-8',
-        'md:p-16',
+        'panel h-max w-screen translate-x-0 flex-col items-center justify-between gap-8 bg-secondary px-6 pb-6 pt-32',
+        'sm:px-8 sm:pb-8',
+        'md:px-16 md:pb-16',
         'xl:h-screen xl:max-h-screen xl:min-h-full xl:gap-0'
       )}
     >

@@ -5,10 +5,10 @@ import { montserratAlternates } from '@/app/fonts';
 
 const Hero = () => {
   const name = locales.name;
-  const { heading, subheading } = locales.pages.hero;
+  const { id, heading, subheading } = locales.pages.hero;
 
   return (
-    <section id="hero" className={cn('panel h-full max-h-screen min-h-full w-screen flex-col', 'lg:h-screen')}>
+    <section id={id} className={cn('panel h-full max-h-screen min-h-full w-screen flex-col', 'lg:h-screen')}>
       <div className={cn('relative flex size-full flex-col bg-dark bg-opacity-20 text-light', 'xl:flex-row')}>
         <div
           className={cn(
