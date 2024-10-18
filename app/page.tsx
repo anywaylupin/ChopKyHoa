@@ -1,44 +1,23 @@
 'use client';
 
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { useCallback, useRef, useState } from 'react';
 import { Sidebar, SidebarBody, SidebarLink } from '@/components/ui';
 
 import { IconMenu2 } from '@tabler/icons-react';
 import Link from 'next/link';
-import ScrollToPlugin from 'gsap/ScrollToPlugin';
-import ScrollTrigger from 'gsap/ScrollTrigger';
 import { cn } from '@/lib/utils';
 import gsap from 'gsap';
 import locales from '@/locales/vn.json';
 import { usePageSection } from './modules';
+import { useHorizontalScroll } from '@/hooks';
 
 const Home = () => {
   const ref = useRef<HTMLElement>(null);
-  const tweenRef = useRef<gsap.core.Tween>();
+
+  const tweenRef = useHorizontalScroll(ref, '.panel', 1280);
 
   const [open, setOpen] = useState(false);
   const { sections, isMobile, isDesktop } = usePageSection();
-
-  const createScrollTween = useCallback(() => {
-    ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
-
-    if (!isDesktop() || !ref.current) return;
-
-    const panels = gsap.utils.toArray('.panel');
-    gsap.registerPlugin(ScrollToPlugin, ScrollTrigger);
-
-    tweenRef.current = gsap.to(ref.current, {
-      xPercent: -100 * (panels.length - 1),
-      ease: 'none',
-      scrollTrigger: {
-        trigger: ref.current,
-        pin: true,
-        scrub: 1,
-        snap: 1 / (panels.length - 1),
-        end: () => `+=${ref.current?.offsetWidth ?? 0}`
-      }
-    });
-  }, [isDesktop, ref.current]);
 
   const onNavClick = useCallback(
     (sectionId: string) => {
@@ -57,18 +36,8 @@ const Home = () => {
         gsap.to(window, { scrollTo: { y, autoKill: false }, duration: 1 });
       }
     },
-    [isDesktop, sections.length]
+    [isDesktop, sections.length, tweenRef]
   );
-
-  useEffect(() => {
-    createScrollTween();
-    window.addEventListener('resize', createScrollTween);
-
-    return () => {
-      window.removeEventListener('resize', createScrollTween);
-      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
-    };
-  }, [createScrollTween]);
 
   return (
     <>
@@ -96,15 +65,15 @@ const Home = () => {
 
       <div
         className={cn(
-          'fixed right-10 top-6 z-50 flex items-center justify-center gap-4 py-6 transition-all',
-          'xs:right-auto',
-          'md:w-full',
+          'pointer-events-none fixed right-10 top-6 z-50 flex w-full items-center justify-end gap-4 py-6 transition-all',
+          'xs:right-auto xs:justify-center',
+          'md:z-50',
           'xl:left-14 xl:top-4 xl:w-auto'
         )}
       >
         <button
           className={cn(
-            'absolute hidden rounded-xl bg-dark p-2 text-white shadow-2xl',
+            'pointer-events-auto absolute hidden rounded-xl bg-dark p-2 text-white shadow-2xl',
             'md:left-14 md:block',
             'xl:relative xl:left-0'
           )}
@@ -115,7 +84,7 @@ const Home = () => {
         </button>
         <Link
           className={cn(
-            'text-xl font-extrabold text-accent [text-shadow:0px_1px_8px_black]',
+            'pointer-events-auto text-xl font-extrabold text-accent [text-shadow:0px_1px_8px_black]',
             'sm:text-center sm:text-2xl'
           )}
           href="#hero"
