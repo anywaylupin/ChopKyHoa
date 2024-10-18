@@ -1,5 +1,5 @@
 {
-  "name": "with-aceternity-ui",
+  "name": "chopkyhoa",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -13,39 +13,24 @@
     "prepare": "husky"
   },
   "dependencies": {
-    "@gsap/react": "^2.1.1",
-    "@radix-ui/react-hover-card": "^1.1.1",
-    "@radix-ui/react-label": "^2.1.0",
     "@radix-ui/react-tooltip": "^1.1.2",
-    "@react-three/drei": "^9.111.5",
-    "@react-three/fiber": "^8.17.6",
     "@tabler/icons-react": "^3.14.0",
-    "@tsparticles/engine": "^3.5.0",
-    "@tsparticles/react": "^3.0.0",
-    "@tsparticles/slim": "^3.5.0",
     "clsx": "^2.1.1",
     "framer-motion": "^11.3.31",
     "gsap": "^3.12.5",
     "lottie-web": "^5.12.2",
     "mini-svg-data-uri": "^1.4.4",
     "next": "14.2.7",
-    "qss": "^3.0.0",
     "react": "^18",
     "react-dom": "^18",
-    "react-dropzone": "^14.2.3",
-    "simplex-noise": "^4.0.3",
-    "sonner": "^1.5.0",
     "tailwind-merge": "^2.5.2",
-    "tailwindcss-animate": "^1.0.7",
-    "three": "^0.168.0",
-    "three-globe": "^2.31.1"
+    "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
     "@next/eslint-plugin-next": "^14.2.7",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
-    "@types/three": "^0.168.0",
     "@typescript-eslint/eslint-plugin": "^8.3.0",
     "@typescript-eslint/parser": "^8.3.0",
     "@vercel/style-guide": "^6.0.0",

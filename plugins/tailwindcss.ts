@@ -32,9 +32,7 @@ export const AuroraBackground = plugin(({ addComponents }) => {
   });
 });
 
-/**
- * @link https://ui.aceternity.com/components/grid-and-dot-backgrounds
- */
+/** @link https://ui.aceternity.com/components/grid-and-dot-backgrounds */
 export const GridAndDotsBackground = plugin(({ matchUtilities, theme }) => {
   matchUtilities(
     {

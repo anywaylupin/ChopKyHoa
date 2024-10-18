@@ -1,38 +1,80 @@
-# Next.js + Aceternity UI The Starter Kit
+# 🎾 Chop Ky Hoa - Tennis Coach Portfolio
 
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+Welcome to **Chop Ky Hoa**, an animated and interactive tennis coach portfolio designed to showcase coaching skills, programs, and client success in a fun and dynamic way. Enjoy smooth horizontal scrolling and playful animations that make exploring this portfolio a breeze!
 
-## Getting Started
+## 🚀 Features
 
-First, run the development server:
+- ⚡ **Horizontal Scrolling** – A unique scrolling experience powered by GSAP.
+- 📱 **Fully Responsive** – Looks amazing on any device, big or small.
+- 🎨 **Sleek Animations** – Eye-catching transitions that bring the site to life.
+- 🧩 **Custom UI Components** – Modular design with easy-to-use elements.
+- 🎯 **Iconic Design** – Sharp and simple icons to keep things professional yet modern.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 🎨 GSAP Magic
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Take a spin through the portfolio with smooth, horizontal scrolling brought to life with **GSAP**. It's all about keeping things fluid and fun as you navigate through coaching programs, testimonials, and more.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🛠️ Built With
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- ![Next.js](https://img.shields.io/badge/Next.js-000000?style=flat&logo=next.js&logoColor=white)
+- ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=flat&logo=tailwind-css&logoColor=white)
+- ![GSAP](https://img.shields.io/badge/GSAP-88CE02?style=flat&logo=greensock&logoColor=white) GSAP
+- ![Framer Motion](https://img.shields.io/badge/Framer_Motion-0055FF?style=flat&logo=framer&logoColor=white)
+- ![Radix UI](https://img.shields.io/badge/Radix%20UI-252526?style=flat&logo=radix-ui&logoColor=white)
+- ![Tabler Icons](https://img.shields.io/badge/Tabler_Icons-007ACC?style=flat&logo=tabler&logoColor=white)
 
-## Learn More
+## ⚙️ Installation
 
-To learn more about Next.js, take a look at the following resources:
+1. Clone the repo:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+   ```bash
+   git clone https://github.com/your-username/chopkyhoa.git
+   ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+2. Navigate into the directory:
 
-## Deploy on Vercel
+   ```bash
+   cd chopkyhoa
+   ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+3. Install dependencies:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+   ```bash
+   npm install
+   ```
+
+## 🎯 Usage
+
+- **Development**: Start the local development server:
+
+  ```bash
+  npm run dev
+  ```
+
+- **Production Build**: Create a production-ready build:
+
+  ```bash
+  npm run build
+  ```
+
+- **Start Production Server**: Run the production build:
+
+  ```bash
+  npm run start
+  ```
+
+- **Code Linting**: Check for linting issues:
+
+  ```bash
+  npm run lint
+  ```
+
+- **Code Formatting**: Format your code with Prettier:
+
+  ```bash
+  npm run format
+  ```
+
+## 💬 Support
+
+Got questions or ideas? Feel free to reach out via GitHub or submit a pull request! Your feedback is always welcome!
