@@ -23,6 +23,11 @@ Take a spin through the portfolio with smooth, horizontal scrolling brought to l
 - ![Radix UI](https://img.shields.io/badge/Radix%20UI-252526?style=flat&logo=radix-ui&logoColor=white)
 - ![Tabler Icons](https://img.shields.io/badge/Tabler_Icons-007ACC?style=flat&logo=tabler&logoColor=white)
 
+## 🌐 Live Preview
+
+Check out the live site here:  
+👉 **[Chop Ky Hoa - Live on Vercel](https://chopkyhoa.vercel.app/)**
+
 ## ⚙️ Installation
 
 1. Clone the repo:
