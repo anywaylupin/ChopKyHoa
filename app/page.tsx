@@ -13,16 +13,16 @@ import locales from '@/locales/vn.json';
 import { usePageSection } from './modules';
 
 const Home = () => {
-  const { sections, isMobile, isDesktop } = usePageSection();
-  const [open, setOpen] = useState(false);
-
   const ref = useRef<HTMLElement>(null);
   const tweenRef = useRef<gsap.core.Tween>();
+
+  const [open, setOpen] = useState(false);
+  const { sections, isMobile, isDesktop } = usePageSection();
 
   const createScrollTween = useCallback(() => {
     ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
 
-    if (window.innerWidth < 1280 || !ref.current) return;
+    if (!isDesktop() || !ref.current) return;
 
     const panels = gsap.utils.toArray('.panel');
     gsap.registerPlugin(ScrollToPlugin, ScrollTrigger);
@@ -38,14 +38,14 @@ const Home = () => {
         end: () => `+=${ref.current?.offsetWidth ?? 0}`
       }
     });
-  }, [ref]);
+  }, [isDesktop, ref.current]);
 
   const onNavClick = useCallback(
     (sectionId: string) => {
       setOpen(false);
 
       const tween = tweenRef.current;
-      if (window.innerWidth < 1280 || !ref.current || !tween?.scrollTrigger) return;
+      if (!isDesktop() || !ref.current || !tween?.scrollTrigger) return;
 
       const target = document.getElementById(sectionId);
       if (target) {
@@ -57,7 +57,7 @@ const Home = () => {
         gsap.to(window, { scrollTo: { y, autoKill: false }, duration: 1 });
       }
     },
-    [sections.length]
+    [isDesktop, sections.length]
   );
 
   useEffect(() => {
