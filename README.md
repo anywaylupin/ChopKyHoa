@@ -28,58 +28,6 @@ Take a spin through the portfolio with smooth, horizontal scrolling brought to l
 Check out the live site here:  
 👉 **[Chop Ky Hoa - Live on Vercel](https://chopkyhoa.vercel.app/)**
 
-## ⚙️ Installation
-
-1. Clone the repo:
-
-   ```bash
-   git clone https://github.com/your-username/chopkyhoa.git
-   ```
-
-2. Navigate into the directory:
-
-   ```bash
-   cd chopkyhoa
-   ```
-
-3. Install dependencies:
-
-   ```bash
-   npm install
-   ```
-
-## 🎯 Usage
-
-- **Development**: Start the local development server:
-
-  ```bash
-  npm run dev
-  ```
-
-- **Production Build**: Create a production-ready build:
-
-  ```bash
-  npm run build
-  ```
-
-- **Start Production Server**: Run the production build:
-
-  ```bash
-  npm run start
-  ```
-
-- **Code Linting**: Check for linting issues:
-
-  ```bash
-  npm run lint
-  ```
-
-- **Code Formatting**: Format your code with Prettier:
-
-  ```bash
-  npm run format
-  ```
-
 ## 💬 Support
 
 Got questions or ideas? Feel free to reach out via GitHub or submit a pull request! Your feedback is always welcome!
