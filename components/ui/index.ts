@@ -3,5 +3,7 @@ export * from './infinite-scroll-text';
 export * from './input';
 export * from './label';
 export * from './layout-grid';
+export * from './select';
 export * from './sidebar';
+export * from './textarea';
 export * from './tooltip';

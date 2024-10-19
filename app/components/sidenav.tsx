@@ -6,6 +6,7 @@ import Link from 'next/link';
 import { cn } from '@/lib/utils';
 import gsap from 'gsap';
 import locales from '@/locales/vn.json';
+import social from '../social.json';
 import { usePageSection } from '../modules';
 
 type SidenavProps = PropsWithClass<{
@@ -74,7 +75,7 @@ export const Sidenav = ({ open, setOpen, tweenRef }: SidenavProps) => {
             ))}
           </ul>
 
-          <Link href={process.env.ADDRESS_GOOGLE_MAPS ?? ''} target="_blank">
+          <Link href={social.googleMaps} target="_blank">
             <ul className={cn('flex flex-col')}>
               {addressDetails.map(({ key, value }) => (
                 <li key={key} className="animate-underline w-max after:bg-dark">
@@ -86,7 +87,7 @@ export const Sidenav = ({ open, setOpen, tweenRef }: SidenavProps) => {
         </div>
 
         <div className="flex max-h-max w-full flex-1 justify-center">
-          <ButtonFacebook href="https://www.facebook.com/ChopHocVien" />
+          <ButtonFacebook href={social.facebook} />
         </div>
       </SidebarBody>
     </Sidebar>

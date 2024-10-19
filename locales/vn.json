@@ -68,7 +68,35 @@
         { "key": "venue", "value": "Sân Học Viện" },
         { "key": "ward", "value": "Phường 12, Quận 10" },
         { "key": "city", "value": "Thành phố Hồ Chí Minh" }
-      ]
+      ],
+      "form": {
+        "heading": "Để lại thông tin đăng kí ngay!",
+        "submit": "Gửi thông tin",
+        "fullName": {
+          "label": "Họ Tên",
+          "placeholder": "Thái Văn Thực"
+        },
+        "phone": {
+          "label": "Số điện thoại",
+          "placeholder": "0902989993"
+        },
+        "email": {
+          "label": "Địa chỉ Email",
+          "placeholder": "chopkyhoa@gmail.com"
+        },
+        "select": {
+          "label": "Chọn môn bạn muốn chơi",
+          "placeholder": "Tennis/Pickleball",
+          "options": [
+            { "value": "tennis", "text": "Tennis" },
+            { "value": "pickleball", "text": "Pickleball" }
+          ]
+        },
+        "textarea": {
+          "label": "Thắc mắc (nếu có)",
+          "placeholder": "chopkyhoa@gmail.com"
+        }
+      }
     },
     "gallery": {
       "id": "gallery",

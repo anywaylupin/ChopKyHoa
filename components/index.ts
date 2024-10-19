@@ -2,6 +2,8 @@ export * from './icons/check';
 export * from './icons/facebook';
 
 export * from './ui/3d-card';
+export * from './ui/button';
+export * from './ui/form';
 export * from './ui/infinite-scroll-text';
 export * from './ui/input';
 export * from './ui/label';
