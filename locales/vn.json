@@ -70,32 +70,52 @@
         { "key": "city", "value": "Thành phố Hồ Chí Minh" }
       ],
       "form": {
-        "heading": "Để lại thông tin đăng kí ngay!",
-        "submit": "Gửi thông tin",
-        "fullName": {
-          "label": "Họ Tên",
-          "placeholder": "Thái Văn Thực"
-        },
-        "phone": {
-          "label": "Số điện thoại",
-          "placeholder": "0902989993"
-        },
-        "email": {
-          "label": "Địa chỉ Email",
-          "placeholder": "chopkyhoa@gmail.com"
-        },
-        "select": {
-          "label": "Chọn môn bạn muốn chơi",
-          "placeholder": "Tennis/Pickleball",
-          "options": [
-            { "value": "tennis", "text": "Tennis" },
-            { "value": "pickleball", "text": "Pickleball" }
-          ]
-        },
-        "textarea": {
-          "label": "Thắc mắc (nếu có)",
-          "placeholder": "chopkyhoa@gmail.com"
-        }
+        "heading": "Đăng ký tham gia huấn luyện tennis ngay!",
+        "submit": "Gửi đăng ký",
+        "fields": [
+          {
+            "name": "fullName",
+            "type": "text",
+            "label": "Họ Tên",
+            "placeholder": "Thái Văn Thực",
+            "error": "Nhập ít nhất 2 ký tự",
+            "required": true
+          },
+          {
+            "name": "option",
+            "type": "select",
+            "label": "Môn học",
+            "placeholder": "Tennis",
+            "options": [
+              { "value": "tennis", "text": "Tennis" },
+              { "value": "pickleball", "text": "Pickleball" }
+            ],
+            "error": "Chọn một môn",
+            "required": true
+          },
+          {
+            "name": "phone",
+            "type": "text",
+            "label": "Số điện thoại",
+            "placeholder": "0902989993",
+            "error": "Không hợp lệ",
+            "required": true
+          },
+          {
+            "name": "email",
+            "type": "text",
+            "label": "Địa chỉ email",
+            "placeholder": "chopkyhoa@gmail.com",
+            "required": false
+          },
+          {
+            "name": "message",
+            "type": "textarea",
+            "label": "Ghi chú",
+            "placeholder": "Nhu cầu huấn luyện",
+            "required": false
+          }
+        ]
       }
     },
     "gallery": {
