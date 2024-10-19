@@ -1,9 +1,8 @@
 'use client';
 
+import { Sidenav, Title } from './components';
 import { useRef, useState } from 'react';
 
-import { Sidenav } from './components';
-import { Title } from './components/title';
 import { cn } from '@/lib/utils';
 import { useHorizontalScroll } from '@/hooks';
 import { usePageSection } from './modules';

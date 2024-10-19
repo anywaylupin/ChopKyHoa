@@ -1,7 +1,14 @@
 import type { Config } from 'tailwindcss';
 import TailwindCssAnimate from 'tailwindcss-animate';
-import { AddVariablesForColors, AuroraBackground, GridAndDotsBackground } from './plugins/tailwindcss';
+import flattenColorPalette from 'tailwindcss/lib/util/flattenColorPalette';
 import plugin from 'tailwindcss/plugin';
+
+export const AddVariablesForColors = plugin(({ addBase, theme }) => {
+  const allColors = flattenColorPalette(theme('colors'));
+  const newVars = Object.fromEntries(Object.entries(allColors).map(([key, val]) => [`--${key}`, val]));
+
+  addBase({ ':root': newVars });
+});
 
 const config = {
   darkMode: ['selector'],
@@ -161,8 +168,6 @@ const config = {
       });
     }),
     AddVariablesForColors,
-    AuroraBackground,
-    GridAndDotsBackground,
     TailwindCssAnimate
   ]
 } satisfies Config;

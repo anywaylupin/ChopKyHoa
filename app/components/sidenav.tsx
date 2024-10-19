@@ -1,8 +1,11 @@
 import { Dispatch, MutableRefObject, SetStateAction } from 'react';
 import { Sidebar, SidebarBody, SidebarLink } from '@/components/ui';
 
+import { ButtonFacebook } from '@/components/icons';
+import Link from 'next/link';
 import { cn } from '@/lib/utils';
 import gsap from 'gsap';
+import locales from '@/locales/vn.json';
 import { usePageSection } from '../modules';
 
 type SidenavProps = PropsWithClass<{
@@ -13,6 +16,8 @@ type SidenavProps = PropsWithClass<{
 
 export const Sidenav = ({ open, setOpen, tweenRef }: SidenavProps) => {
   const { isDesktop, sections } = usePageSection();
+
+  const { addressDetails, contactDetails } = locales.pages.contact;
 
   const handleClick = (id: string) => {
     setOpen(false);
@@ -34,21 +39,54 @@ export const Sidenav = ({ open, setOpen, tweenRef }: SidenavProps) => {
 
   return (
     <Sidebar open={open} setOpen={setOpen}>
-      <SidebarBody className={cn('fixed left-0 z-50 h-full bg-light', 'md:bg-dark')}>
-        <div className={cn('flex size-full flex-1 flex-col gap-16 overflow-hidden pl-2 pt-36', 'md:pl-16', 'xl:pt-44')}>
+      <SidebarBody
+        className={cn('fixed left-0 z-50 h-full justify-between gap-8 bg-silver pb-8 pt-36 text-dark', 'xl:pt-40')}
+      >
+        <div
+          className={cn(
+            'flex size-full flex-[2] flex-col gap-8 pl-2 text-3xl font-medium',
+            'sm:text-5xl',
+            'md:pl-16 md:text-3xl'
+          )}
+        >
           {sections.map(
             ({ id, label, icon }, idx) =>
               idx > 0 && (
-                <SidebarLink
-                  key={id}
-                  className={cn('text-3xl font-medium text-dark', 'sm:text-5xl', 'md:text-2xl md:text-light')}
-                  label={label}
-                  icon={icon}
-                  href={`#${id}`}
-                  onClick={() => handleClick(id)}
-                />
+                <SidebarLink key={id} label={label} icon={icon} href={`#${id}`} onClick={() => handleClick(id)} />
               )
           )}
+        </div>
+
+        <div
+          className={cn(
+            'flex max-h-max w-full flex-1 flex-col justify-end gap-16 pl-8 text-3xl font-medium lowercase leading-relaxed -tracking-tighter',
+            'sm:text-5xl',
+            'md:gap-6 md:pl-16 md:text-xl md:text-dark'
+          )}
+        >
+          <ul className={cn('flex flex-col')}>
+            {contactDetails.map(({ key, value, href }) => (
+              <li key={key} aria-label={key} className="w-max">
+                <Link href={href} className="animate-underline after:bg-dark" target="_blank">
+                  {value}
+                </Link>
+              </li>
+            ))}
+          </ul>
+
+          <Link href={process.env.ADDRESS_GOOGLE_MAPS ?? ''} target="_blank">
+            <ul className={cn('flex flex-col')}>
+              {addressDetails.map(({ key, value }) => (
+                <li key={key} className="animate-underline w-max after:bg-dark">
+                  {value}
+                </li>
+              ))}
+            </ul>
+          </Link>
+        </div>
+
+        <div className="flex max-h-max w-full flex-1 justify-center">
+          <ButtonFacebook href="https://www.facebook.com/ChopHocVien" />
         </div>
       </SidebarBody>
     </Sidebar>

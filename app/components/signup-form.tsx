@@ -1,18 +1,16 @@
-'use client';
-
 import { IconBrandGithub, IconBrandGoogle, IconBrandOnlyfans } from '@tabler/icons-react';
 import { Input, Label } from '@/components/ui';
 
 import { cn } from '@/lib/utils';
 
-const SignupFormDemo = () => {
+export const SignupForm = () => {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     console.log('Form submitted');
   };
 
   return (
-    <div className="mx-auto w-full max-w-md rounded-none bg-white p-4 shadow-input md:rounded-2xl md:p-8 dark:bg-black">
+    <div className="mx-auto w-full rounded-none bg-white p-4 shadow-input md:rounded-2xl md:p-8 dark:bg-black">
       <h2 className="text-xl font-bold text-neutral-800 dark:text-neutral-200">Welcome to Aceternity</h2>
       <p className="mt-2 max-w-sm text-sm text-neutral-600 dark:text-neutral-300">
         Login to aceternity if you can because we don&apos;t have a login flow yet
@@ -95,5 +93,3 @@ const BottomGradient = () => {
 const LabelInputContainer = ({ children, className }: { children: React.ReactNode; className?: string }) => {
   return <div className={cn('flex w-full flex-col space-y-2', className)}>{children}</div>;
 };
-
-export default SignupFormDemo;

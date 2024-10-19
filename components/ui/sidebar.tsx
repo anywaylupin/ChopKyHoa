@@ -57,7 +57,11 @@ export const DesktopSidebar = ({
 
   return (
     <motion.div
-      className={cn('hidden h-full flex-shrink-0 shadow-2xl', 'md:flex md:flex-col', className)}
+      className={cn(
+        'hidden h-full flex-shrink-0 justify-between overflow-hidden shadow-2xl',
+        'md:flex md:flex-col',
+        className
+      )}
       animate={{ width: !animate || !open ? '0' : '400px' }}
       onMouseEnter={() => setOpen(true)}
       onMouseLeave={() => setOpen(false)}

@@ -1,7 +1,6 @@
 import { IconCheck } from '@/components/icons';
 import { Tooltip } from '@/components/ui';
 import { cn } from '@/lib/utils';
-
 import locales from '@/locales/vn.json';
 
 const Benefits = () => {
