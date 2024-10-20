@@ -1,6 +1,7 @@
 'use client';
 
 import { cn } from '@/lib/utils';
+
 import { CardContainer, CardItem } from './3d-card';
 
 export const LayoutGrid = ({ className, items }: PropsWithClass<{ items: LayoutGridItem[] }>) => (

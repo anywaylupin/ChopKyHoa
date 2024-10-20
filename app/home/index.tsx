@@ -1,13 +1,14 @@
 import { IconBallTennis, IconInfoCircle, IconPhone, IconPhoto, IconSmartHome } from '@tabler/icons-react';
 import { cloneElement, useMemo } from 'react';
 
+import { cn } from '@/lib/utils';
+import locales from '@/locales/vn.json';
+
 import About from './about';
 import Benefits from './benefits';
 import Contact from './contact';
 import Gallery from './gallery';
 import Hero from './hero';
-import { cn } from '@/lib/utils';
-import locales from '@/locales/vn.json';
 
 const templates = {
   hero: { icon: <IconSmartHome />, content: Hero },

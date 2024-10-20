@@ -1,14 +1,16 @@
 'use client';
 
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Textarea } from '@/components/ui/textarea';
-import { SelectField } from './select-field';
+import { zodResolver } from '@hookform/resolvers/zod';
 import { Control, useForm } from 'react-hook-form';
 import { z } from 'zod';
-import { zodResolver } from '@hookform/resolvers/zod';
+
+import { Button } from '@/components/ui/button';
+import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
+import { Input } from '@/components/ui/input';
+import { Textarea } from '@/components/ui/textarea';
 import locales from '@/locales/vn.json';
+
+import { SelectField } from './select-field';
 
 const formLocalization = locales.pages.contact.form;
 

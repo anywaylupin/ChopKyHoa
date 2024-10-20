@@ -1,7 +1,6 @@
-import { NextRequest, NextResponse } from 'next/server';
-
-import nodemailer from 'nodemailer';
 import { OAuth2Client } from 'google-auth-library';
+import { NextRequest, NextResponse } from 'next/server';
+import { createTransport } from 'nodemailer';
 
 interface EmailValues {
   name: string;
@@ -24,7 +23,7 @@ export const POST = async (request: NextRequest) => {
 
     if (!token) throw new Error(`Access token not found`);
 
-    const transporter = nodemailer.createTransport({
+    const transporter = createTransport({
       service: 'gmail',
       auth: {
         type: 'OAuth2',

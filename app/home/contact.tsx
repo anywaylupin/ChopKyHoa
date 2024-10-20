@@ -1,6 +1,7 @@
-import { SignupForm } from '../components';
 import { cn } from '@/lib/utils';
 import locales from '@/locales/vn.json';
+
+import { SignupForm } from '../../components/common';
 
 const Contact = () => {
   const { id, heading, description } = locales.pages.contact;

@@ -1,11 +1,12 @@
 'use client';
 
-import { Sidenav, Title } from './components';
 import { useRef, useState } from 'react';
 
-import { cn } from '@/lib/utils';
+import { Sidenav, Title } from '@/components/common';
 import { useHorizontalScroll } from '@/hooks';
-import { usePageSection } from './modules';
+import { cn } from '@/lib/utils';
+
+import { usePageSection } from './home';
 
 const Home = () => {
   const ref = useRef<HTMLElement>(null);

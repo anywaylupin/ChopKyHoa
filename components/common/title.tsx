@@ -1,10 +1,10 @@
-import { Dispatch, SetStateAction } from 'react';
-
 import { IconMenu2 } from '@tabler/icons-react';
 import Link from 'next/link';
+import { Dispatch, SetStateAction } from 'react';
+
+import { usePageSection } from '@/app/home';
 import { cn } from '@/lib/utils';
 import locales from '@/locales/vn.json';
-import { usePageSection } from '../modules';
 
 export const Title = ({ setOpen }: PropsWithClass<{ setOpen: Dispatch<SetStateAction<boolean>> }>) => {
   const { isMobile, isDesktop } = usePageSection();

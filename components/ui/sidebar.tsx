@@ -1,7 +1,7 @@
 'use client';
 
-import { AnimatePresence, motion } from 'framer-motion';
 import { IconMenu2, IconX } from '@tabler/icons-react';
+import { AnimatePresence, motion } from 'framer-motion';
 import Link, { LinkProps } from 'next/link';
 import React, { createContext, useContext, useMemo, useState } from 'react';
 

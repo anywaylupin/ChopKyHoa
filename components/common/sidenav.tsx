@@ -1,13 +1,13 @@
-import { Dispatch, MutableRefObject, SetStateAction } from 'react';
-import { Sidebar, SidebarBody, SidebarLink } from '@/components/ui';
-
-import { ButtonFacebook } from '@/components/icons';
-import Link from 'next/link';
-import { cn } from '@/lib/utils';
 import gsap from 'gsap';
+import Link from 'next/link';
+import { Dispatch, MutableRefObject, SetStateAction } from 'react';
+
+import { usePageSection } from '@/app/home';
+import { ButtonFacebook } from '@/components/icons';
+import { Sidebar, SidebarBody, SidebarLink } from '@/components/ui';
+import { FACEBOOK_LINK, GOOGLE_MAP_ADDRESS } from '@/lib/const';
+import { cn } from '@/lib/utils';
 import locales from '@/locales/vn.json';
-import social from '../social.json';
-import { usePageSection } from '../modules';
 
 type SidenavProps = PropsWithClass<{
   open: boolean;
@@ -75,7 +75,7 @@ export const Sidenav = ({ open, setOpen, tweenRef }: SidenavProps) => {
             ))}
           </ul>
 
-          <Link href={social.googleMaps} target="_blank">
+          <Link href={GOOGLE_MAP_ADDRESS} target="_blank">
             <ul className={cn('flex flex-col')}>
               {addressDetails.map(({ key, value }) => (
                 <li key={key} className="animate-underline w-max after:bg-dark">
@@ -87,7 +87,7 @@ export const Sidenav = ({ open, setOpen, tweenRef }: SidenavProps) => {
         </div>
 
         <div className="flex max-h-max w-full flex-1 justify-center">
-          <ButtonFacebook href={social.facebook} />
+          <ButtonFacebook href={FACEBOOK_LINK} />
         </div>
       </SidebarBody>
     </Sidebar>

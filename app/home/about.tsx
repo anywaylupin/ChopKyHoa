@@ -1,4 +1,5 @@
 import Image from 'next/image';
+
 import { cn } from '@/lib/utils';
 import locales from '@/locales/vn.json';
 

@@ -1,8 +1,9 @@
 import './globals.css';
 
 import type { Metadata } from 'next';
+
+import { montserrat } from '@/lib/fonts';
 import { cn } from '@/lib/utils';
-import { montserrat } from '@/app/fonts';
 
 export const metadata: Metadata = {
   title: 'Chop Ky Hoa',

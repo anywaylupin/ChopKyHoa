@@ -1,5 +1,6 @@
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { ControllerRenderProps, FieldPath, FieldValues } from 'react-hook-form';
+
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 
 export type SelectFieldProps<T extends FieldValues = FieldValues, TName extends FieldPath<T> = FieldPath<T>> = {
   options: { value: string; text: string }[];

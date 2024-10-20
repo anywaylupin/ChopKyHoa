@@ -1,7 +1,7 @@
 import { InfiniteScrollText } from '@/components/ui';
+import { montserratAlternates } from '@/lib/fonts';
 import { cn } from '@/lib/utils';
 import locales from '@/locales/vn.json';
-import { montserratAlternates } from '@/app/fonts';
 
 const Hero = () => {
   const name = locales.name;
