@@ -1,13 +1,18 @@
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+import { ControllerRenderProps, FieldPath, FieldValues } from 'react-hook-form';
 
-export interface SelectFieldProps {
+export type SelectFieldProps<T extends FieldValues = FieldValues, TName extends FieldPath<T> = FieldPath<T>> = {
   options: { value: string; text: string }[];
   placeholder: string;
-  field: any;
-}
+  field: ControllerRenderProps<T, TName>;
+};
 
-export const SelectField: React.FC<SelectFieldProps> = ({ options, placeholder, field }) => (
-  <Select {...field}>
+export const SelectField = <T extends FieldValues = FieldValues, TName extends FieldPath<T> = FieldPath<T>>({
+  options,
+  placeholder,
+  field
+}: SelectFieldProps<T, TName>) => (
+  <Select defaultValue={field.value} onValueChange={field.onChange}>
     <SelectTrigger className="w-full text-base">
       <SelectValue placeholder={placeholder} />
     </SelectTrigger>

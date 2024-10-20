@@ -70,7 +70,7 @@
         { "key": "city", "value": "Thành phố Hồ Chí Minh" }
       ],
       "form": {
-        "heading": "Đăng ký tham gia huấn luyện tennis ngay!",
+        "heading": "Đăng ký tham gia huấn luyện ngay!",
         "submit": "Gửi đăng ký",
         "fields": [
           {
@@ -85,12 +85,12 @@
             "name": "option",
             "type": "select",
             "label": "Môn học",
-            "placeholder": "Tennis",
+            "placeholder": "Chọn một môn",
             "options": [
               { "value": "tennis", "text": "Tennis" },
               { "value": "pickleball", "text": "Pickleball" }
             ],
-            "error": "Chọn một môn",
+            "error": "Vui lòng chọn một môn",
             "required": true
           },
           {

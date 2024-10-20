@@ -1,8 +1,10 @@
 declare namespace NodeJS {
   interface ProcessEnv {
-    EMAIL_USER: string;
-    EMAIL_PASS: string;
-    FACEBOOK_LINK?: string;
-    ADDRESS_GOOGLE_MAPS?: string;
+    ADMIN_EMAIL_ADDRESS: string;
+    RECEIVER_EMAIL_ADDRESS: string;
+    OAUTH2_CLIENT_ID: string;
+    OAUTH2_CLIENT_SECRET: string;
+    OAUTH2_AUTHORIZATION_CODE: string;
+    OAUTH2_REFRESH_TOKEN: string;
   }
 }

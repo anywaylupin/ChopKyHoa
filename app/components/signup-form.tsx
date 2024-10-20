@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { SelectField } from './select-field';
-import { useForm } from 'react-hook-form';
+import { Control, useForm } from 'react-hook-form';
 import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
 import locales from '@/locales/vn.json';
@@ -15,25 +15,22 @@ const formLocalization = locales.pages.contact.form;
 type FormField = (typeof formLocalization.fields)[number];
 
 const fieldValidationRules: Record<FormField['type'], (required: boolean, error?: string) => z.ZodTypeAny> = {
-  text: (required, error) => z.string().min(required ? 2 : 0, { message: error }),
-  textarea: (required, error) => z.string().min(required ? 5 : 0, { message: error }),
+  text: (required, error) => (required ? z.string().min(2, { message: error }) : z.string().optional()),
+  textarea: (required, error) => (required ? z.string().min(5, { message: error }) : z.string().optional()),
   select: (required, error) => (required ? z.string().min(1, { message: error }) : z.string().optional())
 };
 
 const formSchema = z.object(
-  formLocalization.fields.reduce(
-    (schema, field) => {
-      const validationRule = fieldValidationRules[field.type];
-      schema[field.name] = validationRule(field.required, field.error);
-      return schema;
-    },
-    {} as Record<string, z.ZodTypeAny>
-  )
+  formLocalization.fields.reduce<Record<string, z.ZodTypeAny>>((schema, field) => {
+    const validationRule = fieldValidationRules[field.type];
+    schema[field.name] = validationRule(field.required, field.error);
+    return schema;
+  }, {})
 );
 
 type SignupFormValues = z.infer<typeof formSchema>;
 
-const FormFieldComponent = ({ field, control }: { field: FormField; control: any }) => (
+const FormFieldComponent = ({ field, control }: { field: FormField; control: Control<SignupFormValues> }) => (
   <FormField
     control={control}
     name={field.name}
@@ -60,23 +57,37 @@ const FormFieldComponent = ({ field, control }: { field: FormField; control: any
 export const SignupForm = () => {
   const form = useForm<SignupFormValues>({
     resolver: zodResolver(formSchema),
-    defaultValues: formLocalization.fields.reduce(
-      (defaults, field) => {
-        defaults[field.name] = '';
-        return defaults;
-      },
-      {} as Record<string, string>
-    )
+    defaultValues: formLocalization.fields.reduce<Record<string, string>>((defaults, field) => {
+      defaults[field.name] = '';
+      return defaults;
+    }, {})
   });
 
-  const onSubmit = (values: SignupFormValues) => {
-    console.log(values);
+  const onSubmit = async (values: SignupFormValues) => {
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        body: JSON.stringify(values)
+      });
+
+      if (!response.ok) {
+        throw new Error(`response status: ${response.status}`);
+      }
+
+      const responseData = await response.json();
+      console.log(responseData['message']);
+
+      alert('Message successfully sent');
+    } catch (error) {
+      console.error(error);
+      alert('Error, please try resubmitting the form');
+    }
   };
 
   return (
-    <Form {...form}>
-      <div className="mx-auto w-full rounded-none bg-white p-4 shadow-input md:rounded-2xl md:p-8 dark:bg-black">
-        <h3 className="text-xl font-bold text-neutral-800 dark:text-neutral-200">{formLocalization.heading}</h3>
+    <div className="mx-auto w-full rounded-none bg-white p-4 shadow-input md:rounded-2xl md:p-8 dark:bg-black">
+      <h3 className="text-xl font-bold text-neutral-800 dark:text-neutral-200">{formLocalization.heading}</h3>
+      <Form {...form}>
         <form className="my-8 w-full space-y-8" onSubmit={form.handleSubmit(onSubmit)}>
           {formLocalization.fields.map((field) => (
             <FormFieldComponent key={field.name} field={field} control={form.control} />
@@ -91,7 +102,7 @@ export const SignupForm = () => {
             <span className="absolute inset-x-10 -bottom-px mx-auto block h-px w-1/2 bg-gradient-to-r from-transparent via-indigo-500 to-transparent opacity-0 blur-sm transition duration-500 group-hover/btn:opacity-100" />
           </Button>
         </form>
-      </div>
-    </Form>
+      </Form>
+    </div>
   );
 };

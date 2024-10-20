@@ -11,15 +11,15 @@ import { createContext, forwardRef, useContext, useId, useMemo } from 'react';
 export const Form = FormProvider;
 
 export type FormFieldContextValue<T extends FieldValues = FieldValues, TName extends FieldPath<T> = FieldPath<T>> = {
-  name: TName;
+  name?: TName;
 };
 
-export const FormFieldContext = createContext<FormFieldContextValue>({} as FormFieldContextValue);
+export const FormFieldContext = createContext<FormFieldContextValue>({});
 
 export const FormField = <T extends FieldValues = FieldValues, TName extends FieldPath<T> = FieldPath<T>>(
   props: ControllerProps<T, TName>
 ) => {
-  const providerValue = useMemo(() => ({ name: props.name }), []);
+  const providerValue = useMemo(() => ({ name: props.name }), [props.name]);
 
   return (
     <FormFieldContext.Provider value={providerValue}>
@@ -33,7 +33,7 @@ export const useFormField = () => {
   const itemContext = useContext(FormItemContext);
   const { getFieldState, formState } = useFormContext();
 
-  const fieldState = getFieldState(fieldContext.name, formState);
+  const fieldState = getFieldState(fieldContext.name ?? '', formState);
 
   if (!fieldContext) {
     throw new Error('useFormField should be used within <FormField>');
@@ -51,16 +51,16 @@ export const useFormField = () => {
   };
 };
 
-export type FormItemContextValue = { id: string };
+export type FormItemContextValue = { id?: string };
 
-export const FormItemContext = createContext<FormItemContextValue>({} as FormItemContextValue);
+export const FormItemContext = createContext<FormItemContextValue>({});
 
 export const FormItem = forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement>>(function FormItem(
   { className, ...props },
   ref
 ) {
   const id = useId();
-  const providerValue = useMemo(() => ({ id }), []);
+  const providerValue = useMemo(() => ({ id }), [id]);
 
   return (
     <FormItemContext.Provider value={providerValue}>
