@@ -1,8 +1,7 @@
 import gsap from 'gsap';
 import Link from 'next/link';
-import { Dispatch, MutableRefObject, SetStateAction } from 'react';
 
-import { usePageSection } from '@/app/home';
+import { usePageSection } from '@/app/components';
 import { ButtonFacebook } from '@/components/icons';
 import { Sidebar, SidebarBody, SidebarLink } from '@/components/ui';
 import { FACEBOOK_LINK, GOOGLE_MAP_ADDRESS } from '@/lib/const';
@@ -11,8 +10,8 @@ import locales from '@/locales/vn.json';
 
 type SidenavProps = PropsWithClass<{
   open: boolean;
-  setOpen: Dispatch<SetStateAction<boolean>>;
-  tweenRef: MutableRefObject<gsap.core.Tween | undefined>;
+  setOpen: React.Dispatch<React.SetStateAction<boolean>>;
+  tweenRef: React.MutableRefObject<gsap.core.Tween | undefined>;
 }>;
 
 export const Sidenav = ({ open, setOpen, tweenRef }: SidenavProps) => {

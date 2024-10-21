@@ -72,6 +72,7 @@
       "form": {
         "heading": "Đăng ký tham gia huấn luyện ngay!",
         "submit": "Gửi đăng ký",
+        "success": "Cám ơn bạn đã để lại thông tin, tôi sẽ liên hệ bạn trong thời gian gần nhất!",
         "fields": [
           {
             "name": "fullName",
@@ -104,7 +105,7 @@
           {
             "name": "email",
             "type": "text",
-            "label": "Địa chỉ email",
+            "label": "Địa chỉ Email",
             "placeholder": "chopkyhoa@gmail.com",
             "required": false
           },

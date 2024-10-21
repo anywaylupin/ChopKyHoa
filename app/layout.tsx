@@ -4,10 +4,14 @@ import type { Metadata } from 'next';
 
 import { montserrat } from '@/lib/fonts';
 import { cn } from '@/lib/utils';
+import locales from '@/locales/vn.json';
+
+const title = locales.name;
+const description = locales.pages.hero.heading;
 
 export const metadata: Metadata = {
-  title: 'Chop Ky Hoa',
-  description: 'Next App /w Aceternity UI'
+  title,
+  description
 };
 
 const RootLayout = ({ children }: Readonly<React.PropsWithChildren>) => (

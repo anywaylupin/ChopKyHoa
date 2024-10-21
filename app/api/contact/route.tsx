@@ -2,12 +2,7 @@ import { OAuth2Client } from 'google-auth-library';
 import { NextRequest, NextResponse } from 'next/server';
 import { createTransport } from 'nodemailer';
 
-interface EmailValues {
-  name: string;
-  email?: string;
-  phone?: string;
-  [key: string]: string | undefined;
-}
+import { EmailDto, generateEmailHTML, generateSubject } from './html';
 
 const { ADMIN_EMAIL_ADDRESS, RECEIVER_EMAIL_ADDRESS, OAUTH2_CLIENT_ID, OAUTH2_CLIENT_SECRET, OAUTH2_REFRESH_TOKEN } =
   process.env;
@@ -17,7 +12,7 @@ oauth2Client.setCredentials({ refresh_token: OAUTH2_REFRESH_TOKEN });
 
 export const POST = async (request: NextRequest) => {
   try {
-    const values: EmailValues = await request.json();
+    const values: EmailDto = await request.json();
 
     const { token } = await oauth2Client.getAccessToken();
 
@@ -42,7 +37,7 @@ export const POST = async (request: NextRequest) => {
     await transporter.sendMail({
       from: ADMIN_EMAIL_ADDRESS,
       to: RECEIVER_EMAIL_ADDRESS,
-      subject: `Đăng ký buổi học tennis mới - ${values.name}`,
+      subject: generateSubject(values.fullName),
       html: generateEmailHTML(values)
     });
 
@@ -51,27 +46,4 @@ export const POST = async (request: NextRequest) => {
     console.error('Error sending email:', error);
     return NextResponse.json({ message: 'Failed to send email' }, { status: 500 });
   }
-};
-
-const generateEmailHTML = (values: EmailValues): string => {
-  return `
-    <div style="font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;">
-      <h2 style="color: #0055ff; font-size: 20px;">Đăng ký buổi học tennis mới 🎾</h2>
-      <p>Xin chào,</p>
-      <p>Bạn vừa nhận được một đăng ký buổi học tennis mới. Dưới đây là thông tin chi tiết của học viên:</p>
-      <table style="width: 100%; max-width: 600px; margin: 20px 0; border-collapse: collapse;">
-        ${Object.entries(values)
-          .map(
-            ([key, value]) => `
-              <tr>
-                <td style="padding: 10px; border: 1px solid #ddd;"><strong>${key}</strong></td>
-                <td style="padding: 10px; border: 1px solid #ddd;">${value ?? 'Không có lời nhắn thêm.'}</td>
-              </tr>`
-          )
-          .join('')}
-      </table>
-      <p>Vui lòng liên hệ với học viên để xác nhận lịch học và thông tin chi tiết.</p>
-      <p style="color: #555;">Trân trọng,<br>Đội ngũ huấn luyện tennis</p>
-    </div>
-  `;
 };

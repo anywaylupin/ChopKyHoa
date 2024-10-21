@@ -10,7 +10,9 @@ declare type MinMaxValue = { min?: number; max?: number };
 
 declare type StringNode = JSX.Element | React.ReactNode | string;
 
-declare type StateContextType<S = boolean> = [S, React.Dispatch<React.SetStateAction<S>>];
+declare type DispatchState<S = boolean> = React.Dispatch<React.SetStateAction<S>>;
+
+declare type StateContextType<S = boolean> = [S, DispatchState<S>];
 
 declare type PropsWithClass<P = unknown, T = undefined> = React.PropsWithChildren<
   { className?: string; containerClassName?: string } & P

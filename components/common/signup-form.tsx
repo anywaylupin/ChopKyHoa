@@ -1,13 +1,22 @@
 'use client';
 
 import { zodResolver } from '@hookform/resolvers/zod';
+import { IconCircleCheckFilled } from '@tabler/icons-react';
+import { motion } from 'framer-motion';
 import { Control, useForm } from 'react-hook-form';
 import { z } from 'zod';
 
-import { Button } from '@/components/ui/button';
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
-import { Input } from '@/components/ui/input';
-import { Textarea } from '@/components/ui/textarea';
+import {
+  Button,
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+  Input,
+  Textarea
+} from '@/components/ui';
 import locales from '@/locales/vn.json';
 
 import { SelectField } from './select-field';
@@ -56,7 +65,7 @@ const FormFieldComponent = ({ field, control }: { field: FormField; control: Con
   />
 );
 
-export const SignupForm = () => {
+export const FormContainer = ({ setSubmitted }: { setSubmitted: DispatchState }) => {
   const form = useForm<SignupFormValues>({
     resolver: zodResolver(formSchema),
     defaultValues: formLocalization.fields.reduce<Record<string, string>>((defaults, field) => {
@@ -76,21 +85,18 @@ export const SignupForm = () => {
         throw new Error(`response status: ${response.status}`);
       }
 
-      const responseData = await response.json();
-      console.log(responseData['message']);
-
-      alert('Message successfully sent');
+      setSubmitted(true);
     } catch (error) {
       console.error(error);
-      alert('Error, please try resubmitting the form');
+      setSubmitted(true);
     }
   };
 
   return (
-    <div className="mx-auto w-full rounded-none bg-white p-4 shadow-input md:rounded-2xl md:p-8 dark:bg-black">
+    <>
       <h3 className="text-xl font-bold text-neutral-800 dark:text-neutral-200">{formLocalization.heading}</h3>
       <Form {...form}>
-        <form className="my-8 w-full space-y-8" onSubmit={form.handleSubmit(onSubmit)}>
+        <form className="flex size-full max-h-full flex-col justify-between" onSubmit={form.handleSubmit(onSubmit)}>
           {formLocalization.fields.map((field) => (
             <FormFieldComponent key={field.name} field={field} control={form.control} />
           ))}
@@ -105,6 +111,13 @@ export const SignupForm = () => {
           </Button>
         </form>
       </Form>
-    </div>
+    </>
   );
 };
+
+export const FormSuccess = () => (
+  <motion.div className="relative flex size-full flex-col items-center justify-center gap-5">
+    <IconCircleCheckFilled size={160} color="var(--dark)" />
+    <span className="text-center text-4xl">{formLocalization.success}</span>
+  </motion.div>
+);

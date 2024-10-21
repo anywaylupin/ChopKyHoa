@@ -1,10 +1,13 @@
+import { useState } from 'react';
+
+import { FormContainer, FormSuccess } from '@/components/common';
 import { cn } from '@/lib/utils';
 import locales from '@/locales/vn.json';
 
-import { SignupForm } from '../../components/common';
-
 const Contact = () => {
   const { id, heading, description } = locales.pages.contact;
+
+  const [submitted, setSubmitted] = useState(false);
 
   return (
     <section
@@ -19,8 +22,8 @@ const Contact = () => {
           'lg:py-16'
         )}
       >
-        <div className="relative flex h-full flex-1 justify-between gap-8 pt-16">
-          <div className="flex h-max max-w-[50%] flex-col justify-between gap-8">
+        <div className={cn('relative flex h-full flex-1 flex-col justify-between gap-8 pt-16', 'xl:flex-row')}>
+          <div className={cn('flex h-max flex-col justify-between gap-8', 'xl:max-w-[40%]', '2xl:max-w-[50%]')}>
             <h2
               className={cn(
                 'text-5xl font-semibold uppercase -tracking-[2.56px] small-caps',
@@ -46,7 +49,14 @@ const Contact = () => {
             </p>
           </div>
 
-          <SignupForm />
+          <div
+            className={cn(
+              'relative mx-auto flex size-full flex-col gap-8 rounded-none bg-white p-4 shadow-input dark:bg-black',
+              'md:rounded-2xl md:p-8'
+            )}
+          >
+            {submitted ? <FormSuccess /> : <FormContainer setSubmitted={setSubmitted} />}
+          </div>
         </div>
       </div>
     </section>

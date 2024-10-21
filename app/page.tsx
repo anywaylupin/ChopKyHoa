@@ -6,7 +6,7 @@ import { Sidenav, Title } from '@/components/common';
 import { useHorizontalScroll } from '@/hooks';
 import { cn } from '@/lib/utils';
 
-import { usePageSection } from './home';
+import { usePageSection } from './components';
 
 const Home = () => {
   const ref = useRef<HTMLElement>(null);
