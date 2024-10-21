@@ -21,7 +21,7 @@ const Benefits = () => {
       </span>
       <h2
         className={cn(
-          'relative h-full max-h-max text-center text-4xl font-semibold uppercase tracking-tighter text-light small-caps',
+          'small-caps relative h-full max-h-max text-center text-4xl font-semibold uppercase tracking-tighter text-light',
           'md:text-6xl',
           'lg:text-start',
           'xl:absolute xl:px-16 xl:pt-16 xl:text-9xl'

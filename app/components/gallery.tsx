@@ -17,7 +17,7 @@ const Gallery = () => {
     >
       <h2
         className={cn(
-          'mb-8 text-nowrap text-center text-6xl font-semibold uppercase -tracking-widest text-light small-caps',
+          'small-caps mb-8 text-nowrap text-center text-6xl font-semibold uppercase -tracking-widest text-light',
           'sm:text-7xl',
           'md:text-8xl',
           'lg:text-[200px]',

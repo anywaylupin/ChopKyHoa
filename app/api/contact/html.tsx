@@ -39,10 +39,10 @@ export const generateEmailHTML = (values: EmailDto): string => {
                   padding: 24px;
                   border-radius: 8px;
                   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-                  border-top: 4px solid #16a085;
+                  border-top: 4px solid #2ecc71;
               }
               .email-header {
-                  color: #16a085;
+                  color: #2ecc71;
                   font-size: 32px;
                   margin-bottom: 16px;
                   text-align: center;
@@ -58,12 +58,12 @@ export const generateEmailHTML = (values: EmailDto): string => {
                   border-radius: 8px;
                   margin-bottom: 12px;
                   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-                  border-left: 4px solid #16a085;
+                  border-left: 4px solid #2ecc71;
               }
               .info-card h4 {
                   margin: 0 0 4px;
                   font-size: 20px;
-                  color: #16a085;
+                  color: #2ecc71;
               }
               .info-card p {
                   margin: 0;

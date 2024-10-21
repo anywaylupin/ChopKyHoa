@@ -3,6 +3,7 @@
 import { zodResolver } from '@hookform/resolvers/zod';
 import { IconCircleCheckFilled } from '@tabler/icons-react';
 import { motion } from 'framer-motion';
+import { useState } from 'react';
 import { Control, useForm } from 'react-hook-form';
 import { z } from 'zod';
 
@@ -17,6 +18,7 @@ import {
   Input,
   Textarea
 } from '@/components/ui';
+import { cn } from '@/lib/utils';
 import locales from '@/locales/vn.json';
 
 import { SelectField } from './select-field';
@@ -66,6 +68,8 @@ const FormFieldComponent = ({ field, control }: { field: FormField; control: Con
 );
 
 export const FormContainer = ({ setSubmitted }: { setSubmitted: DispatchState }) => {
+  const [isLoading, setIsLoading] = useState(false);
+
   const form = useForm<SignupFormValues>({
     resolver: zodResolver(formSchema),
     defaultValues: formLocalization.fields.reduce<Record<string, string>>((defaults, field) => {
@@ -76,6 +80,8 @@ export const FormContainer = ({ setSubmitted }: { setSubmitted: DispatchState })
 
   const onSubmit = async (values: SignupFormValues) => {
     try {
+      setIsLoading(true);
+
       const response = await fetch('/api/contact', {
         method: 'POST',
         body: JSON.stringify(values)
@@ -86,38 +92,83 @@ export const FormContainer = ({ setSubmitted }: { setSubmitted: DispatchState })
       }
 
       setSubmitted(true);
+      setIsLoading(false);
     } catch (error) {
       console.error(error);
       setSubmitted(true);
+      setIsLoading(false);
     }
   };
 
-  return (
-    <>
-      <h3 className="text-xl font-bold text-neutral-800 dark:text-neutral-200">{formLocalization.heading}</h3>
-      <Form {...form}>
-        <form className="flex size-full max-h-full flex-col justify-between" onSubmit={form.handleSubmit(onSubmit)}>
-          {formLocalization.fields.map((field) => (
-            <FormFieldComponent key={field.name} field={field} control={form.control} />
-          ))}
+  return isLoading ? (
+    <FormLoading />
+  ) : (
+    <div className="relative flex size-full">
+      <motion.div
+        className="relative flex size-full flex-col gap-8"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        transition={{ duration: 0.3, ease: 'easeInOut' }}
+      >
+        <h3 className="text-xl font-bold text-neutral-800 dark:text-neutral-200">{formLocalization.heading}</h3>
+        <Form {...form}>
+          <form className="flex size-full max-h-full flex-col justify-between" onSubmit={form.handleSubmit(onSubmit)}>
+            {formLocalization.fields.map((field) => (
+              <FormFieldComponent key={field.name} field={field} control={form.control} />
+            ))}
 
-          <Button
-            className="group/btn relative block h-10 w-full rounded-md bg-gradient-to-br from-black to-neutral-600 font-medium text-white shadow-[0px_1px_0px_0px_#ffffff40_inset,0px_-1px_0px_0px_#ffffff40_inset] dark:bg-zinc-800 dark:from-zinc-900 dark:to-zinc-900 dark:shadow-[0px_1px_0px_0px_var(--zinc-800)_inset,0px_-1px_0px_0px_var(--zinc-800)_inset]"
-            type="submit"
-          >
-            {formLocalization.submit}
-            <span className="absolute inset-x-0 -bottom-px block h-px w-full bg-gradient-to-r from-transparent via-cyan-500 to-transparent opacity-0 transition duration-500 group-hover/btn:opacity-100" />
-            <span className="absolute inset-x-10 -bottom-px mx-auto block h-px w-1/2 bg-gradient-to-r from-transparent via-indigo-500 to-transparent opacity-0 blur-sm transition duration-500 group-hover/btn:opacity-100" />
-          </Button>
-        </form>
-      </Form>
-    </>
+            <Button
+              className="rounded-md border-2 border-transparent bg-dark px-8 py-2 text-xl font-bold text-white transition-all duration-200 hover:border-dark hover:bg-white hover:text-2xl hover:text-black"
+              type="submit"
+            >
+              {formLocalization.submit}
+              <span className="absolute inset-x-0 -bottom-px block h-px w-full bg-gradient-to-r from-transparent via-cyan-500 to-transparent opacity-0 transition duration-500 group-hover/btn:opacity-100" />
+              <span className="absolute inset-x-10 -bottom-px mx-auto block h-px w-1/2 bg-gradient-to-r from-transparent via-indigo-500 to-transparent opacity-0 blur-sm transition duration-500 group-hover/btn:opacity-100" />
+            </Button>
+          </form>
+        </Form>
+      </motion.div>
+    </div>
   );
 };
 
 export const FormSuccess = () => (
-  <motion.div className="relative flex size-full flex-col items-center justify-center gap-5">
-    <IconCircleCheckFilled size={160} color="var(--dark)" />
-    <span className="text-center text-4xl">{formLocalization.success}</span>
-  </motion.div>
+  <div className="relative flex size-full flex-col items-center justify-center gap-5">
+    <motion.div
+      className="flex max-w-32 md:max-w-max"
+      initial={{ scale: 0 }}
+      animate={{ scale: 1 }}
+      exit={{ scale: 0 }}
+      transition={{ duration: 0.3, ease: 'backOut' }}
+    >
+      <IconCircleCheckFilled size={160} color="var(--dark)" />
+    </motion.div>
+    <motion.span
+      className="text-center text-lg sm:text-2xl md:text-4xl"
+      initial={{ y: '-10%', opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      exit={{ y: '-10%', opacity: 0 }}
+      transition={{ duration: 0.3, ease: 'easeInOut' }}
+    >
+      {formLocalization.success}
+    </motion.span>
+  </div>
+);
+
+export const FormLoading = () => (
+  <div className="relative flex size-full items-center justify-center gap-4">
+    {['delay-0', 'delay-100', 'delay-200'].map((delay, i) => (
+      <motion.div
+        key={`${delay}-${i}`}
+        className="relative flex"
+        initial={{ scale: 0 }}
+        animate={{ scale: 1 }}
+        exit={{ scale: 0 }}
+        transition={{ duration: 0.3, ease: 'backOut' }}
+      >
+        <span className={cn('tennis-ball animate-loading bg-primary', delay)}></span>
+      </motion.div>
+    ))}
+  </div>
 );

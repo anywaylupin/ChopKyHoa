@@ -26,7 +26,7 @@ const Contact = () => {
           <div className={cn('flex h-max flex-col justify-between gap-8', 'xl:max-w-[40%]', '2xl:max-w-[50%]')}>
             <h2
               className={cn(
-                'text-5xl font-semibold uppercase -tracking-[2.56px] small-caps',
+                'small-caps text-5xl font-semibold uppercase -tracking-[2.56px]',
                 'md:text-7xl md:leading-[116px]',
                 'lg:text-8xl',
                 '2xl:text-9xl'
@@ -51,7 +51,7 @@ const Contact = () => {
 
           <div
             className={cn(
-              'relative mx-auto flex size-full flex-col gap-8 rounded-none bg-white p-4 shadow-input dark:bg-black',
+              'relative mx-auto size-full min-h-80 gap-8 rounded-none bg-white p-4 shadow-input transition-all dark:bg-black',
               'md:rounded-2xl md:p-8'
             )}
           >

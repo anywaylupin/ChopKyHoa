@@ -12,7 +12,7 @@ const Hero = () => {
       <div className={cn('relative flex size-full flex-col bg-dark bg-opacity-20 text-light', 'xl:flex-row')}>
         <div
           className={cn(
-            'absolute flex size-full w-full flex-col items-center justify-end gap-10 bg-dark bg-opacity-40 py-20 text-center uppercase small-caps',
+            'small-caps absolute flex size-full w-full flex-col items-center justify-end gap-10 bg-dark bg-opacity-40 py-20 text-center uppercase',
             'sm:min-w-96 sm:justify-center sm:py-16',
             'xl:relative xl:w-1/2 xl:justify-end xl:gap-16 xl:bg-opacity-100 xl:pl-16 xl:text-start'
           )}

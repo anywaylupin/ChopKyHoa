@@ -1,12 +1,13 @@
 'use client';
 
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import { Sidenav, Title } from '@/components/common';
 import { useHorizontalScroll } from '@/hooks';
 import { cn } from '@/lib/utils';
 
 import { usePageSection } from './components';
+import Loading from './loading';
 
 const Home = () => {
   const ref = useRef<HTMLElement>(null);
@@ -14,10 +15,16 @@ const Home = () => {
   const tweenRef = useHorizontalScroll(ref, '.panel', 1280);
 
   const [open, setOpen] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
   const { sections } = usePageSection();
+
+  useEffect(() => {
+    setTimeout(() => setIsLoading(false), 500);
+  }, []);
 
   return (
     <>
+      <Loading loading={isLoading} />
       <Sidenav open={open} setOpen={setOpen} tweenRef={tweenRef} />
       <Title setOpen={setOpen} />
 

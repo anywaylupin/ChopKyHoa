@@ -20,7 +20,7 @@ const About = () => {
         <div className={cn('flex flex-col gap-4', 'md:gap-12')}>
           <h2
             className={cn(
-              'text-center text-3xl font-semibold uppercase leading-snug -tracking-[2.56px] small-caps',
+              'small-caps text-center text-3xl font-semibold uppercase leading-snug -tracking-[2.56px]',
               'md:text-start md:text-5xl',
               'xl:text-6xl'
             )}

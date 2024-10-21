@@ -40,12 +40,16 @@ export const Sidenav = ({ open, setOpen, tweenRef }: SidenavProps) => {
   return (
     <Sidebar open={open} setOpen={setOpen}>
       <SidebarBody
-        className={cn('fixed left-0 z-50 h-full justify-between gap-8 bg-silver pb-8 pt-36 text-dark', 'xl:pt-40')}
+        className={cn(
+          'fixed left-0 z-50 h-full justify-between bg-silver pb-8 pt-28 text-dark',
+          'xs:gap-8',
+          'xl:pt-40'
+        )}
       >
         <div
           className={cn(
-            'flex size-full flex-[2] flex-col gap-8 pl-2 text-3xl font-medium',
-            'sm:text-5xl',
+            'flex size-full flex-[2] flex-col gap-8 pb-6 pl-2 text-xl font-medium',
+            'sm:pb-0 sm:text-2xl',
             'md:pl-16 md:text-3xl'
           )}
         >
@@ -59,12 +63,12 @@ export const Sidenav = ({ open, setOpen, tweenRef }: SidenavProps) => {
 
         <div
           className={cn(
-            'flex max-h-max w-full flex-1 flex-col justify-end gap-16 pl-8 text-3xl font-medium lowercase leading-relaxed -tracking-tighter',
-            'sm:text-5xl',
-            'md:gap-6 md:pl-16 md:text-xl md:text-dark'
+            'flex max-h-max w-full max-w-full flex-1 flex-col items-center gap-2 text-base font-medium lowercase leading-relaxed -tracking-tighter',
+            'sm:mb-8 sm:flex-row sm:justify-between sm:pl-8 sm:text-lg',
+            'md:flex-col md:items-start md:justify-end md:gap-6 md:pl-16 md:text-xl md:text-dark'
           )}
         >
-          <ul className={cn('flex flex-col')}>
+          <ul className={cn('flex flex-col items-center', 'sm:items-start')}>
             {contactDetails.map(({ key, value, href }) => (
               <li key={key} aria-label={key} className="w-max">
                 <Link href={href} className="animate-underline after:bg-dark" target="_blank">
@@ -75,7 +79,7 @@ export const Sidenav = ({ open, setOpen, tweenRef }: SidenavProps) => {
           </ul>
 
           <Link href={GOOGLE_MAP_ADDRESS} target="_blank">
-            <ul className={cn('flex flex-col')}>
+            <ul className={cn('flex flex-col items-center', 'sm:items-start')}>
               {addressDetails.map(({ key, value }) => (
                 <li key={key} className="animate-underline w-max after:bg-dark">
                   {value}
@@ -85,7 +89,7 @@ export const Sidenav = ({ open, setOpen, tweenRef }: SidenavProps) => {
           </Link>
         </div>
 
-        <div className="flex max-h-max w-full flex-1 justify-center">
+        <div className={cn('flex max-h-max w-full flex-1 scale-75 justify-center', 'sm:scale-100')}>
           <ButtonFacebook href={FACEBOOK_LINK} />
         </div>
       </SidebarBody>

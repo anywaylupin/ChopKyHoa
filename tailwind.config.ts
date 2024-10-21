@@ -1,7 +1,7 @@
 import type { Config } from 'tailwindcss';
-import TailwindCssAnimate from 'tailwindcss-animate';
 import flattenColorPalette from 'tailwindcss/lib/util/flattenColorPalette';
 import plugin from 'tailwindcss/plugin';
+import TailwindCssAnimate from 'tailwindcss-animate';
 
 export const AddVariablesForColors = plugin(({ addBase, theme }) => {
   const allColors = flattenColorPalette(theme('colors'));
@@ -52,71 +52,18 @@ const config = {
           '0 0 24px rgba(34, 42, 53, 0.06), 0 1px 1px rgba(0, 0, 0, 0.05), 0 0 0 1px rgba(34, 42, 53, 0.04), 0 0 4px rgba(34, 42, 53, 0.08), 0 16px 68px rgba(47, 48, 55, 0.05), 0 1px 0 rgba(255, 255, 255, 0.1) inset'
       },
       animation: {
-        first: 'moveVertical 30s ease infinite',
-        second: 'moveInCircle 20s reverse infinite',
-        third: 'moveInCircle 40s linear infinite',
-        fourth: 'moveHorizontal 40s ease infinite',
-        fifth: 'moveInCircle 20s ease infinite',
-        'accordion-down': 'accordion-down 0.2s ease-out',
-        'accordion-up': 'accordion-up 0.2s ease-out',
-        aurora: 'aurora 60s linear infinite',
-        'meteor-effect': 'meteor 5s linear infinite',
-        scroll: 'scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite',
-        shimmer: 'shimmer 2s linear infinite',
-        spotlight: 'spotlight 2s ease .75s 1 forwards'
+        loading: 'loading ease-in-out 1s infinite alternate'
       },
       keyframes: {
-        'accordion-down': {
-          from: { height: '0' },
-          to: { height: 'var(--radix-accordion-content-height)' }
-        },
-        'accordion-up': {
-          from: { height: 'var(--radix-accordion-content-height)' },
-          to: { height: '0' }
-        },
-        aurora: {
-          from: { backgroundPosition: '50% 50%, 50% 50%' },
-          to: { backgroundPosition: '350% 50%, 350% 50%' }
-        },
-        meteor: {
-          '0%': { transform: 'rotate(215deg) translateX(0)', opacity: '1' },
-          '70%': { opacity: '1' },
-          '100%': {
-            transform: 'rotate(215deg) translateX(-500px)',
-            opacity: '0'
-          }
-        },
-        moveHorizontal: {
-          '0%': { transform: 'translateX(-50%) translateY(-10%)' },
-          '50%': { transform: 'translateX(50%) translateY(10%)' },
-          '100%': { transform: 'translateX(-50%) translateY(-10%)' }
-        },
-        moveInCircle: {
-          '0%': { transform: 'rotate(0deg)' },
-          '50%': { transform: 'rotate(180deg)' },
-          '100%': { transform: 'rotate(360deg)' }
-        },
-        moveVertical: {
-          '0%': { transform: 'translateY(-50%)' },
-          '50%': { transform: 'translateY(50%)' },
-          '100%': { transform: 'translateY(-50%)' }
-        },
-        scroll: {
-          to: { transform: 'translate(calc(-60%))' }
-        },
-        shimmer: {
-          from: { backgroundPosition: '0 0' },
-          to: { backgroundPosition: '-200% 0' }
-        },
-        spotlight: {
-          '0%': { opacity: '0', transform: 'translate(-72%, -62%) scale(0.5)' },
-          '100%': { opacity: '1', transform: 'translate(-50%,-40%) scale(1)' }
+        loading: {
+          '0%, 50%, 100%': { transform: 'translateY(0)' },
+          '25%, 75%': { transform: 'translateY(-80px)' }
         }
       }
     }
   },
   plugins: [
-    plugin(({ addComponents, addUtilities }) => {
+    plugin(({ addComponents }) => {
       addComponents({
         '.panel': {
           position: 'relative',
@@ -152,18 +99,35 @@ const config = {
         },
         '.animate-underline:focus::after': {
           transform: 'translate3d(0, 0, 0)'
-        }
-      });
-
-      addUtilities({
-        '.transform-3d': {
-          transformStyle: 'preserve-3d'
         },
-        '.scrollbar-none': {
-          scrollbarWidth: 'none'
+        '.tennis-ball': {
+          height: '90px',
+          width: '90px',
+          overflow: 'hidden',
+          transform: 'translateY(0)',
+          borderRadius: '50%'
         },
-        '.small-caps': {
-          fontVariant: 'small-caps'
+        '.tennis-ball::before': {
+          content: '""',
+          position: 'absolute',
+          display: 'block',
+          left: '65px',
+          height: '80px',
+          width: '80px',
+          border: 'solid 3px #fff',
+          borderRadius: '50%',
+          boxSizing: 'border-box'
+        },
+        '.tennis-ball::after': {
+          content: '""',
+          position: 'absolute',
+          display: 'block',
+          left: '-55px',
+          height: ' 80px',
+          width: '80px',
+          border: 'solid 3px #fff',
+          borderRadius: '50%',
+          boxSizing: 'border-box'
         }
       });
     }),
