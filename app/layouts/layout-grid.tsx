@@ -1,8 +1,7 @@
 'use client';
 
+import { CardContainer, CardItem } from '@/components/ui/3d-card';
 import { cn } from '@/lib/utils';
-
-import { CardContainer, CardItem } from './3d-card';
 
 export const LayoutGrid = ({ className, items }: PropsWithClass<{ items: LayoutGridItem[] }>) => (
   <div className={cn('relative grid grid-cols-12 gap-4', className)}>
@@ -19,14 +18,22 @@ export const LayoutGrid = ({ className, items }: PropsWithClass<{ items: LayoutG
         )}
         className="size-full"
       >
-        <CardItem
-          translateZ="200"
-          className="size-full rounded-xl bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: `url(/${item.src})` }}
-        />
+        {item.type === 'image' ? (
+          <CardItem
+            translateZ="200"
+            className="size-full rounded-xl bg-cover bg-center bg-no-repeat"
+            style={{ backgroundImage: `url(/${item.src})` }}
+          />
+        ) : (
+          <video className="" src={item.src} autoPlay muted playsInline loop>
+            Your browser does not support the video tag.
+          </video>
+        )}
       </CardContainer>
     ))}
   </div>
 );
 
-export type LayoutGridItem = { id: number; className?: string; src: string };
+export type LayoutGridItem =
+  | { id: number; className?: string; src: string; type: 'image' | 'video' }
+  | { id: number; className?: string; src: string; type: string };

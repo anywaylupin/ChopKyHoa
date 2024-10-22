@@ -20,7 +20,7 @@ const Hero = () => {
           <h1
             className={cn(
               montserratAlternates.className,
-              'w-full max-w-sm text-4xl font-semibold tracking-tighter',
+              'w-full max-w-sm text-4xl font-semibold tracking-tight',
               'sm:max-w-2xl sm:text-6xl',
               'md:text-7xl',
               '2xl:max-w-full 2xl:text-8xl'

@@ -4,25 +4,24 @@
     "hero": {
       "id": "hero",
       "label": "Trang chính",
-      "heading": "Huấn luyện viên Tennis cá nhân",
+      "heading": "Huấn luyện viên Pickleball cá nhân",
       "subheading": "Hãy để đam mê tỏa sáng trên sân"
     },
     "about": {
       "id": "about",
       "label": "Thông tin",
-      "heading": "Hãy tham gia các lớp học của tôi",
-      "subheading": "Tennis không chỉ là một môn thể thao, mà là một phong cách sống đầy đam mê và cống hiến.",
-      "description": "Hãy dấn thân vào Thế Giới Tennis, nơi niềm đam mê hòa quyện cùng sự kịch tính của từng trận đấu."
+      "heading": "Hãy tham gia ngay lớp Pickleball Quận 10",
+      "subheading": "Pickleball là sự kết hợp độc đáo giữa tennis, cầu lông và bóng bàn, phù hợp với mọi độ tuổi.",
+      "description": "Không chỉ giúp nâng cao thể lực mà còn là cơ hội để giao lưu, kết nối và thư giãn."
     },
     "benefits": {
       "id": "benefits",
       "label": "Lớp học",
-      "heading": "Lớp học Tennis & Pickle Ball",
-      "subheading": "Lợi ích khi tham gia lớp học",
+      "heading": "Lợi ích khi tham gia lớp Pickle Ball",
       "items": [
         {
           "key": 1,
-          "title": "Chương trình đào tạo và cam kết",
+          "title": "Chương trình đào tạo",
           "list": [
             "Khóa học từ cơ bản đến nâng cao",
             "Đảm bảo thành thạo sau 6 tháng",
@@ -32,7 +31,7 @@
         },
         {
           "key": 2,
-          "title": "Điều kiện học tập và hỗ trợ",
+          "title": "Điều kiện học tập",
           "list": [
             "Chi phí thuê sân đã bao gồm",
             "Lịch học linh hoạt, phù hợp",
@@ -57,7 +56,7 @@
       "label": "Liên hệ",
       "heading": "Liên hệ",
       "description": [
-        "Sẵn sàng khám phá Thế Giới Tennis đầy đam mê và kịch tính? Đừng bỏ lỡ cơ hội tham gia khóa học đặc biệt cùng huấn luyện viên tận tâm và giàu kinh nghiệm!",
+        "Sẵn sàng khám phá Thế Giới Pickleball đầy đam mê và kịch tính? Đừng bỏ lỡ cơ hội tham gia khóa học đặc biệt cùng huấn luyện viên tận tâm và giàu kinh nghiệm!",
         "Cùng nhau, chúng ta sẽ chinh phục những đỉnh cao mới trong môn thể thao tuyệt vời này!"
       ],
       "contactDetails": [
@@ -88,8 +87,8 @@
             "label": "Môn học",
             "placeholder": "Chọn một môn",
             "options": [
-              { "value": "tennis", "text": "Tennis" },
-              { "value": "pickleball", "text": "Pickleball" }
+              { "value": "pickleball", "text": "Pickleball" },
+              { "value": "tennis", "text": "Tennis" }
             ],
             "error": "Vui lòng chọn một môn",
             "required": true
@@ -124,14 +123,14 @@
       "label": "Thư viện",
       "heading": "Thư viện",
       "items": [
-        { "id": 1, "src": "img-1.jpg" },
-        { "id": 2, "src": "img-2.jpg" },
-        { "id": 3, "src": "img-3.jpg" },
-        { "id": 4, "src": "img-4.jpg" },
-        { "id": 5, "src": "img-5.jpg" },
-        { "id": 6, "src": "img-6.jpg" },
-        { "id": 7, "src": "img-7.jpg" },
-        { "id": 8, "src": "img-8.jpg" }
+        { "id": 1, "type": "image", "src": "images/img-1.jpg" },
+        { "id": 2, "type": "image", "src": "images/img-2.jpg" },
+        { "id": 3, "type": "image", "src": "images/img-3.jpg" },
+        { "id": 4, "type": "image", "src": "images/img-4.jpg" }
+      ],
+      "videos": [
+        { "id": 1, "type": "video", "src": "videos/reels.mp4" },
+        { "id": 2, "type": "video", "src": "videos/traning.mp4" }
       ]
     }
   }

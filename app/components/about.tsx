@@ -36,16 +36,28 @@ const About = () => {
           >
             {subheading}
           </div>
+
+          <div className="w-full xl:hidden">
+            <p
+              className={cn(
+                'text-center text-xl lowercase leading-relaxed -tracking-tighter text-light',
+                'md:text-start md:text-4xl',
+                'lg:leading-loose'
+              )}
+            >
+              {description}
+            </p>
+          </div>
         </div>
 
-        <div className="relative flex max-w-[1037px] justify-center overflow-hidden rounded-2xl">
-          <Image className="!w-max" src="/about.jpg" fill sizes="" alt="Aside" />
+        <div className="relative flex min-h-[200px] max-w-[1037px] items-center justify-center overflow-hidden rounded-2xl">
+          <Image className="absolute h-max min-w-full" src="/images/about.jpg" fill sizes="" alt="About" />
         </div>
       </div>
 
-      <aside className={cn('hidden h-full flex-col items-end gap-8', 'xl:flex xl:max-w-[584px]')}>
-        <div className="relative size-max max-w-max">
-          <Image src="/about-aside.png" fill sizes="" alt="Aside" />
+      <aside className={cn('hidden h-full flex-col items-end gap-8', 'xl:flex xl:max-w-[500px]', '2xl:max-w-[584px]')}>
+        <div className="relative size-max max-w-full overflow-hidden rounded-2xl">
+          <Image src="/images/about-aside.jpg" fill sizes="" alt="Aside" />
         </div>
 
         <div className="w-full">
