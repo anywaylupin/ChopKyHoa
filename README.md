@@ -23,18 +23,12 @@ Utilize the power of **Nodemailer** in combination with **Google's OAuth2** to s
 
 ## 🛠️ Built With
 
-- ![Next.js](https://img.shields.io/badge/Next.js-000000?style=flat&logo=next.js&logoColor=white)  
-  A React framework for production.
-- ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=flat&logo=tailwind-css&logoColor=white)  
-  A utility-first CSS framework for rapid UI development.
-- ![GSAP](https://img.shields.io/badge/GSAP-88CE02?style=flat&logo=greensock&logoColor=white)  
-  A JavaScript library for creating high-performance animations.
-- ![Framer Motion](https://img.shields.io/badge/Framer_Motion-0055FF?style=flat&logo=framer&logoColor=white)  
-  A production-ready motion library for React.
-- ![Radix UI](https://img.shields.io/badge/Radix%20UI-252526?style=flat&logo=radix-ui&logoColor=white)  
-  A set of accessible React components.
-- ![Tabler Icons](https://img.shields.io/badge/Tabler_Icons-007ACC?style=flat&logo=tabler&logoColor=white)  
-  A set of free and open-source icons.
+![Next.js](https://img.shields.io/badge/Next.js-000000?style=flat&logo=next.js&logoColor=white)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=flat&logo=tailwind-css&logoColor=white)
+![GSAP](https://img.shields.io/badge/GSAP-88CE02?style=flat&logo=greensock&logoColor=white)
+![Framer Motion](https://img.shields.io/badge/Framer_Motion-0055FF?style=flat&logo=framer&logoColor=white)
+![Radix UI](https://img.shields.io/badge/Radix%20UI-252526?style=flat&logo=radix-ui&logoColor=white)
+![Tabler Icons](https://img.shields.io/badge/Tabler_Icons-007ACC?style=flat&logo=tabler&logoColor=white)
 
 ## 🌐 Live Preview
 
