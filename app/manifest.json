@@ -1,0 +1,9 @@
+{
+  "name": "Chớp Kỳ Hòa",
+  "short_name": "Chớp Kỳ Hòa",
+  "description": "Huấn Luyện Viên Pickleball Cá Nhân",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#08BD80",
+  "theme_color": "#08BD80"
+}

@@ -30,6 +30,9 @@ const config = {
         secondary: {
           DEFAULT: '#E17A61'
         },
+        tertiary: {
+          DEFAULT: '#08BD80'
+        },
         accent: {
           DEFAULT: '#D7FF01'
         },

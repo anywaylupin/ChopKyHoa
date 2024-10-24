@@ -110,10 +110,10 @@ const generateEmailHTML = (values: FormSchema): string => {
                   padding: 24px;
                   border-radius: 8px;
                   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-                  border-top: 4px solid #2ecc71;
+                  border-top: 4px solid #08BD80;
               }
               .email-header {
-                  color: #2ecc71;
+                  color: #08BD80;
                   font-size: 32px;
                   margin-bottom: 16px;
                   text-align: center;
@@ -129,12 +129,12 @@ const generateEmailHTML = (values: FormSchema): string => {
                   border-radius: 8px;
                   margin-bottom: 12px;
                   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-                  border-left: 4px solid #2ecc71;
+                  border-left: 4px solid #08BD80;
               }
               .info-card h4 {
                   margin: 0 0 4px;
                   font-size: 20px;
-                  color: #2ecc71;
+                  color: #08BD80;
               }
               .info-card p {
                   margin: 0;

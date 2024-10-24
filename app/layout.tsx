@@ -7,12 +7,15 @@ import { montserrat } from '@/lib/fonts';
 import { cn } from '@/lib/utils';
 import locales from '@/locales/vn.json';
 
-const title = locales.name;
 const description = locales.pages.hero.heading;
+const title = `${locales.name} | ${description}`;
 
 export const metadata: Metadata = {
   title,
-  description
+  description,
+  openGraph: { type: 'website', title, description },
+  twitter: { card: 'summary_large_image', title, description },
+  metadataBase: new URL('https://chopkyhoa.vercel.app/')
 };
 
 const RootLayout = ({ children }: Readonly<React.PropsWithChildren>) => (

@@ -20,23 +20,24 @@ export const InfiniteScrollText = ({
 
   useEffect(() => {
     if (!ref.current || !scrollerRef.current) return;
+    const container = ref.current;
     const scrollerContent = Array.from(scrollerRef.current.children);
     scrollerContent.forEach((item) => scrollerRef.current?.appendChild(item.cloneNode(true)));
 
-    ref.current.style.setProperty('--animation-direction', direction);
+    container.style.setProperty('--animation-direction', direction);
 
     switch (speed) {
       case 'fast':
-        ref.current.style.setProperty('--animation-duration', '20s');
+        container.style.setProperty('--animation-duration', '20s');
         break;
       case 'normal':
-        ref.current.style.setProperty('--animation-duration', '40s');
+        container.style.setProperty('--animation-duration', '40s');
         break;
       case 'slow':
-        ref.current.style.setProperty('--animation-duration', '80s');
+        container.style.setProperty('--animation-duration', '80s');
         break;
       default:
-        ref.current.style.setProperty('--animation-duration', `${speed}s`);
+        container.style.setProperty('--animation-duration', `${speed}s`);
         break;
     }
 

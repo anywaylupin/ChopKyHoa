@@ -27,6 +27,7 @@ const About = () => {
           >
             {heading}
           </h2>
+
           <div
             className={cn(
               'text-center text-xl leading-relaxed -tracking-tighter',
@@ -51,13 +52,13 @@ const About = () => {
         </div>
 
         <div className="relative flex min-h-[200px] max-w-[1037px] items-center justify-center overflow-hidden rounded-2xl">
-          <Image className="absolute h-max min-w-full" src="/images/about.jpg" fill sizes="" alt="About" />
+          <Image className="absolute h-max min-w-full" src="/images/about.jpg" fill sizes="1037px" alt="About" />
         </div>
       </div>
 
       <aside className={cn('hidden h-full flex-col items-end gap-8', 'xl:flex xl:max-w-[500px]', '2xl:max-w-[584px]')}>
         <div className="relative size-max max-w-full overflow-hidden rounded-2xl">
-          <Image src="/images/about-aside.jpg" fill sizes="" alt="Aside" />
+          <Image src="/images/about-aside.jpg" fill sizes="500px" alt="Aside" />
         </div>
 
         <div className="w-full">
