@@ -154,10 +154,10 @@ const generateEmailHTML = (values: FormSchema): string => {
       </head>
       <body>
           <div class="email-container">
-              <h2 class="email-header">Đăng Ký Buổi Học Pickleball 🎾</h2>
+              <h2 class="email-header">Đăng Ký Buổi Học 🎾</h2>
               <div class="email-body">
                   <p>Xin chào,</p>
-                  <p>Bạn vừa nhận được một đăng ký buổi học pickleball mới. Dưới đây là thông tin chi tiết của học viên:</p>
+                  <p>Bạn vừa nhận được một đăng ký buổi học mới. Dưới đây là thông tin chi tiết của học viên:</p>
                   ${Object.entries(values)
                     .map(
                       ([key, value]) => `
@@ -181,7 +181,7 @@ const generateEmailHTML = (values: FormSchema): string => {
 const generateTelegramMessage = (values: FormSchema): string => {
   const escapeMarkdownV2 = (text: string): string => text.replace(/([_*[\]()~`>#+\-=|{}.!\\])/g, '\\$1');
 
-  let message = `${escapeMarkdownV2('Bạn vừa nhận được một đăng ký buổi học tennis mới. Dưới đây là thông tin chi tiết của học viên:')}\n\n`;
+  let message = `${escapeMarkdownV2('Bạn vừa nhận được một đăng ký buổi học mới. Dưới đây là thông tin chi tiết của học viên:')}\n\n`;
 
   message += Object.entries(values)
     .map(([key, value]) => {
