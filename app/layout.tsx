@@ -7,8 +7,8 @@ import { montserrat } from '@/lib/fonts';
 import { cn } from '@/lib/utils';
 import locales from '@/locales/vn.json';
 
-const description = locales.pages.hero.heading;
-const title = `${locales.name} | ${description}`;
+const title = `${locales.name} | ${locales.pages.hero.heading}`;
+const description = locales.pages.hero.subheading;
 
 export const metadata: Metadata = {
   title,
