@@ -2,8 +2,6 @@ import { OAuth2Client } from 'google-auth-library';
 import { NextRequest, NextResponse } from 'next/server';
 import { createTransport } from 'nodemailer';
 
-import { EmailDto, generateEmailHTML, generateSubject } from './html';
-
 const { ADMIN_EMAIL_ADDRESS, RECEIVER_EMAIL_ADDRESS, OAUTH2_CLIENT_ID, OAUTH2_CLIENT_SECRET, OAUTH2_REFRESH_TOKEN } =
   process.env;
 
@@ -12,7 +10,7 @@ oauth2Client.setCredentials({ refresh_token: OAUTH2_REFRESH_TOKEN });
 
 export const POST = async (request: NextRequest) => {
   try {
-    const values: EmailDto = await request.json();
+    const req = await request.json();
 
     const { token } = await oauth2Client.getAccessToken();
 
@@ -34,16 +32,11 @@ export const POST = async (request: NextRequest) => {
       return NextResponse.json({ message: 'Missing email credentials' }, { status: 500 });
     }
 
-    await transporter.sendMail({
-      from: ADMIN_EMAIL_ADDRESS,
-      to: RECEIVER_EMAIL_ADDRESS,
-      subject: generateSubject(values.fullName),
-      html: generateEmailHTML(values)
-    });
+    await transporter.sendMail({ from: ADMIN_EMAIL_ADDRESS, to: RECEIVER_EMAIL_ADDRESS, ...req });
 
     return NextResponse.json({ message: 'Success: email was sent' });
   } catch (error) {
-    console.error('Error sending email:', error);
-    return NextResponse.json({ message: 'Failed to send email' }, { status: 500 });
+    console.error(error);
+    return NextResponse.json({ message: 'Failed to send email', error }, { status: 500 });
   }
 };

@@ -41,9 +41,9 @@ const formSchema = z.object(
   }, {})
 );
 
-type SignupFormValues = z.infer<typeof formSchema>;
+export type FormSchema = z.infer<typeof formSchema>;
 
-const FormFieldComponent = ({ field, control }: { field: FormField; control: Control<SignupFormValues> }) => (
+const FormFieldComponent = ({ field, control }: { field: FormField; control: Control<FormSchema> }) => (
   <FormField
     control={control}
     name={field.name}
@@ -67,10 +67,10 @@ const FormFieldComponent = ({ field, control }: { field: FormField; control: Con
   />
 );
 
-export const FormContainer = ({ setSubmitted }: { setSubmitted: DispatchState }) => {
+export const FormContainer = ({ onSubmit }: { onSubmit: (values: FormSchema) => Promise<void> | void }) => {
   const [isLoading, setIsLoading] = useState(false);
 
-  const form = useForm<SignupFormValues>({
+  const form = useForm<FormSchema>({
     resolver: zodResolver(formSchema),
     defaultValues: formLocalization.fields.reduce<Record<string, string>>((defaults, field) => {
       defaults[field.name] = '';
@@ -78,24 +78,14 @@ export const FormContainer = ({ setSubmitted }: { setSubmitted: DispatchState })
     }, {})
   });
 
-  const onSubmit = async (values: SignupFormValues) => {
+  const handleSubmit = async (values: FormSchema) => {
     try {
       setIsLoading(true);
 
-      const response = await fetch('/api/contact', {
-        method: 'POST',
-        body: JSON.stringify(values)
-      });
-
-      if (!response.ok) {
-        throw new Error(`response status: ${response.status}`);
-      }
-
-      setSubmitted(true);
-      setIsLoading(false);
+      await onSubmit(values);
     } catch (error) {
       console.error(error);
-      setSubmitted(true);
+    } finally {
       setIsLoading(false);
     }
   };
@@ -113,7 +103,10 @@ export const FormContainer = ({ setSubmitted }: { setSubmitted: DispatchState })
       >
         <h3 className="text-xl font-bold text-neutral-800 dark:text-neutral-200">{formLocalization.heading}</h3>
         <Form {...form}>
-          <form className="flex size-full max-h-full flex-col justify-between" onSubmit={form.handleSubmit(onSubmit)}>
+          <form
+            className="flex size-full max-h-full flex-col justify-between"
+            onSubmit={form.handleSubmit(handleSubmit)}
+          >
             {formLocalization.fields.map((field) => (
               <FormFieldComponent key={field.name} field={field} control={form.control} />
             ))}
