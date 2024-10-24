@@ -14,7 +14,7 @@ const Benefits = () => {
         'panel h-max w-screen translate-x-0 flex-col items-center gap-8 bg-secondary px-6 pb-6 pt-32',
         'sm:px-8 sm:pb-8',
         'md:px-16 md:pb-16',
-        'xl:h-screen xl:max-h-screen xl:min-h-full xl:flex-row xl:items-stretch'
+        'xl:h-screen xl:max-h-screen xl:min-h-full xl:flex-row xl:items-stretch xl:gap-4'
       )}
     >
       <div
@@ -69,10 +69,9 @@ const Benefits = () => {
             >
               <h5
                 className={cn(
-                  'text-xl font-semibold capitalize leading-10 tracking-tighter text-dark',
+                  'w-full text-center text-xl font-semibold capitalize leading-10 tracking-tighter text-dark',
                   'md:text-2xl',
-                  'xl:text-3xl',
-                  '2xl:text-4xl'
+                  'xl:text-3xl'
                 )}
               >
                 {title}

@@ -19,6 +19,7 @@
     "@radix-ui/react-slot": "1",
     "@radix-ui/react-tooltip": "1",
     "@tabler/icons-react": "3",
+    "@vercel/analytics": "^1.3.1",
     "class-variance-authority": "0",
     "clsx": "2",
     "framer-motion": "11",

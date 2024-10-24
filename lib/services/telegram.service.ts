@@ -3,9 +3,9 @@ export interface TelegramMessageDto {
   body: Record<string, unknown>;
 }
 
-export const sendTelegramMessage = async <T extends TelegramMessageDto['body']>(payload: T) => {
+export const sendTelegramMessage = async (text: string) => {
   try {
-    const body: TelegramMessageDto = { method: 'sendMessage', body: payload };
+    const body: TelegramMessageDto = { method: 'sendMessage', body: { parse_mode: 'MarkdownV2', text } };
 
     const res = await fetch('/api/bot', { method: 'POST', body: JSON.stringify(body) });
 

@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from 'react';
 
 import { Sidenav, Title } from '@/components/common';
 import { useHorizontalScroll } from '@/hooks';
+import { sendTelegramMessage } from '@/lib/services';
 import { cn } from '@/lib/utils';
 
 import { usePageSection } from './components';
@@ -19,7 +20,17 @@ const Home = () => {
   const { sections } = usePageSection();
 
   useEffect(() => {
-    setTimeout(() => setIsLoading(false), 500);
+    const sendMessage = async () => {
+      try {
+        await sendTelegramMessage('Một người dùng vừa truy cập vào website hồ sơ huấn luyện viên pickleball của bạn.');
+      } catch (error) {
+        console.error('Failed to send Telegram message: ', error);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    sendMessage();
   }, []);
 
   return (

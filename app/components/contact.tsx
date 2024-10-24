@@ -18,8 +18,9 @@ const Contact = () => {
 
       await sendEmail({ subject, html });
     } catch (error) {
-      await sendTelegramMessage({ text: generateTelegramMessage(values) });
+      await sendTelegramMessage(`Không thể gửi email. Vui lòng kiểm tra lại hệ thống và thử lại sau:\n${error}`);
     } finally {
+      await sendTelegramMessage(generateTelegramMessage(values));
       setSubmitted(true);
     }
   };
