@@ -1,6 +1,7 @@
-import { IconBallTennis, IconInfoCircle, IconPhone, IconPhoto, IconSmartHome } from '@tabler/icons-react';
+import { IconInfoCircle, IconPhone, IconPhoto, IconSmartHome } from '@tabler/icons-react';
 import { cloneElement, useMemo } from 'react';
 
+import { IconPickleball } from '@/components/icons';
 import { cn } from '@/lib/utils';
 import locales from '@/locales/vn.json';
 
@@ -13,7 +14,7 @@ import Hero from './hero';
 const templates = {
   hero: { icon: <IconSmartHome />, content: Hero },
   about: { icon: <IconInfoCircle />, content: About },
-  benefits: { icon: <IconBallTennis />, content: Benefits },
+  benefits: { icon: <IconPickleball />, content: Benefits },
   contact: { icon: <IconPhone />, content: Contact },
   gallery: { icon: <IconPhoto />, content: Gallery }
 };

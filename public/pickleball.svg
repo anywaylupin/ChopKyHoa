@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" id="indoor-pickleball-ball">
+    <g>
+        <circle cx="256" cy="256" r="240" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round"
+            stroke-width="32"></circle>
+        <circle cx="354.052" cy="157.948" r="37.333" fill="none" stroke="#000" stroke-linecap="round"
+            stroke-linejoin="round" stroke-width="32" transform="rotate(-45 354.052 157.949)"></circle>
+        <circle cx="157.948" cy="157.948" r="37.333" fill="none" stroke="#000" stroke-linecap="round"
+            stroke-linejoin="round" stroke-width="32" transform="rotate(-76.717 157.949 157.948)"></circle>
+        <circle cx="157.948" cy="354.052" r="37.333" fill="none" stroke="#000" stroke-linecap="round"
+            stroke-linejoin="round" stroke-width="32" transform="rotate(-45 157.947 354.052)"></circle>
+        <circle cx="354.052" cy="354.052" r="37.333" fill="none" stroke="#000" stroke-linecap="round"
+            stroke-linejoin="round" stroke-width="32" transform="rotate(-45 354.052 354.052)"></circle>
+        <circle cx="256" cy="256" r="37.333" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round"
+            stroke-width="32"></circle>
+    </g>
+</svg>

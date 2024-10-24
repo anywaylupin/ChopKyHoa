@@ -153,10 +153,10 @@ const generateEmailHTML = (values: FormSchema): string => {
       </head>
       <body>
           <div class="email-container">
-              <h2 class="email-header">Đăng Ký Buổi Học Tennis 🎾</h2>
+              <h2 class="email-header">Đăng Ký Buổi Học Pickleball 🎾</h2>
               <div class="email-body">
                   <p>Xin chào,</p>
-                  <p>Bạn vừa nhận được một đăng ký buổi học tennis mới. Dưới đây là thông tin chi tiết của học viên:</p>
+                  <p>Bạn vừa nhận được một đăng ký buổi học pickleball mới. Dưới đây là thông tin chi tiết của học viên:</p>
                   ${Object.entries(values)
                     .map(
                       ([key, value]) => `
