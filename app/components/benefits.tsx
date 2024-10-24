@@ -37,8 +37,8 @@ const Benefits = () => {
       <div
         className={cn(
           'order-1 flex w-full flex-col items-center justify-between gap-8',
-          'xl:h-full xl:gap-8',
-          '2xl:gap-16'
+          'xl:h-full xl:gap-0',
+          '2xl:gap-4'
         )}
       >
         <h2
@@ -54,7 +54,7 @@ const Benefits = () => {
 
         <div
           className={cn(
-            'relative flex size-full flex-col gap-8',
+            'relative flex max-h-full w-full flex-1 flex-col gap-8',
             'md:w-1/2 md:min-w-max',
             'xl:grid xl:w-full xl:min-w-full xl:grid-cols-3 xl:gap-4'
           )}
@@ -63,12 +63,17 @@ const Benefits = () => {
             <div
               key={key}
               className={cn(
-                'inline-flex flex-col items-start justify-between gap-6 rounded-2xl bg-light p-6',
+                'inline-flex max-h-full flex-col items-start justify-between gap-6 rounded-2xl bg-light p-6',
                 'md:gap-8 md:p-8'
               )}
             >
               <h5
-                className={cn('text-xl font-semibold capitalize leading-10 tracking-tighter text-dark', 'md:text-4xl')}
+                className={cn(
+                  'text-xl font-semibold capitalize leading-10 tracking-tighter text-dark',
+                  'md:text-2xl',
+                  'xl:text-3xl',
+                  '2xl:text-4xl'
+                )}
               >
                 {title}
               </h5>
@@ -78,14 +83,15 @@ const Benefits = () => {
                   <li
                     key={`${key}-${i}`}
                     className={cn('flex w-full items-center gap-4', {
-                      'border-b border-b-silver pb-3 md:pb-6': i < list.length - 1
+                      'border-b border-b-silver pb-3 2xl:pb-4': i < list.length - 1
                     })}
                   >
                     <IconCheck fill="#D7FF01"></IconCheck>
                     <Tooltip
                       className={cn(
                         'line-clamp-2 w-full text-start text-sm leading-tight tracking-tight text-dark',
-                        'md:text-xl'
+                        'md:text-lg',
+                        '2xl:text-xl'
                       )}
                       label={description}
                     >

@@ -21,7 +21,7 @@ import {
 import { cn } from '@/lib/utils';
 import locales from '@/locales/vn.json';
 
-import { SelectField } from './select-field';
+import { SelectField } from '../../components/common/select-field';
 
 const formLocalization = locales.pages.contact.form;
 

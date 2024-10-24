@@ -1,9 +1,10 @@
 import { useState } from 'react';
 
-import { FormContainer, FormSchema, FormSuccess } from '@/components/common';
 import { sendEmail, sendTelegramMessage } from '@/lib/services';
 import { capitalize, cn } from '@/lib/utils';
 import locales from '@/locales/vn.json';
+
+import { FormContainer, FormSchema, FormSuccess } from '../layouts/signup-form';
 
 const Contact = () => {
   const { id, heading, description } = locales.pages.contact;
