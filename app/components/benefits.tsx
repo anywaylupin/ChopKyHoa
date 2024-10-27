@@ -88,8 +88,8 @@ const Benefits = () => {
                     <IconCheck fill="#D7FF01"></IconCheck>
                     <Tooltip
                       className={cn(
-                        'line-clamp-2 w-full text-start text-sm leading-tight tracking-tight text-dark',
-                        'md:text-lg',
+                        'w-full text-start text-sm leading-tight tracking-tight text-dark',
+                        'md:line-clamp-2 md:text-lg',
                         '2xl:text-xl'
                       )}
                       label={description}

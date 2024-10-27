@@ -21,8 +21,6 @@ import {
 import { cn } from '@/lib/utils';
 import locales from '@/locales/vn.json';
 
-import { SelectField } from '../../components/common/select-field';
-
 const formLocalization = locales.pages.contact.form;
 
 type FormField = (typeof formLocalization.fields)[number];
@@ -56,9 +54,9 @@ const FormFieldComponent = ({ field, control }: { field: FormField; control: Con
         <FormControl>
           <>
             {field.type === 'text' && <Input {...formField} placeholder={field.placeholder} />}
-            {field.type === 'select' && field.options && (
+            {/* {field.type === 'select' && field.options && (
               <SelectField options={field.options} placeholder={field.placeholder} field={formField} />
-            )}
+            )} */}
             {field.type === 'textarea' && <Textarea {...formField} placeholder={field.placeholder} />}
           </>
         </FormControl>
@@ -95,16 +93,18 @@ export const FormContainer = ({ onSubmit }: { onSubmit: (values: FormSchema) => 
   ) : (
     <div className="relative flex size-full">
       <motion.div
-        className="relative flex size-full flex-col gap-8"
+        className={cn('relative flex size-full flex-col gap-4', 'lg:gap-8')}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
         transition={{ duration: 0.3, ease: 'easeInOut' }}
       >
-        <h3 className="text-xl font-bold text-neutral-800 dark:text-neutral-200">{formLocalization.heading}</h3>
+        <h3 className={cn('text-base font-bold text-neutral-800 dark:text-neutral-200', 'lg:text-2xl')}>
+          {formLocalization.heading}
+        </h3>
         <Form {...form}>
           <form
-            className="flex size-full max-h-full flex-col justify-between"
+            className={cn('flex size-full max-h-full flex-col justify-between gap-4', 'sm:gap-8', 'xl:gap-0')}
             onSubmit={form.handleSubmit(handleSubmit)}
           >
             {formLocalization.fields.map((field) => (
