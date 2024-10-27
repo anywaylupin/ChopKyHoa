@@ -186,7 +186,7 @@ const generateTelegramMessage = (values: FormSchema): string => {
   message += Object.entries(values)
     .map(([key, value]) => {
       const label = capitalize(getLabelFromKey(key));
-      const formattedValue = value ? capitalize(value) : 'Không có';
+      const formattedValue = value ?? 'Không có';
       return `*${escapeMarkdownV2(label)}*: ${escapeMarkdownV2(formattedValue)}`;
     })
     .join('\n');
