@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   description,
   openGraph: { type: 'website', title, description },
   twitter: { card: 'summary_large_image', title, description },
-  metadataBase: new URL('https://chopkyhoa.vercel.app/')
+  metadataBase: new URL('https://thaivanthuc.vercel.app/')
 };
 
 const RootLayout = ({ children }: Readonly<React.PropsWithChildren>) => (

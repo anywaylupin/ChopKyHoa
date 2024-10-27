@@ -5,14 +5,14 @@ import locales from '@/locales/vn.json';
 
 const Hero = () => {
   const name = locales.name;
-  const { id, heading, subheading } = locales.pages.hero;
+  const { id, heading, subheading, video } = locales.pages.hero;
 
   return (
     <section id={id} className={cn('panel h-full max-h-screen min-h-full w-screen flex-col', 'lg:h-screen')}>
       <div className={cn('relative flex size-full flex-col bg-dark bg-opacity-20 text-light', 'xl:flex-row')}>
         <div
           className={cn(
-            'small-caps absolute flex size-full w-full flex-col items-center justify-end gap-10 bg-dark bg-opacity-40 py-20 text-center uppercase',
+            'small-caps absolute z-10 flex size-full w-full flex-col items-center justify-end gap-10 bg-dark bg-opacity-40 py-20 text-center uppercase',
             'sm:min-w-96 sm:justify-center sm:py-16',
             'xl:relative xl:w-1/2 xl:justify-end xl:gap-16 xl:bg-opacity-100 xl:pl-16 xl:text-start'
           )}
@@ -41,9 +41,16 @@ const Hero = () => {
             {subheading}
           </h2>
         </div>
-        <div
-          className={cn('size-full bg-hero bg-cover bg-[position:36%_0%] bg-no-repeat', 'md:bg-center', 'xl:w-1/2')}
-        ></div>
+        <div className={cn('order-2 flex size-full items-center justify-center', 'xl:w-1/2')}>
+          <video
+            className={cn('absolute size-full min-h-full object-cover')}
+            src={video}
+            autoPlay
+            muted
+            loop
+            playsInline
+          ></video>
+        </div>
       </div>
 
       <InfiniteScrollText

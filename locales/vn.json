@@ -1,11 +1,12 @@
 {
-  "name": "Chớp Kỳ Hòa",
+  "name": "Thái Văn Thực",
   "pages": {
     "hero": {
       "id": "hero",
       "label": "Trang chính",
       "heading": "Huấn Luyện Viên Pickleball Cá Nhân",
-      "subheading": "Hãy để đam mê tỏa sáng trên sân"
+      "subheading": "Hãy để đam mê tỏa sáng trên sân",
+      "video": "videos/hero.mp4"
     },
     "about": {
       "id": "about",
@@ -61,7 +62,7 @@
       ],
       "contactDetails": [
         { "key": "phone", "value": "(+84) 090-298-9993", "href": "tel:+84902989993" },
-        { "key": "email", "value": "chopkyhoa@gmail.com", "href": "mailto:chopkyhoa@gmail.com" }
+        { "key": "email", "value": "thaivanthuc9993@gmail.com", "href": "mailto:thaivanthuc9993@gmail.com" }
       ],
       "addressDetails": [
         { "key": "venue", "value": "Sân Học Viện" },
@@ -105,7 +106,7 @@
             "name": "email",
             "type": "text",
             "label": "Địa chỉ Email",
-            "placeholder": "chopkyhoa@gmail.com",
+            "placeholder": "thaivanthuc9993@gmail.com",
             "required": false
           },
           {

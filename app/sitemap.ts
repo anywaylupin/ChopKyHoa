@@ -2,7 +2,7 @@ import type { MetadataRoute } from 'next';
 
 const sitemap = (): MetadataRoute.Sitemap => [
   {
-    url: 'https://chopkyhoa.vercel.app',
+    url: 'https://thaivanthuc.vercel.app',
     lastModified: new Date(),
     changeFrequency: 'monthly',
     priority: 1

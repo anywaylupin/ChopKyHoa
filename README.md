@@ -33,7 +33,7 @@ Utilize the power of **Nodemailer** in combination with **Google's OAuth2** to s
 ## 🌐 Live Preview
 
 Check out the live site here:  
-👉 **[Chop Ky Hoa - Live on Vercel](https://chopkyhoa.vercel.app/)**
+👉 **[Chop Ky Hoa - Live on Vercel](https://thaivanthuc.vercel.app/)**
 
 ## 💬 Support
 
