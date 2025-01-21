@@ -1,6 +1,5 @@
 import './globals.css';
 
-import { Analytics } from '@vercel/analytics/react';
 import type { Metadata } from 'next';
 
 import { montserrat } from '@/lib/fonts';
@@ -27,7 +26,6 @@ const RootLayout = ({ children }: Readonly<React.PropsWithChildren>) => (
       )}
     >
       {children}
-      <Analytics />
     </body>
   </html>
 );
