@@ -1,5 +1,6 @@
 {
   "name": "Thái Văn Thực",
+  "domain": "https://thaivanthuc.vercel.app/",
   "pages": {
     "hero": {
       "id": "hero",

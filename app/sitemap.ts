@@ -1,8 +1,10 @@
 import type { MetadataRoute } from 'next';
 
+import locales from '@/locales/vn.json';
+
 const sitemap = (): MetadataRoute.Sitemap => [
   {
-    url: 'https://thaivanthuc.vercel.app',
+    url: locales.domain,
     lastModified: new Date(),
     changeFrequency: 'monthly',
     priority: 1
