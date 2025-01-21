@@ -1,5 +1,7 @@
 # 🎾 Chop Ky Hoa - Pickleball Coach Portfolio
 
+![Home Page](./app/opengraph-image.png)
+
 Welcome to **Chop Ky Hoa**, an animated and interactive pickleball coach portfolio designed to showcase coaching skills, programs, and client success in a fun and dynamic way. Enjoy smooth horizontal scrolling and playful animations that make exploring this portfolio a breeze!
 
 ## 🚀 Features
