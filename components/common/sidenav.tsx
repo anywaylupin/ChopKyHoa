@@ -11,7 +11,7 @@ import locales from '@/locales/vn.json';
 type SidenavProps = PropsWithClass<{
   open: boolean;
   setOpen: React.Dispatch<React.SetStateAction<boolean>>;
-  tweenRef: React.MutableRefObject<gsap.core.Tween | undefined>;
+  tweenRef: React.RefObject<gsap.core.Tween | null>;
 }>;
 
 export const Sidenav = ({ open, setOpen, tweenRef }: SidenavProps) => {

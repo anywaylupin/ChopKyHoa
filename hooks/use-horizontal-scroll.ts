@@ -5,11 +5,11 @@ import ScrollTrigger from 'gsap/ScrollTrigger';
 import gsap from 'gsap';
 
 export const useHorizontalScroll = <T extends Parameters<typeof gsap.utils.toArray>[0]>(
-  ref: RefObject<HTMLElement>,
+  ref: RefObject<HTMLElement | null>,
   selector: T,
   minWidth?: number
 ) => {
-  const tweenRef = useRef<gsap.core.Tween>();
+  const tweenRef = useRef<gsap.core.Tween>(null);
 
   const createScrollTween = useCallback(() => {
     ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
