@@ -2,7 +2,7 @@
 
 import * as SelectPrimitive from '@radix-ui/react-select';
 import { Check, ChevronDown, ChevronUp } from 'lucide-react';
-import { ComponentPropsWithoutRef, ElementRef, forwardRef } from 'react';
+import { ComponentPropsWithoutRef, ComponentRef, forwardRef } from 'react';
 
 import { cn } from '@/lib/utils';
 
@@ -13,7 +13,7 @@ export const SelectGroup = SelectPrimitive.Group;
 export const SelectValue = SelectPrimitive.Value;
 
 export const SelectTrigger = forwardRef<
-  ElementRef<typeof SelectPrimitive.Trigger>,
+  ComponentRef<typeof SelectPrimitive.Trigger>,
   ComponentPropsWithoutRef<typeof SelectPrimitive.Trigger>
 >(({ className, children, ...props }, ref) => (
   <SelectPrimitive.Trigger
@@ -33,7 +33,7 @@ export const SelectTrigger = forwardRef<
 SelectTrigger.displayName = SelectPrimitive.Trigger.displayName;
 
 export const SelectScrollUpButton = forwardRef<
-  ElementRef<typeof SelectPrimitive.ScrollUpButton>,
+  ComponentRef<typeof SelectPrimitive.ScrollUpButton>,
   ComponentPropsWithoutRef<typeof SelectPrimitive.ScrollUpButton>
 >(({ className, ...props }, ref) => (
   <SelectPrimitive.ScrollUpButton
@@ -47,7 +47,7 @@ export const SelectScrollUpButton = forwardRef<
 SelectScrollUpButton.displayName = SelectPrimitive.ScrollUpButton.displayName;
 
 export const SelectScrollDownButton = forwardRef<
-  ElementRef<typeof SelectPrimitive.ScrollDownButton>,
+  ComponentRef<typeof SelectPrimitive.ScrollDownButton>,
   ComponentPropsWithoutRef<typeof SelectPrimitive.ScrollDownButton>
 >(({ className, ...props }, ref) => (
   <SelectPrimitive.ScrollDownButton
@@ -61,7 +61,7 @@ export const SelectScrollDownButton = forwardRef<
 SelectScrollDownButton.displayName = SelectPrimitive.ScrollDownButton.displayName;
 
 export const SelectContent = forwardRef<
-  ElementRef<typeof SelectPrimitive.Content>,
+  ComponentRef<typeof SelectPrimitive.Content>,
   ComponentPropsWithoutRef<typeof SelectPrimitive.Content>
 >(({ className, children, position = 'popper', ...props }, ref) => (
   <SelectPrimitive.Portal>
@@ -93,7 +93,7 @@ export const SelectContent = forwardRef<
 SelectContent.displayName = SelectPrimitive.Content.displayName;
 
 export const SelectLabel = forwardRef<
-  ElementRef<typeof SelectPrimitive.Label>,
+  ComponentRef<typeof SelectPrimitive.Label>,
   ComponentPropsWithoutRef<typeof SelectPrimitive.Label>
 >(({ className, ...props }, ref) => (
   <SelectPrimitive.Label ref={ref} className={cn('py-1.5 pl-8 pr-2 text-sm font-semibold', className)} {...props} />
@@ -101,7 +101,7 @@ export const SelectLabel = forwardRef<
 SelectLabel.displayName = SelectPrimitive.Label.displayName;
 
 export const SelectItem = forwardRef<
-  ElementRef<typeof SelectPrimitive.Item>,
+  ComponentRef<typeof SelectPrimitive.Item>,
   ComponentPropsWithoutRef<typeof SelectPrimitive.Item>
 >(({ className, children, ...props }, ref) => (
   <SelectPrimitive.Item
@@ -124,7 +124,7 @@ export const SelectItem = forwardRef<
 SelectItem.displayName = SelectPrimitive.Item.displayName;
 
 export const SelectSeparator = forwardRef<
-  ElementRef<typeof SelectPrimitive.Separator>,
+  ComponentRef<typeof SelectPrimitive.Separator>,
   ComponentPropsWithoutRef<typeof SelectPrimitive.Separator>
 >(({ className, ...props }, ref) => (
   <SelectPrimitive.Separator
