@@ -1,14 +1,6 @@
 import type { Config } from 'tailwindcss';
 import flattenColorPalette from 'tailwindcss/lib/util/flattenColorPalette';
-import plugin from 'tailwindcss/plugin';
 import TailwindCssAnimate from 'tailwindcss-animate';
-
-export const AddVariablesForColors = ({ addBase, theme }: any) => {
-  const allColors = flattenColorPalette(theme('colors'));
-  const newVars = Object.fromEntries(Object.entries(allColors).map(([key, val]) => [`--${key}`, val]));
-
-  addBase({ ':root': newVars });
-};
 
 const config = {
   darkMode: 'class',
@@ -69,79 +61,83 @@ const config = {
       }
     }
   },
-  plugins: [
-    () =>
-      plugin(({ addComponents }) => {
-        addComponents({
-          '.panel': {
-            position: 'relative',
-            display: 'flex'
-          },
-          '.no-visible-scrollbar': {
-            MsOverflowStyle: 'none',
-            WebkitOverflowScrolling: 'touch'
-          },
-          '.no-visible-scrollbar::-webkit-scrollbar': {
-            display: 'none'
-          },
-          '.animate-underline': {
-            display: 'block',
-            position: 'relative',
-            padding: '0.1em 0',
-            overflow: 'hidden'
-          },
-          '.animate-underline::after': {
-            content: '""',
-            position: 'absolute',
-            bottom: '0',
-            left: '0',
-            width: '100%',
-            height: '0.1em',
-            backgroundColor: '#000',
-            opacity: '1',
-            transform: 'translate3d(-100%, 0, 0)',
-            transition: 'opacity 300ms, transform 300ms'
-          },
-          '.animate-underline:hover::after': {
-            transform: 'translate3d(0, 0, 0)'
-          },
-          '.animate-underline:focus::after': {
-            transform: 'translate3d(0, 0, 0)'
-          },
-          '.tennis-ball': {
-            height: '90px',
-            width: '90px',
-            overflow: 'hidden',
-            transform: 'translateY(0)',
-            borderRadius: '50%'
-          },
-          '.tennis-ball::before': {
-            content: '""',
-            position: 'absolute',
-            display: 'block',
-            left: '65px',
-            height: '80px',
-            width: '80px',
-            border: 'solid 3px #fff',
-            borderRadius: '50%',
-            boxSizing: 'border-box'
-          },
-          '.tennis-ball::after': {
-            content: '""',
-            position: 'absolute',
-            display: 'block',
-            left: '-55px',
-            height: ' 80px',
-            width: '80px',
-            border: 'solid 3px #fff',
-            borderRadius: '50%',
-            boxSizing: 'border-box'
-          }
-        });
-      }),
-    AddVariablesForColors,
-    TailwindCssAnimate
-  ]
+  plugins: [AddCustomClass, AddVariablesForColors, TailwindCssAnimate]
 } satisfies Config;
+
+function AddVariablesForColors({ addBase, theme }: any) {
+  const allColors = flattenColorPalette(theme('colors'));
+  const newVars = Object.fromEntries(Object.entries(allColors).map(([key, val]) => [`--${key}`, val]));
+
+  addBase({ ':root': newVars });
+}
+
+function AddCustomClass({ addComponents }: any) {
+  addComponents({
+    '.panel': {
+      position: 'relative',
+      display: 'flex'
+    },
+    '.no-visible-scrollbar': {
+      MsOverflowStyle: 'none',
+      WebkitOverflowScrolling: 'touch'
+    },
+    '.no-visible-scrollbar::-webkit-scrollbar': {
+      display: 'none'
+    },
+    '.animate-underline': {
+      display: 'block',
+      position: 'relative',
+      padding: '0.1em 0',
+      overflow: 'hidden'
+    },
+    '.animate-underline::after': {
+      content: '""',
+      position: 'absolute',
+      bottom: '0',
+      left: '0',
+      width: '100%',
+      height: '0.1em',
+      backgroundColor: '#000',
+      opacity: '1',
+      transform: 'translate3d(-100%, 0, 0)',
+      transition: 'opacity 300ms, transform 300ms'
+    },
+    '.animate-underline:hover::after': {
+      transform: 'translate3d(0, 0, 0)'
+    },
+    '.animate-underline:focus::after': {
+      transform: 'translate3d(0, 0, 0)'
+    },
+    '.tennis-ball': {
+      height: '90px',
+      width: '90px',
+      overflow: 'hidden',
+      transform: 'translateY(0)',
+      borderRadius: '50%'
+    },
+    '.tennis-ball::before': {
+      content: '""',
+      position: 'absolute',
+      display: 'block',
+      left: '65px',
+      height: '80px',
+      width: '80px',
+      border: 'solid 3px #fff',
+      borderRadius: '50%',
+      boxSizing: 'border-box'
+    },
+    '.tennis-ball::after': {
+      content: '""',
+      position: 'absolute',
+      display: 'block',
+      left: '-55px',
+      height: ' 80px',
+      width: '80px',
+      border: 'solid 3px #fff',
+      borderRadius: '50%',
+      boxSizing: 'border-box'
+    }
+  });
+}
 
 export default config;
