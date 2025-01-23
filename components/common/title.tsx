@@ -1,7 +1,7 @@
-import { IconMenu2 } from '@tabler/icons-react';
 import Link from 'next/link';
 
 import { usePageSection } from '@/app/components';
+import { IconMenu2 } from '@/components/icons';
 import { cn } from '@/lib/utils';
 import locales from '@/locales/vn.json';
 

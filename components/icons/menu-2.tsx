@@ -1,4 +1,4 @@
-export const IconCheck = (props: React.ComponentProps<'svg'>) => (
+export const IconMenu2 = (props: React.ComponentProps<'svg'>) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="24"
@@ -11,6 +11,9 @@ export const IconCheck = (props: React.ComponentProps<'svg'>) => (
     strokeLinejoin="round"
     {...props}
   >
-    <path d="M20 6 9 17l-5-5" />
+    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+    <path d="M4 6l16 0" />
+    <path d="M4 12l16 0" />
+    <path d="M4 18l16 0" />
   </svg>
 );

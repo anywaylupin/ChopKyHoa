@@ -1,12 +1,12 @@
 'use client';
 
 import { zodResolver } from '@hookform/resolvers/zod';
-import { IconCircleCheckFilled } from '@tabler/icons-react';
 import { motion } from 'framer-motion';
 import { useState } from 'react';
 import { Control, useForm } from 'react-hook-form';
 import { z } from 'zod';
 
+import { IconCircleCheckFilled } from '@/components/icons';
 import {
   Button,
   Form,
@@ -135,7 +135,7 @@ export const FormSuccess = () => (
       exit={{ scale: 0 }}
       transition={{ duration: 0.3, ease: 'backOut' }}
     >
-      <IconCircleCheckFilled size={160} color="var(--dark)" />
+      <IconCircleCheckFilled color="var(--dark)" />
     </motion.div>
     <motion.span
       className="text-center text-lg sm:text-2xl md:text-4xl"

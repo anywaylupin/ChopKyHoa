@@ -1,4 +1,4 @@
-export const IconCheck = (props: React.ComponentProps<'svg'>) => (
+export const IconChevronUp = (props: React.ComponentProps<'svg'>) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="24"
@@ -11,6 +11,6 @@ export const IconCheck = (props: React.ComponentProps<'svg'>) => (
     strokeLinejoin="round"
     {...props}
   >
-    <path d="M20 6 9 17l-5-5" />
+    <path d="m18 15-6-6-6 6" />
   </svg>
 );

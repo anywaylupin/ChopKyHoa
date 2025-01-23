@@ -1,10 +1,10 @@
 'use client';
 
-import { IconMenu2, IconX } from '@tabler/icons-react';
 import { AnimatePresence, motion } from 'framer-motion';
 import Link, { LinkProps } from 'next/link';
-import React, { createContext, useContext, useMemo, useState } from 'react';
+import { createContext, useContext, useMemo, useState } from 'react';
 
+import { IconMenu2, IconX } from '@/components/icons';
 import { cn } from '@/lib/utils';
 
 const SidebarContext = createContext<SidebarContextProps>({

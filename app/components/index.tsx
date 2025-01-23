@@ -1,7 +1,6 @@
-import { IconInfoCircle, IconPhone, IconPhoto, IconSmartHome } from '@tabler/icons-react';
 import { cloneElement, useMemo } from 'react';
 
-import { IconPickleball } from '@/components/icons';
+import { IconInfoCircle, IconPhone, IconPhoto, IconPickleball, IconSmartHome } from '@/components/icons';
 import { cn } from '@/lib/utils';
 import locales from '@/locales/vn.json';
 

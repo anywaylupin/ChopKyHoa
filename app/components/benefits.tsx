@@ -1,4 +1,4 @@
-import { IconCheck } from '@/components/icons';
+import { IconCircleCheck } from '@/components/icons';
 import { Tooltip } from '@/components/ui';
 import { cn } from '@/lib/utils';
 import locales from '@/locales/vn.json';
@@ -85,7 +85,7 @@ const Benefits = () => {
                       'border-b border-b-silver pb-3 2xl:pb-4': i < list.length - 1
                     })}
                   >
-                    <IconCheck fill="#D7FF01"></IconCheck>
+                    <IconCircleCheck fill="#D7FF01"></IconCircleCheck>
                     <Tooltip
                       className={cn(
                         'w-full text-start text-sm leading-tight tracking-tight text-dark',
