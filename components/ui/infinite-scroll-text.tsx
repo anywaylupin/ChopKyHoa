@@ -48,11 +48,10 @@ export const InfiniteScrollText = ({
     <div ref={ref} className={cn('relative w-full overflow-hidden', className)}>
       <ul
         ref={scrollerRef}
-        className={cn(
-          'flex w-max min-w-full flex-nowrap',
-          '[&>*]:min-w-[20%] [&>*]:text-center [&>*]:text-2xl [&>*]:font-extrabold',
-          { 'animate-scroll': start, 'hover:[animation-play-state:paused]': pauseOnHover }
-        )}
+        className={cn('flex w-max min-w-full flex-nowrap', '*:min-w-[20%] *:text-center *:text-2xl *:font-extrabold', {
+          'animate-scroll': start,
+          'hover:[animation-play-state:paused]': pauseOnHover
+        })}
       >
         {textList.map((txt, i) => (
           <li key={`${txt}-${i}`} className="relative max-w-full py-6">

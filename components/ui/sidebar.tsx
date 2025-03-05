@@ -58,7 +58,7 @@ export const DesktopSidebar = ({
   return (
     <motion.div
       className={cn(
-        'hidden h-full flex-shrink-0 justify-between overflow-hidden shadow-2xl',
+        'hidden h-full shrink-0 justify-between overflow-hidden shadow-2xl',
         'md:flex md:flex-col',
         className
       )}
@@ -76,8 +76,8 @@ export const MobileSidebar = ({ className, children, ...rest }: React.ComponentP
   const { open, setOpen } = useSidebar();
 
   return (
-    <div className={cn('absolute left-10 top-10', 'md:hidden')} {...rest}>
-      <button className={cn('fixed left-10 top-10 z-50 rounded-xl bg-dark p-2 text-white shadow-2xl', 'sm:top-8')}>
+    <div className={cn('absolute top-10 left-10', 'md:hidden')} {...rest}>
+      <button className={cn('bg-dark fixed top-10 left-10 z-50 rounded-xl p-2 text-white shadow-2xl', 'sm:top-8')}>
         <IconMenu2 className={cn('size-8', 'sm:size-12')} onClick={() => setOpen(!open)} />
       </button>
 
@@ -89,13 +89,13 @@ export const MobileSidebar = ({ className, children, ...rest }: React.ComponentP
             exit={{ x: '-100%', opacity: 0 }}
             transition={{ duration: 0.3, ease: 'easeInOut' }}
             className={cn(
-              'fixed inset-0 z-[100] flex h-full w-full flex-col justify-between bg-white p-10 dark:bg-neutral-900',
+              'fixed inset-0 z-100 flex h-full w-full flex-col justify-between bg-white p-10 dark:bg-neutral-900',
               className
             )}
           >
             <button
               className={cn(
-                'fixed left-10 top-10 z-50 rounded-xl p-2 text-dark shadow-2xl transition hover:bg-silver',
+                'text-dark hover:bg-silver fixed top-10 left-10 z-50 rounded-xl p-2 shadow-2xl transition',
                 'sm:top-8'
               )}
               onClick={() => setOpen(!open)}
@@ -124,7 +124,7 @@ export const SidebarLink = ({
 
       <motion.span
         animate={{ display: !animate || !open ? 'none' : 'inline-block', opacity: !animate || !open ? 0 : 1 }}
-        className="!m-0 inline-block whitespace-pre !p-0 transition duration-150 group-hover/sidebar:translate-x-2"
+        className="m-0! inline-block p-0! whitespace-pre transition duration-150 group-hover/sidebar:translate-x-2"
       >
         {label}
       </motion.span>

@@ -9,14 +9,15 @@ const Hero = () => {
 
   return (
     <section id={id} className={cn('panel h-full max-h-screen min-h-full w-screen flex-col', 'lg:h-screen')}>
-      <div className={cn('relative flex size-full flex-col bg-dark bg-opacity-20 text-light', 'xl:flex-row')}>
+      <div className={cn('bg-dark text-light relative flex size-full flex-col', 'xl:flex-row')}>
         <div
           className={cn(
-            'small-caps absolute z-10 flex size-full w-full flex-col items-center justify-end gap-10 bg-dark bg-opacity-40 py-20 text-center uppercase',
+            'small-caps absolute z-10 flex size-full w-full flex-col items-center justify-end gap-10 py-20 text-center uppercase',
             'sm:min-w-96 sm:justify-center sm:py-16',
-            'xl:relative xl:w-1/2 xl:justify-end xl:gap-16 xl:bg-opacity-100 xl:pl-16 xl:text-start'
+            'xl:relative xl:w-1/2 xl:justify-end xl:gap-16 xl:pl-16 xl:text-start'
           )}
         >
+          <div className="bg-dark absolute -z-1 size-full opacity-40"></div>
           <h1
             className={cn(
               montserratAlternates.className,
@@ -41,7 +42,7 @@ const Hero = () => {
             {subheading}
           </h2>
         </div>
-        <div className={cn('order-2 flex size-full items-center justify-center', 'xl:w-1/2')}>
+        <div className={cn('order-2 flex size-full items-center justify-center overflow-hidden', 'xl:w-1/2')}>
           <video
             className={cn('absolute size-full min-h-full object-cover')}
             src={video}
@@ -54,7 +55,7 @@ const Hero = () => {
       </div>
 
       <InfiniteScrollText
-        className={cn('bottom-0 z-20 hidden bg-accent', 'sm:block')}
+        className={cn('bg-accent bottom-0 z-20 hidden', 'sm:block')}
         text={name}
         direction="forwards"
         speed="fast"

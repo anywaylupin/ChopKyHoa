@@ -10,7 +10,7 @@ const About = () => {
     <section
       id={id}
       className={cn(
-        'panel h-max w-screen translate-x-0 flex-col justify-between gap-12 bg-dark px-4 pb-12 pt-32 text-light',
+        'panel bg-dark text-light h-max w-screen translate-x-0 flex-col justify-between gap-12 px-4 pt-32 pb-12',
         'sm:px-8 sm:pb-8',
         'md:px-16 md:pb-16',
         'xl:h-screen xl:max-h-screen xl:min-h-full xl:flex-row'
@@ -20,7 +20,7 @@ const About = () => {
         <div className={cn('flex flex-col gap-4', 'md:gap-12')}>
           <h2
             className={cn(
-              'small-caps text-center text-3xl font-semibold uppercase leading-snug -tracking-[2.56px]',
+              'small-caps text-center text-3xl leading-snug font-semibold -tracking-[2.56px] uppercase',
               'md:text-start md:text-5xl',
               'xl:text-6xl'
             )}
@@ -41,7 +41,7 @@ const About = () => {
           <div className="w-full xl:hidden">
             <p
               className={cn(
-                'text-center text-xl lowercase leading-relaxed -tracking-tighter text-light',
+                'text-light text-center text-xl leading-relaxed -tracking-tighter lowercase',
                 'md:text-start md:text-4xl',
                 'lg:leading-loose'
               )}
@@ -62,7 +62,7 @@ const About = () => {
         </div>
 
         <div className="w-full">
-          <p className="text-end text-4xl lowercase leading-[50px] tracking-tighter text-light">{description}</p>
+          <p className="text-light text-end text-4xl leading-[50px] tracking-tighter lowercase">{description}</p>
         </div>
       </aside>
     </section>

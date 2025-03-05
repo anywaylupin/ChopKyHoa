@@ -4,7 +4,7 @@ import { cn } from '@/lib/utils';
 const Loading = ({ className, loading = true }: PropsWithClass<{ loading?: boolean }>) => (
   <section
     className={cn(
-      'fixed z-[9999] flex size-full max-h-full min-h-screen max-w-full items-center justify-center overflow-hidden bg-dark transition-all duration-1000 ease-in-out',
+      'bg-dark fixed z-9999 flex size-full max-h-full min-h-screen max-w-full items-center justify-center overflow-hidden transition-all duration-1000 ease-in-out',
       { 'w-0': !loading },
       className
     )}

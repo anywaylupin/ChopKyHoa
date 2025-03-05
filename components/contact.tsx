@@ -4,7 +4,7 @@ import { sendEmail, sendTelegramMessage } from '@/lib/services';
 import { capitalize, cn } from '@/lib/utils';
 import locales from '@/locales/vn.json';
 
-import { FormContainer, FormSchema, FormSuccess } from '../layouts/signup-form';
+import { FormContainer, FormSchema, FormSuccess } from './common/signup-form';
 
 const Contact = () => {
   const { id, heading, description } = locales.pages.contact;
@@ -28,11 +28,11 @@ const Contact = () => {
   return (
     <section
       id={id}
-      className={cn('panel z-10 h-max w-screen bg-accent text-dark', 'xl:h-screen xl:max-h-screen xl:min-h-full')}
+      className={cn('panel bg-accent text-dark z-10 h-max w-screen', 'xl:h-screen xl:max-h-screen xl:min-h-full')}
     >
       <div
         className={cn(
-          'flex size-full flex-col justify-between bg-dark bg-opacity-10 p-4 pt-16',
+          'flex size-full flex-col justify-between p-4 pt-16',
           'sm:px-8 sm:pb-8',
           'md:gap-8 md:px-16 md:pb-8',
           'lg:py-16'
@@ -42,7 +42,7 @@ const Contact = () => {
           <div className={cn('flex h-max flex-col justify-between gap-8', 'xl:max-w-[40%]', '2xl:max-w-[50%]')}>
             <h2
               className={cn(
-                'small-caps text-5xl font-semibold uppercase -tracking-[2.56px]',
+                'small-caps text-5xl font-semibold -tracking-[2.56px] uppercase',
                 'md:text-7xl md:leading-[116px]',
                 'lg:text-8xl',
                 '2xl:text-9xl'
@@ -53,7 +53,7 @@ const Contact = () => {
 
             <p
               className={cn(
-                'text-pretty text-lg !leading-relaxed -tracking-tighter',
+                'text-lg leading-relaxed! -tracking-tighter text-pretty',
                 'sm:text-xl',
                 'md:text-2xl',
                 'xl:text-3xl'
@@ -67,7 +67,7 @@ const Contact = () => {
 
           <div
             className={cn(
-              'relative mx-auto size-full min-h-80 gap-8 rounded-none bg-white p-4 shadow-input transition-all dark:bg-black',
+              'shadow-input relative mx-auto size-full min-h-80 gap-8 rounded-none bg-white p-4 transition-all dark:bg-black',
               'md:rounded-2xl md:p-8'
             )}
           >

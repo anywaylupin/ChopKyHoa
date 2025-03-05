@@ -59,7 +59,7 @@ export const CardContainer = ({ children, className, containerClassName }: Props
 };
 
 export const CardBody = ({ children, className }: PropsWithClass) => (
-  <div className={cn('transform-3d [&>*]:transform-3d size-full', className)}>{children}</div>
+  <div className={cn('size-full transform-3d *:transform-3d', className)}>{children}</div>
 );
 
 export const CardItem = ({

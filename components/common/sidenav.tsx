@@ -1,8 +1,8 @@
 import gsap from 'gsap';
 import Link from 'next/link';
 
-import { usePageSection } from '@/app/components';
 import { ButtonFacebook } from '@/components/icons';
+import { usePageSection } from '@/components/section';
 import { Sidebar, SidebarBody, SidebarLink } from '@/components/ui';
 import { FACEBOOK_LINK, GOOGLE_MAP_ADDRESS } from '@/lib/const';
 import { cn } from '@/lib/utils';
@@ -41,14 +41,14 @@ export const Sidenav = ({ open, setOpen, tweenRef }: SidenavProps) => {
     <Sidebar open={open} setOpen={setOpen}>
       <SidebarBody
         className={cn(
-          'fixed left-0 z-50 h-full justify-between bg-silver pb-8 pt-28 text-dark',
+          'bg-silver text-dark fixed left-0 z-50 h-full justify-between pt-28 pb-8',
           'xs:gap-8',
           'xl:pt-40'
         )}
       >
         <div
           className={cn(
-            'flex size-full flex-[2] flex-col gap-8 pb-6 pl-2 text-xl font-medium',
+            'flex size-full flex-2 flex-col gap-8 pb-6 pl-2 text-xl font-medium',
             'sm:pb-0 sm:text-2xl',
             'md:pl-16 md:text-3xl'
           )}
@@ -63,9 +63,9 @@ export const Sidenav = ({ open, setOpen, tweenRef }: SidenavProps) => {
 
         <div
           className={cn(
-            'flex max-h-max w-full max-w-full flex-1 flex-col items-center gap-2 text-base font-medium lowercase leading-relaxed -tracking-tighter',
+            'flex max-h-max w-full max-w-full flex-1 flex-col items-center gap-2 text-base leading-relaxed font-medium -tracking-tighter lowercase',
             'sm:mb-8 sm:flex-row sm:justify-between sm:pl-8 sm:text-lg',
-            'md:flex-col md:items-start md:justify-end md:gap-6 md:pl-16 md:text-xl md:text-dark'
+            'md:text-dark md:flex-col md:items-start md:justify-end md:gap-6 md:pl-16 md:text-xl'
           )}
         >
           <ul className={cn('flex flex-col items-center', 'sm:items-start')}>
@@ -81,7 +81,7 @@ export const Sidenav = ({ open, setOpen, tweenRef }: SidenavProps) => {
           <Link href={GOOGLE_MAP_ADDRESS} target="_blank">
             <ul className={cn('flex flex-col items-center', 'sm:items-start')}>
               {addressDetails.map(({ key, value }) => (
-                <li key={key} className="animate-underline w-max after:bg-dark">
+                <li key={key} className="animate-underline after:bg-dark w-max">
                   {value}
                 </li>
               ))}

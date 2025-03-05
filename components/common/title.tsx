@@ -1,7 +1,7 @@
 import Link from 'next/link';
 
-import { usePageSection } from '@/app/components';
 import { IconMenu2 } from '@/components/icons';
+import { usePageSection } from '@/components/section';
 import { cn } from '@/lib/utils';
 import locales from '@/locales/vn.json';
 
@@ -11,15 +11,15 @@ export const Title = ({ setOpen }: PropsWithClass<{ setOpen: DispatchState }>) =
   return (
     <div
       className={cn(
-        'pointer-events-none fixed right-10 top-6 z-50 flex w-full items-center justify-end gap-4 py-6 transition-all',
+        'pointer-events-none fixed top-6 right-10 z-50 flex w-full items-center justify-end gap-4 py-6 transition-all',
         'xs:right-auto xs:justify-center',
         'md:z-50',
-        'xl:left-14 xl:top-4 xl:w-auto'
+        'xl:top-4 xl:left-14 xl:w-auto'
       )}
     >
       <button
         className={cn(
-          'pointer-events-auto absolute hidden rounded-xl bg-dark p-2 text-white shadow-2xl',
+          'bg-dark pointer-events-auto absolute hidden rounded-xl p-2 text-white shadow-2xl',
           'md:left-14 md:block',
           'xl:relative xl:left-0'
         )}
@@ -30,7 +30,7 @@ export const Title = ({ setOpen }: PropsWithClass<{ setOpen: DispatchState }>) =
       </button>
       <Link
         className={cn(
-          'pointer-events-auto text-xl font-extrabold text-accent [text-shadow:0px_1px_8px_black]',
+          'text-accent pointer-events-auto text-xl font-extrabold [text-shadow:0px_1px_8px_black]',
           'sm:text-center sm:text-2xl'
         )}
         href="#hero"

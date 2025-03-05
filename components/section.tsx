@@ -23,7 +23,7 @@ export const usePageSection = () => {
     () =>
       Object.entries(locales.pages).map(([key, { id, label }]) => {
         const { icon, content } = templates[key as keyof typeof templates];
-        const clonedIcon = cloneElement(icon, { className: cn('size-8 flex-shrink-0', 'md:size-12') });
+        const clonedIcon = cloneElement(icon, { className: cn('size-8 shrink-0', 'md:size-12') });
 
         return { id, label, content, icon: clonedIcon };
       }),

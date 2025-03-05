@@ -1,4 +1,4 @@
-export * from '../../app/layouts/layout-grid';
+export * from '../common/layout-grid';
 export * from './3d-card';
 export * from './button';
 export * from './form';
