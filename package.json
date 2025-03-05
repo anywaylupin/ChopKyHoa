@@ -12,7 +12,7 @@
     "fix": "pnpm lint:fix && pnpm format"
   },
   "overrides": {
-    "framer-motion": {
+    "motion": {
       "react": "19.0.0-rc-66855b96-20241106",
       "react-dom": "19.0.0-rc-66855b96-20241106"
     }
@@ -25,10 +25,11 @@
     "@radix-ui/react-tooltip": "^1.1.7",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
-    "framer-motion": "12.0.3",
     "google-auth-library": "^9.15.0",
     "gsap": "^3.12.7",
     "lottie-web": "^5.12.2",
+    "lucide-react": "^0.477.0",
+    "motion": "^12.0.0-alpha.1",
     "next": "^15.1.6",
     "nodemailer": "^6.10.0",
     "react": "19.0.0",
@@ -53,5 +54,10 @@
     "tailwindcss": "^3.4.1",
     "tailwindcss-animate": "^1.0.7",
     "typescript": "^5.7.3"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "sharp"
+    ]
   }
 }
