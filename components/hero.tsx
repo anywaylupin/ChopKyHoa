@@ -17,7 +17,7 @@ const Hero = () => {
             'xl:relative xl:w-1/2 xl:justify-end xl:gap-16 xl:pl-16 xl:text-start'
           )}
         >
-          <div className="bg-dark absolute -z-1 size-full opacity-40"></div>
+          <div className="bg-dark absolute bottom-0 -z-10 size-full opacity-40 lg:opacity-100"></div>
           <h1
             className={cn(
               montserratAlternates.className,

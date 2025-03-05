@@ -1,4 +1,5 @@
-import { LottieBolt } from '@/components/lottie';
+import Image from 'next/image';
+
 import { cn } from '@/lib/utils';
 
 const Loading = ({ className, loading = true }: PropsWithClass<{ loading?: boolean }>) => (
@@ -10,7 +11,14 @@ const Loading = ({ className, loading = true }: PropsWithClass<{ loading?: boole
     )}
   >
     <div className="relative flex size-full items-center justify-center gap-4">
-      <LottieBolt className={cn('absolute size-max max-w-[200px]', 'md:max-w-max')} />
+      <Image
+        className={cn('absolute size-max max-w-[200px]', 'md:max-w-max')}
+        src="/bolt.gif"
+        alt="Loading"
+        fill
+        sizes=""
+        unoptimized
+      />
     </div>
   </section>
 );

@@ -1,6 +1,7 @@
 import './globals.css';
 
 import type { Metadata } from 'next';
+import { Suspense } from 'react';
 
 import { montserrat } from '@/lib/fonts';
 import { cn } from '@/lib/utils';
@@ -25,7 +26,7 @@ const RootLayout = ({ children }: Readonly<React.PropsWithChildren>) => (
         'no-visible-scrollbar relative m-0 overflow-x-hidden overflow-y-visible scroll-smooth'
       )}
     >
-      {children}
+      <Suspense>{children}</Suspense>
     </body>
   </html>
 );
