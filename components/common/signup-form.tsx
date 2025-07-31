@@ -32,9 +32,9 @@ const fieldValidationRules: Record<FormField['type'], (required: boolean, error?
 };
 
 const formSchema = z.object(
-  formLocalization.fields.reduce<Record<string, z.ZodTypeAny>>((schema, field) => {
+  formLocalization.fields.reduce<Record<string, z.ZodType<string, string>>>((schema, field) => {
     const validationRule = fieldValidationRules[field.type];
-    schema[field.name] = validationRule(field.required, field.error);
+    schema[field.name] = validationRule(field.required, field.error) as z.ZodType<string, string>;
     return schema;
   }, {})
 );
@@ -45,23 +45,22 @@ const FormFieldComponent = ({ field, control }: { field: FormField; control: Con
   <FormField
     control={control}
     name={field.name}
-    render={({ field: formField, fieldState }) => (
-      <FormItem>
-        <div className="flex items-center justify-between">
-          <FormLabel>{field.label}</FormLabel>
-          <FormMessage>{fieldState.error?.message}</FormMessage>
-        </div>
-        <FormControl>
-          <>
-            {field.type === 'text' && <Input {...formField} placeholder={field.placeholder} />}
-            {/* {field.type === 'select' && field.options && (
-              <SelectField options={field.options} placeholder={field.placeholder} field={formField} />
-            )} */}
-            {field.type === 'textarea' && <Textarea {...formField} placeholder={field.placeholder} />}
-          </>
-        </FormControl>
-      </FormItem>
-    )}
+    render={({ field: formField, fieldState }) => {
+      return (
+        <FormItem>
+          <div className="flex items-center justify-between">
+            <FormLabel>{field.label}</FormLabel>
+            <FormMessage>{fieldState.error?.message}</FormMessage>
+          </div>
+          <FormControl>
+            <>
+              {field.type === 'text' && <Input {...formField} placeholder={field.placeholder} />}
+              {field.type === 'textarea' && <Textarea {...formField} placeholder={field.placeholder} />}
+            </>
+          </FormControl>
+        </FormItem>
+      );
+    }}
   />
 );
 
