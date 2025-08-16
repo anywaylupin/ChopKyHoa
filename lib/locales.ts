@@ -1,6 +1,6 @@
 export const locales = {
   name: 'Thái Văn Thực',
-  domain: 'https://thaivanthuc.vercel.app/',
+  domain: process.env.NEXT_PUBLIC_DOMAIN_URL,
   pages: {
     hero: {
       id: 'hero',
@@ -63,7 +63,11 @@ export const locales = {
       ],
       contactDetails: [
         { key: 'phone', value: '(+84) 090-298-9993', href: 'tel:+84902989993' },
-        { key: 'email', value: 'thaivanthuc9993@gmail.com', href: 'mailto:thaivanthuc9993@gmail.com' }
+        {
+          key: 'email',
+          value: process.env.RECEIVER_EMAIL_ADDRESS,
+          href: `mailto:${process.env.RECEIVER_EMAIL_ADDRESS}`
+        }
       ],
       addressDetails: [
         { key: 'venue', value: 'Sân Học Viện' },
@@ -95,7 +99,7 @@ export const locales = {
             name: 'email',
             type: 'text',
             label: 'Địa chỉ Email',
-            placeholder: 'thaivanthuc9993@gmail.com',
+            placeholder: process.env.RECEIVER_EMAIL_ADDRESS,
             required: false
           },
           {

@@ -1,5 +1,6 @@
 import './globals.css';
 
+import { GoogleAnalytics } from '@next/third-parties/google';
 import type { Metadata } from 'next';
 import { Suspense } from 'react';
 
@@ -11,7 +12,7 @@ export const metadata: Metadata = {
   description,
   openGraph: { type: 'website', title, description, siteName: title, url: locales.domain },
   twitter: { card: 'summary_large_image', title, description },
-  metadataBase: new URL('https://thaivanthuc.vercel.app/')
+  metadataBase: new URL(process.env.NEXT_PUBLIC_DOMAIN_URL)
 };
 
 const RootLayout = ({ children }: Readonly<React.PropsWithChildren>) => (
@@ -24,6 +25,7 @@ const RootLayout = ({ children }: Readonly<React.PropsWithChildren>) => (
     >
       <Suspense>{children}</Suspense>
     </body>
+    <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_ANALYTICS_ID} />
   </html>
 );
 

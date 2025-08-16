@@ -1,5 +1,7 @@
 declare namespace NodeJS {
   interface ProcessEnv {
+    NEXT_PUBLIC_ANALYTICS_ID: string;
+    NEXT_PUBLIC_DOMAIN_URL: string;
     ADMIN_EMAIL_ADDRESS: string;
     RECEIVER_EMAIL_ADDRESS: string;
     OAUTH2_CLIENT_ID: string;
