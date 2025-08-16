@@ -1,8 +1,4 @@
-import { LayoutGrid } from '@/components/ui';
-import { cn } from '@/lib/utils';
-import locales from '@/locales/vn.json';
-
-const Gallery = () => {
+export function Gallery() {
   const { id, heading, items, videos } = locales.pages.gallery;
 
   return (
@@ -44,6 +40,4 @@ const Gallery = () => {
       <LayoutGrid items={items} />
     </section>
   );
-};
-
-export default Gallery;
+}

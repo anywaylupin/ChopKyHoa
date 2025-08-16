@@ -3,7 +3,7 @@ export interface TelegramMessageDto {
   body: Record<string, unknown>;
 }
 
-export const sendTelegramMessage = async (text: string) => {
+export async function sendTelegramMessage(text: string) {
   try {
     const body: TelegramMessageDto = { method: 'sendMessage', body: { parse_mode: 'MarkdownV2', text } };
 
@@ -16,4 +16,4 @@ export const sendTelegramMessage = async (text: string) => {
     console.error(error);
     throw error;
   }
-};
+}

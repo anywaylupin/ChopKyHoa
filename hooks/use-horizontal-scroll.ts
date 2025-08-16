@@ -1,14 +1,14 @@
-import { RefObject, useCallback, useEffect, useRef } from 'react';
+import type { RefObject } from 'react';
 
 import ScrollToPlugin from 'gsap/ScrollToPlugin';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 import gsap from 'gsap';
 
-export const useHorizontalScroll = <T extends Parameters<typeof gsap.utils.toArray>[0]>(
+export function useHorizontalScroll<T extends Parameters<typeof gsap.utils.toArray>[0]>(
   ref: RefObject<HTMLElement | null>,
   selector: T,
   minWidth?: number
-) => {
+) {
   const tweenRef = useRef<gsap.core.Tween>(null);
 
   const createScrollTween = useCallback(() => {
@@ -43,4 +43,4 @@ export const useHorizontalScroll = <T extends Parameters<typeof gsap.utils.toArr
   }, [createScrollTween]);
 
   return tweenRef;
-};
+}

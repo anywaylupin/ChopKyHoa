@@ -1,12 +1,10 @@
 import Link from 'next/link';
 
-import { cn } from '@/lib/utils';
-
-export const ButtonFacebook = ({
+export function ButtonFacebook({
   href,
   className,
   ...rest
-}: React.ButtonHTMLAttributes<HTMLButtonElement> & { href: string }) => {
+}: React.ButtonHTMLAttributes<HTMLButtonElement> & { href: string }) {
   return (
     <button
       className={cn('flex h-max max-h-[88px] items-end justify-center overflow-hidden rounded-3xl', className)}
@@ -23,4 +21,4 @@ export const ButtonFacebook = ({
       </Link>
     </button>
   );
-};
+}

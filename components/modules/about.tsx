@@ -1,9 +1,6 @@
 import Image from 'next/image';
 
-import { cn } from '@/lib/utils';
-import locales from '@/locales/vn.json';
-
-const About = () => {
+export function About() {
   const { id, heading, subheading, description } = locales.pages.about;
 
   return (
@@ -67,6 +64,4 @@ const About = () => {
       </aside>
     </section>
   );
-};
-
-export default About;
+}

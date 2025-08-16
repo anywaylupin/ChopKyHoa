@@ -2,23 +2,20 @@
 
 import * as LabelPrimitive from '@radix-ui/react-label';
 import { Slot } from '@radix-ui/react-slot';
-import { createContext, forwardRef, useContext, useId, useMemo } from 'react';
+import { createContext } from 'react';
 import { Controller, ControllerProps, FieldPath, FieldValues, FormProvider, useFormContext } from 'react-hook-form';
 
-import { Label } from '@/components/ui/label';
-import { cn } from '@/lib/utils';
-
-export const Form = FormProvider;
-
-export type FormFieldContextValue<T extends FieldValues = FieldValues, TName extends FieldPath<T> = FieldPath<T>> = {
+type FormFieldContextValue<T extends FieldValues = FieldValues, TName extends FieldPath<T> = FieldPath<T>> = {
   name?: TName;
 };
 
+export const Form = FormProvider;
+
 export const FormFieldContext = createContext<FormFieldContextValue>({});
 
-export const FormField = <T extends FieldValues = FieldValues, TName extends FieldPath<T> = FieldPath<T>>(
+export function FormField<T extends FieldValues = FieldValues, TName extends FieldPath<T> = FieldPath<T>>(
   props: ControllerProps<T, TName>
-) => {
+) {
   const providerValue = useMemo(() => ({ name: props.name }), [props.name]);
 
   return (
@@ -26,9 +23,9 @@ export const FormField = <T extends FieldValues = FieldValues, TName extends Fie
       <Controller {...props} />
     </FormFieldContext.Provider>
   );
-};
+}
 
-export const useFormField = () => {
+export function useFormField() {
   const fieldContext = useContext(FormFieldContext);
   const itemContext = useContext(FormItemContext);
   const { getFieldState, formState } = useFormContext();
@@ -49,7 +46,7 @@ export const useFormField = () => {
     formMessageId: `${id}-form-item-message`,
     ...fieldState
   };
-};
+}
 
 export type FormItemContextValue = { id?: string };
 

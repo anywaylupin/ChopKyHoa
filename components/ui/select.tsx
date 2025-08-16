@@ -1,11 +1,7 @@
 'use client';
 
 import * as SelectPrimitive from '@radix-ui/react-select';
-import { ComponentPropsWithoutRef, ComponentRef, forwardRef } from 'react';
-
-import { cn } from '@/lib/utils';
-
-import { IconCheck, IconChevronDown, IconChevronUp } from '../icons';
+import type { ComponentPropsWithoutRef, ComponentRef } from 'react';
 
 export const Select = SelectPrimitive.Root;
 

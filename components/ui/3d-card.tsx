@@ -1,20 +1,29 @@
 'use client';
 
-import { createContext, useCallback, useContext, useEffect, useMemo, useRef, useState } from 'react';
+import { createContext } from 'react';
 
-import { cn } from '@/lib/utils';
+type CardItemProps = {
+  as?: React.ElementType;
+  translateX?: Numberish;
+  translateY?: Numberish;
+  translateZ?: Numberish;
+  rotateX?: Numberish;
+  rotateY?: Numberish;
+  rotateZ?: Numberish;
+  [key: string]: unknown;
+};
 
 export const MouseEnterContext = createContext<StateContextType>([false, () => {}]);
 
-export const useMouseEnter = () => {
+function useMouseEnter() {
   const context = useContext(MouseEnterContext);
   if (!context) {
     throw new Error('useMouseEnter must be used within a MouseEnterProvider');
   }
   return context;
-};
+}
 
-export const CardContainer = ({ children, className, containerClassName }: PropsWithClass) => {
+export function CardContainer({ children, className, containerClassName }: PropsWithClass) {
   const ref = useRef<HTMLDivElement>(null);
   const [mouseEntered, setMouseEntered] = useState(false);
 
@@ -56,13 +65,13 @@ export const CardContainer = ({ children, className, containerClassName }: Props
       </div>
     </MouseEnterContext.Provider>
   );
-};
+}
 
-export const CardBody = ({ children, className }: PropsWithClass) => (
-  <div className={cn('size-full transform-3d *:transform-3d', className)}>{children}</div>
-);
+export function CardBody({ children, className }: PropsWithClass) {
+  return <div className={cn('size-full transform-3d *:transform-3d', className)}>{children}</div>;
+}
 
-export const CardItem = ({
+export function CardItem({
   as: Tag = 'div',
   children,
   className,
@@ -73,7 +82,7 @@ export const CardItem = ({
   rotateY = 0,
   rotateZ = 0,
   ...rest
-}: PropsWithClass<CardItemProps>) => {
+}: PropsWithClass<CardItemProps>) {
   const ref = useRef<HTMLDivElement>(null);
   const [mouseEntered] = useMouseEnter();
 
@@ -91,15 +100,4 @@ export const CardItem = ({
       {children}
     </Tag>
   );
-};
-
-type CardItemProps = {
-  as?: React.ElementType;
-  translateX?: Numberish;
-  translateY?: Numberish;
-  translateZ?: Numberish;
-  rotateX?: Numberish;
-  rotateY?: Numberish;
-  rotateZ?: Numberish;
-  [key: string]: unknown;
-};
+}

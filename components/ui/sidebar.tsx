@@ -1,30 +1,25 @@
 'use client';
 
 import { AnimatePresence, motion } from 'motion/react';
-import Link, { LinkProps } from 'next/link';
-import { createContext, useContext, useMemo, useState } from 'react';
+import Link, { type LinkProps } from 'next/link';
+import { createContext } from 'react';
 
-import { IconMenu2, IconX } from '@/components/icons';
-import { cn } from '@/lib/utils';
+type SidebarContextProps = { open: boolean; setOpen: React.Dispatch<React.SetStateAction<boolean>>; animate: boolean };
 
-const SidebarContext = createContext<SidebarContextProps>({
-  open: false,
-  setOpen: () => {},
-  animate: false
-});
+const SidebarContext = createContext<SidebarContextProps>({ open: false, setOpen: () => {}, animate: false });
 
-export const useSidebar = () => {
+function useSidebar() {
   const context = useContext(SidebarContext);
   if (!context) throw new Error('useSidebar must be used within a SidebarProvider');
   return context;
-};
+}
 
-export const SidebarProvider = ({
+export function SidebarProvider({
   children,
   open,
   setOpen,
   animate = true
-}: PropsWithClass<Partial<SidebarContextProps>>) => {
+}: PropsWithClass<Partial<SidebarContextProps>>) {
   const [openState, setOpenState] = useState(false);
 
   const providerProps = useMemo(
@@ -33,26 +28,30 @@ export const SidebarProvider = ({
   );
 
   return <SidebarContext.Provider value={providerProps}>{children}</SidebarContext.Provider>;
-};
+}
 
-export const Sidebar = ({ children, open, setOpen, animate }: PropsWithClass<Partial<SidebarContextProps>>) => (
-  <SidebarProvider open={open} setOpen={setOpen} animate={animate}>
-    {children}
-  </SidebarProvider>
-);
+export function Sidebar({ children, open, setOpen, animate }: PropsWithClass<Partial<SidebarContextProps>>) {
+  return (
+    <SidebarProvider open={open} setOpen={setOpen} animate={animate}>
+      {children}
+    </SidebarProvider>
+  );
+}
 
-export const SidebarBody = (props: PropsWithClass<React.ComponentProps<typeof motion.div>>) => (
-  <>
-    <DesktopSidebar {...props} />
-    <MobileSidebar {...(props as React.ComponentProps<'div'>)} />
-  </>
-);
+export function SidebarBody(props: PropsWithClass<React.ComponentProps<typeof motion.div>>) {
+  return (
+    <>
+      <DesktopSidebar {...props} />
+      <MobileSidebar {...(props as React.ComponentProps<'div'>)} />
+    </>
+  );
+}
 
-export const DesktopSidebar = ({
+export function DesktopSidebar({
   className,
   children,
   ...props
-}: PropsWithClass<React.ComponentProps<typeof motion.div>>) => {
+}: PropsWithClass<React.ComponentProps<typeof motion.div>>) {
   const { open, setOpen, animate } = useSidebar();
 
   return (
@@ -70,9 +69,9 @@ export const DesktopSidebar = ({
       {children}
     </motion.div>
   );
-};
+}
 
-export const MobileSidebar = ({ className, children, ...rest }: React.ComponentProps<'div'>) => {
+export function MobileSidebar({ className, children, ...rest }: React.ComponentProps<'div'>) {
   const { open, setOpen } = useSidebar();
 
   return (
@@ -108,14 +107,14 @@ export const MobileSidebar = ({ className, children, ...rest }: React.ComponentP
       </AnimatePresence>
     </div>
   );
-};
+}
 
-export const SidebarLink = ({
+export function SidebarLink({
   label,
   icon,
   className,
   ...rest
-}: PropsWithClass<{ label: string; icon: StringNode } & LinkProps>) => {
+}: PropsWithClass<{ label: string; icon: StringNode } & LinkProps>) {
   const { open, animate } = useSidebar();
 
   return (
@@ -130,6 +129,4 @@ export const SidebarLink = ({
       </motion.span>
     </Link>
   );
-};
-
-type SidebarContextProps = { open: boolean; setOpen: React.Dispatch<React.SetStateAction<boolean>>; animate: boolean };
+}

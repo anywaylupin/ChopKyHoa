@@ -1,6 +1,6 @@
-import { NextRequest, NextResponse } from 'next/server';
+import { type NextRequest, NextResponse } from 'next/server';
 
-import { TelegramMessageDto } from '@/lib/services';
+import type { TelegramMessageDto } from '@/lib/services/telegram.service';
 
 const { TELEGRAM_API_BASE_URL, TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_ID } = process.env;
 

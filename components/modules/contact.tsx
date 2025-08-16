@@ -1,12 +1,6 @@
-import { useState } from 'react';
+import type { FormSchema } from '@/components/widgets/signup-form';
 
-import { sendEmail, sendTelegramMessage } from '@/lib/services';
-import { capitalize, cn } from '@/lib/utils';
-import locales from '@/locales/vn.json';
-
-import { FormContainer, FormSchema, FormSuccess } from './common/signup-form';
-
-const Contact = () => {
+export function Contact() {
   const { id, heading, description } = locales.pages.contact;
 
   const [submitted, setSubmitted] = useState(false);
@@ -77,7 +71,7 @@ const Contact = () => {
       </div>
     </section>
   );
-};
+}
 
 const getLabelFromKey = (key: keyof FormSchema): string => {
   const field = locales.pages.contact.form.fields.find(({ name }) => name === key);
@@ -195,5 +189,3 @@ const generateTelegramMessage = (values: FormSchema): string => {
 
   return message;
 };
-
-export default Contact;

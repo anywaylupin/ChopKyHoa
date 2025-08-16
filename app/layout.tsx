@@ -3,10 +3,6 @@ import './globals.css';
 import type { Metadata } from 'next';
 import { Suspense } from 'react';
 
-import { montserrat } from '@/lib/fonts';
-import { cn } from '@/lib/utils';
-import locales from '@/locales/vn.json';
-
 const title = `${locales.name} | ${locales.pages.hero.heading}`;
 const description = locales.pages.hero.subheading;
 

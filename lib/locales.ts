@@ -1,0 +1,127 @@
+export const locales = {
+  name: 'Thái Văn Thực',
+  domain: 'https://thaivanthuc.vercel.app/',
+  pages: {
+    hero: {
+      id: 'hero',
+      label: 'Trang chính',
+      heading: 'Huấn Luyện Viên Pickleball Cá Nhân',
+      subheading: 'Hãy để đam mê tỏa sáng trên sân',
+      video: 'videos/hero.mp4'
+    },
+    about: {
+      id: 'about',
+      label: 'Thông tin',
+      heading: 'Hãy tham gia ngay lớp Pickleball Quận 10',
+      subheading: 'Pickleball là sự kết hợp độc đáo giữa tennis, cầu lông và bóng bàn, phù hợp với mọi độ tuổi.',
+      description: 'Không chỉ giúp nâng cao thể lực mà còn là cơ hội để giao lưu, kết nối và thư giãn.'
+    },
+    benefits: {
+      id: 'benefits',
+      label: 'Lớp học',
+      heading: 'Lợi ích khi tham gia lớp Pickle Ball',
+      items: [
+        {
+          key: 1,
+          title: 'Chương trình đào tạo',
+          list: [
+            'Phù hợp cho tất cả mọi người',
+            'Đảm bảo thành thạo sau 20 buổi tập',
+            'Bài tập đậm tính kỹ thuật, chiến thuật và thể lực',
+            'Phát triển khả năng phản xạ và phối hợp đồng đội'
+          ]
+        },
+        {
+          key: 2,
+          title: 'Điều kiện học tập',
+          list: [
+            'Cơ sở vật chất hiện đại, sân bãi đạt chuẩn',
+            'Lịch học linh hoạt, phù hợp cho người bận rộn',
+            'Huấn luyện viên kinh nghiệm, nhiệt tình',
+            'Môi trường học tập thoải mái, vui vẻ và chuyên nghiệp'
+          ]
+        },
+        {
+          key: 3,
+          title: 'Phát triển và giao lưu',
+          list: [
+            'Thư giãn sau những giờ làm việc căng thẳng',
+            'Cơ hội tay đôi với người chơi giỏi',
+            'Tham gia các giải đấu để thử sức',
+            'Kết nối với người chơi và hội nhóm cùng đam mê'
+          ]
+        }
+      ]
+    },
+    contact: {
+      id: 'contact',
+      label: 'Liên hệ',
+      heading: 'Liên hệ',
+      description: [
+        'Sẵn sàng khám phá Thế Giới Pickleball đầy đam mê và kịch tính? Đừng bỏ lỡ cơ hội tham gia khóa học đặc biệt cùng huấn luyện viên tận tâm và giàu kinh nghiệm!',
+        'Cùng nhau, chúng ta sẽ chinh phục những đỉnh cao mới trong môn thể thao tuyệt vời này!'
+      ],
+      contactDetails: [
+        { key: 'phone', value: '(+84) 090-298-9993', href: 'tel:+84902989993' },
+        { key: 'email', value: 'thaivanthuc9993@gmail.com', href: 'mailto:thaivanthuc9993@gmail.com' }
+      ],
+      addressDetails: [
+        { key: 'venue', value: 'Sân Học Viện' },
+        { key: 'ward', value: 'Phường 12, Quận 10' },
+        { key: 'city', value: 'Thành phố Hồ Chí Minh' }
+      ],
+      form: {
+        heading: 'Đăng ký tham gia huấn luyện ngay!',
+        submit: 'Gửi đăng ký',
+        success: 'Cám ơn bạn đã để lại thông tin, tôi sẽ liên hệ bạn trong thời gian gần nhất!',
+        fields: [
+          {
+            name: 'fullName',
+            type: 'text',
+            label: 'Họ Tên',
+            placeholder: 'Thái Văn Thực',
+            error: 'Nhập ít nhất 2 ký tự',
+            required: true
+          },
+          {
+            name: 'phone',
+            type: 'text',
+            label: 'Số điện thoại',
+            placeholder: '0902989993',
+            error: 'Không hợp lệ',
+            required: true
+          },
+          {
+            name: 'email',
+            type: 'text',
+            label: 'Địa chỉ Email',
+            placeholder: 'thaivanthuc9993@gmail.com',
+            required: false
+          },
+          {
+            name: 'message',
+            type: 'textarea',
+            label: 'Ghi chú',
+            placeholder: 'Nhu cầu huấn luyện',
+            required: false
+          }
+        ]
+      }
+    },
+    gallery: {
+      id: 'gallery',
+      label: 'Thư viện',
+      heading: 'Thư viện',
+      items: [
+        { id: 1, type: 'image', src: 'images/img-1.jpg' },
+        { id: 2, type: 'image', src: 'images/img-2.jpg' },
+        { id: 3, type: 'image', src: 'images/img-3.jpg' },
+        { id: 4, type: 'image', src: 'images/img-4.jpg' }
+      ],
+      videos: [
+        { id: 1, type: 'video', src: 'videos/reels.mp4' },
+        { id: 2, type: 'video', src: 'videos/traning.mp4' }
+      ]
+    }
+  }
+};

@@ -1,21 +1,14 @@
 import gsap from 'gsap';
 import Link from 'next/link';
 
-import { ButtonFacebook } from '@/components/icons';
-import { usePageSection } from '@/components/section';
-import { Sidebar, SidebarBody, SidebarLink } from '@/components/ui';
-import { FACEBOOK_LINK, GOOGLE_MAP_ADDRESS } from '@/lib/const';
-import { cn } from '@/lib/utils';
-import locales from '@/locales/vn.json';
-
 type SidenavProps = PropsWithClass<{
   open: boolean;
   setOpen: React.Dispatch<React.SetStateAction<boolean>>;
   tweenRef: React.RefObject<gsap.core.Tween | null>;
 }>;
 
-export const Sidenav = ({ open, setOpen, tweenRef }: SidenavProps) => {
-  const { isDesktop, sections } = usePageSection();
+export function Sidenav({ open, setOpen, tweenRef }: SidenavProps) {
+  const { isDesktop, sections } = usePageSection({ pages: locales.pages, templates });
 
   const { addressDetails, contactDetails } = locales.pages.contact;
 
@@ -95,4 +88,4 @@ export const Sidenav = ({ open, setOpen, tweenRef }: SidenavProps) => {
       </SidebarBody>
     </Sidebar>
   );
-};
+}

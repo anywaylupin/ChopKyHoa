@@ -1,9 +1,4 @@
-import { IconCircleCheck } from '@/components/icons';
-import { Tooltip } from '@/components/ui';
-import { cn } from '@/lib/utils';
-import locales from '@/locales/vn.json';
-
-const Benefits = () => {
+export function Benefits() {
   const { id, heading, items: benefitItems } = locales.pages.benefits;
   const [video] = locales.pages.gallery.videos;
 
@@ -105,6 +100,4 @@ const Benefits = () => {
       </div>
     </section>
   );
-};
-
-export default Benefits;
+}

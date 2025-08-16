@@ -1,11 +1,11 @@
-import { SendMailOptions } from 'nodemailer';
+import type { SendMailOptions } from 'nodemailer';
 
 export interface EmailDto extends SendMailOptions {
   subject: string;
   html: string;
 }
 
-export const sendEmail = async (values: EmailDto) => {
+export async function sendEmail(values: EmailDto) {
   try {
     const res = await fetch('/api/email', { method: 'POST', body: JSON.stringify(values) });
 
@@ -16,4 +16,4 @@ export const sendEmail = async (values: EmailDto) => {
     console.error(error);
     throw error;
   }
-};
+}

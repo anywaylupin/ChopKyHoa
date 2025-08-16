@@ -1,9 +1,4 @@
-import { InfiniteScrollText } from '@/components/ui';
-import { montserratAlternates } from '@/lib/fonts';
-import { cn } from '@/lib/utils';
-import locales from '@/locales/vn.json';
-
-const Hero = () => {
+export function Hero() {
   const name = locales.name;
   const { id, heading, subheading, video } = locales.pages.hero;
 
@@ -62,6 +57,4 @@ const Hero = () => {
       />
     </section>
   );
-};
-
-export default Hero;
+}

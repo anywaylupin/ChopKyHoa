@@ -2,28 +2,10 @@
 
 import { zodResolver } from '@hookform/resolvers/zod';
 import { motion } from 'motion/react';
-import { useState } from 'react';
 import { Control, useForm } from 'react-hook-form';
 import { z } from 'zod';
 
-import { IconCircleCheckFilled } from '@/components/icons';
-import {
-  Button,
-  Form,
-  FormControl,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-  Input,
-  Textarea
-} from '@/components/ui';
-import { cn } from '@/lib/utils';
-import locales from '@/locales/vn.json';
-
 const formLocalization = locales.pages.contact.form;
-
-type FormField = (typeof formLocalization.fields)[number];
 
 const fieldValidationRules: Record<FormField['type'], (required: boolean, error?: string) => z.ZodTypeAny> = {
   text: (required, error) => (required ? z.string().min(2, { message: error }) : z.string().optional()),
@@ -39,32 +21,37 @@ const formSchema = z.object(
   }, {})
 );
 
+type FormField = (typeof formLocalization.fields)[number];
+
 export type FormSchema = z.infer<typeof formSchema>;
 
-const FormFieldComponent = ({ field, control }: { field: FormField; control: Control<FormSchema> }) => (
-  <FormField
-    control={control}
-    name={field.name}
-    render={({ field: formField, fieldState }) => {
-      return (
-        <FormItem>
-          <div className="flex items-center justify-between">
-            <FormLabel>{field.label}</FormLabel>
-            <FormMessage>{fieldState.error?.message}</FormMessage>
-          </div>
-          <FormControl>
-            <>
-              {field.type === 'text' && <Input {...formField} placeholder={field.placeholder} />}
-              {field.type === 'textarea' && <Textarea {...formField} placeholder={field.placeholder} />}
-            </>
-          </FormControl>
-        </FormItem>
-      );
-    }}
-  />
-);
+function FormFieldComponent({ field, control }: Readonly<{ field: FormField; control: Control<FormSchema> }>) {
+  return (
+    <FormField
+      control={control}
+      name={field.name}
+      render={({ field: formField, fieldState }) => {
+        return (
+          <FormItem>
+            <div className="flex items-center justify-between">
+              <FormLabel>{field.label}</FormLabel>
+              <FormMessage>{fieldState.error?.message}</FormMessage>
+            </div>
+            <FormControl>
+              {field.type === 'textarea' ? (
+                <Textarea {...formField} placeholder={field.placeholder} />
+              ) : (
+                <Input {...formField} placeholder={field.placeholder} />
+              )}
+            </FormControl>
+          </FormItem>
+        );
+      }}
+    />
+  );
+}
 
-export const FormContainer = ({ onSubmit }: { onSubmit: (values: FormSchema) => Promise<void> | void }) => {
+export function FormContainer({ onSubmit }: { onSubmit: (values: FormSchema) => Promise<void> | void }) {
   const [isLoading, setIsLoading] = useState(false);
 
   const form = useForm<FormSchema>({
@@ -123,44 +110,48 @@ export const FormContainer = ({ onSubmit }: { onSubmit: (values: FormSchema) => 
       </motion.div>
     </div>
   );
-};
+}
 
-export const FormSuccess = () => (
-  <div className="relative flex size-full flex-col items-center justify-center gap-5">
-    <motion.div
-      className="flex max-w-32 md:max-w-max"
-      initial={{ scale: 0 }}
-      animate={{ scale: 1 }}
-      exit={{ scale: 0 }}
-      transition={{ duration: 0.3, ease: 'backOut' }}
-    >
-      <IconCircleCheckFilled color="var(--dark)" />
-    </motion.div>
-    <motion.span
-      className="text-center text-lg sm:text-2xl md:text-4xl"
-      initial={{ y: '-10%', opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      exit={{ y: '-10%', opacity: 0 }}
-      transition={{ duration: 0.3, ease: 'easeInOut' }}
-    >
-      {formLocalization.success}
-    </motion.span>
-  </div>
-);
-
-export const FormLoading = () => (
-  <div className="relative flex size-full items-center justify-center gap-4">
-    {['delay-0', 'delay-100', 'delay-200'].map((delay, i) => (
+export function FormSuccess() {
+  return (
+    <div className="relative flex size-full flex-col items-center justify-center gap-5">
       <motion.div
-        key={`${delay}-${i}`}
-        className="relative flex"
+        className="flex max-w-32 md:max-w-max"
         initial={{ scale: 0 }}
         animate={{ scale: 1 }}
         exit={{ scale: 0 }}
         transition={{ duration: 0.3, ease: 'backOut' }}
       >
-        <span className={cn('tennis-ball animate-loading bg-primary', delay)}></span>
+        <IconCircleCheckFilled color="var(--dark)" />
       </motion.div>
-    ))}
-  </div>
-);
+      <motion.span
+        className="text-center text-lg sm:text-2xl md:text-4xl"
+        initial={{ y: '-10%', opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        exit={{ y: '-10%', opacity: 0 }}
+        transition={{ duration: 0.3, ease: 'easeInOut' }}
+      >
+        {formLocalization.success}
+      </motion.span>
+    </div>
+  );
+}
+
+export function FormLoading() {
+  return (
+    <div className="relative flex size-full items-center justify-center gap-4">
+      {['delay-0', 'delay-100', 'delay-200'].map((delay, i) => (
+        <motion.div
+          key={`${delay}-${i}`}
+          className="relative flex"
+          initial={{ scale: 0 }}
+          animate={{ scale: 1 }}
+          exit={{ scale: 0 }}
+          transition={{ duration: 0.3, ease: 'backOut' }}
+        >
+          <span className={cn('tennis-ball animate-loading bg-primary', delay)}></span>
+        </motion.div>
+      ))}
+    </div>
+  );
+}

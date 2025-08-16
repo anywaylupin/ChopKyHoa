@@ -6,14 +6,14 @@ Welcome to **Chop Ky Hoa**, an animated and interactive pickleball coach portfol
 
 ## 🚀 Features
 
-- ⚡ **Horizontal Scrolling** – A unique scrolling experience powered by GSAP.
-- 📱 **Fully Responsive** – Looks amazing on any device, big or small.
-- 🎨 **Sleek Animations** – Eye-catching transitions that bring the site to life.
-- 🧩 **Custom UI Components** – Modular design with easy-to-use elements.
-- 🎯 **Iconic Design** – Sharp and simple icons to keep things professional yet modern.
-- 🤖 **Telegram Bot Integration** – Seamlessly communicate with users using the Telegram Bot API.
-- ✉️ **Email Notifications** – Automated email sending using Gmail and OAuth2.
-- 🛠️ **Advanced Tooling** – Enhanced development workflow with TypeScript, ESLint, Prettier, and Husky.
+- ⚡ **Horizontal Scrolling** - A unique scrolling experience powered by GSAP.
+- 📱 **Fully Responsive** - Looks amazing on any device, big or small.
+- 🎨 **Sleek Animations** - Eye-catching transitions that bring the site to life.
+- 🧩 **Custom UI Components** - Modular design with easy-to-use elements.
+- 🎯 **Iconic Design** - Sharp and simple icons to keep things professional yet modern.
+- 🤖 **Telegram Bot Integration** - Seamlessly communicate with users using the Telegram Bot API.
+- ✉️ **Email Notifications** - Automated email sending using Gmail and OAuth2.
+- 🛠️ **Advanced Tooling** - Enhanced development workflow with TypeScript, ESLint, Prettier, and Husky.
 
 ## 🎨 GSAP Magic
 

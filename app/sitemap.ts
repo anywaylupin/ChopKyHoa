@@ -1,7 +1,5 @@
 import type { MetadataRoute } from 'next';
 
-import locales from '@/locales/vn.json';
-
 const sitemap = (): MetadataRoute.Sitemap => [
   {
     url: locales.domain,

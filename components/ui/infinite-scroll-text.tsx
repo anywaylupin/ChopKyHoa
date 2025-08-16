@@ -1,16 +1,12 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
-
-import { cn } from '@/lib/utils';
-
-export const InfiniteScrollText = ({
+export function InfiniteScrollText({
   text,
   direction = 'forwards',
   speed = 'fast',
   pauseOnHover = false,
   className
-}: InfiniteScrollTextProps) => {
+}: InfiniteScrollTextProps) {
   const ref = useRef<HTMLDivElement>(null);
   const scrollerRef = useRef<HTMLUListElement>(null);
 
@@ -61,11 +57,9 @@ export const InfiniteScrollText = ({
       </ul>
     </div>
   );
-};
+}
 
-export type InfiniteMovingCardsItem = { id: React.Key; text: string };
-
-export type InfiniteScrollTextProps = PropsWithClass<{
+type InfiniteScrollTextProps = PropsWithClass<{
   className?: string;
   text: string[] | string;
   direction?: 'forwards' | 'reverse';

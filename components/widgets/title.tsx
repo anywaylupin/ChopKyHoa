@@ -1,12 +1,7 @@
 import Link from 'next/link';
 
-import { IconMenu2 } from '@/components/icons';
-import { usePageSection } from '@/components/section';
-import { cn } from '@/lib/utils';
-import locales from '@/locales/vn.json';
-
-export const Title = ({ setOpen }: PropsWithClass<{ setOpen: DispatchState }>) => {
-  const { isMobile, isDesktop } = usePageSection();
+export function Title({ setOpen }: PropsWithClass<{ setOpen: DispatchState }>) {
+  const { isMobile, isDesktop } = usePageSection({ pages: locales.pages, templates });
 
   return (
     <div
@@ -41,4 +36,4 @@ export const Title = ({ setOpen }: PropsWithClass<{ setOpen: DispatchState }>) =
       </Link>
     </div>
   );
-};
+}

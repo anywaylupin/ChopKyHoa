@@ -1,8 +1,4 @@
-import { forwardRef } from 'react';
-
-import { cn } from '@/lib/utils';
-
-const Input = forwardRef<HTMLInputElement, React.InputHTMLAttributes<HTMLInputElement>>(function Input(
+export const Input = forwardRef<HTMLInputElement, React.InputHTMLAttributes<HTMLInputElement>>(function Input(
   { className, type, ...props },
   ref
 ) {
@@ -19,5 +15,3 @@ const Input = forwardRef<HTMLInputElement, React.InputHTMLAttributes<HTMLInputEl
     />
   );
 });
-
-export { Input };

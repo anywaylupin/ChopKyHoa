@@ -1,4 +1,4 @@
-export const IconPickleball = ({ className, fill = '#000000' }: PropsWithSVG) => {
+export function IconPickleball({ className, fill = '#000000' }: PropsSVG) {
   return (
     <span className={className}>
       <svg className="p-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" id="indoor-pickleball-ball">
@@ -71,4 +71,4 @@ export const IconPickleball = ({ className, fill = '#000000' }: PropsWithSVG) =>
       </svg>
     </span>
   );
-};
+}
